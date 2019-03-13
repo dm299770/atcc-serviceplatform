@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-authentication" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-discovery" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-messageadapter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-oauth2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-smarthomeadapter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-useradapter" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

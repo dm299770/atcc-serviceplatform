@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--
+    namespace：必须与对应的接口mapper.java全类名一致
+    id:必须与对应接口mapper.java的某个对应的方法名一致
+ -->
+<mapper namespace="com.acv.cloud.mapper.vehicle.VehicleMapper">
+
+    <!--数据库表字段名与models中类属性对应关系-->
+    <resultMap id="BaseResultMap" type="TrUserVin">
+        <id column="USER_ID" property="userId" jdbcType="VARCHAR"/>
+        <id column="VIN" property="vin" jdbcType="VARCHAR"/>
+        <id column="PLATE_NUM" property="plateNum" jdbcType="VARCHAR"/>
+        <id column="LAST_SIX_PHONENUM" property="lastSixPhoneNum" jdbcType="VARCHAR"/>
+        <id column="ENGINE_NUM" property="engineNum" jdbcType="VARCHAR"/>
+        <id column="DEFAULT_VEHICLE" property="defaultVehicle" jdbcType="TINYINT"/>
+        <id column="BINDING_DATE" property="bindingDate" jdbcType="DATE"/>
+        <id column="UNBINDING_DATE" property="unBindingDate" jdbcType="DATE"/>
+        <id column="IS_EFFCTIVE" property="isEffctive" jdbcType="TINYINT"/>
+        <id column="CREATE_DATE" property="createDate" jdbcType="DATE"/>
+    </resultMap>
+
+
+    <sql id="tableName">
+        TR_USER_VIN
+    </sql>
+
+    <sql id="baseColumns">
+        USER_ID,VIN,PLATE_NUM,LAST_SIX_PHONENUM,ENGINE_NUM,DEFAULT_VEHICLE,BINDING_DATE,UNBINDING_DATE,IS_EFFCTIVE,CREATE_DATE
+    </sql>
+
+
+    <select id="findById" resultMap="BaseResultMap">
+        select
+        <include refid="baseColumns"/>
+        from
+        <include refid="tableName"/>
+        where USER_ID = #{userId} and IS_EFFCTIVE = 1
+    </select>
+
+    <insert id="saveTrUserVin" parameterType="TrUserVin">
+        insert into
+        <include refid="tableName"/>
+        (<include refid="baseColumns"/>)
+        VALUES
+        (#{userId},#{vin},#{plateNum},#{lastSixPhoneNum},#{engineNum},#{defaultVehicle},#{bindingDate},#{unBindingDate},#{isEffctive},#{createDate})
+    </insert>
+
+    <update id="unbindTrUserVin" parameterType="string">
+        UPDATE
+        <include refid="tableName"/>
+
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="vin!=null and vin!=''">
+                IS_EFFCTIVE = 0 , UNBINDING_DATE = DATE_FORMAT(NOW(),'%Y-%m-%d %H:%m:%s')
+            </if>
+        </trim>
+        WHERE
+        VIN = #{vin}
+        and IS_EFFCTIVE = 1
+        and USER_ID = #{userId}
+    </update>
+
+    <update id="setDefaultVehicle" parameterType="string">
+        UPDATE
+        <include refid="tableName"/>
+
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="vin!=null and vin!=''">
+                DEFAULT_VEHICLE = ${defaultVehicle}
+            </if>
+        </trim>
+        WHERE
+        VIN = #{vin}
+        and IS_EFFCTIVE = 1
+        and USER_ID = #{userId}
+    </update>
+
+    <update id="clearDefaultVehicle" parameterType="string">
+        UPDATE
+        <include refid="tableName"/>
+
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId!=null and userId!=''">
+                DEFAULT_VEHICLE = 0
+            </if>
+        </trim>
+        WHERE
+        USER_ID = #{userId}
+        and IS_EFFCTIVE = 1
+        and USER_ID = #{userId}
+    </update>
+
+    <select id="findVehicleByVin" resultMap="BaseResultMap">
+        select
+        <include refid="baseColumns"/>
+        from
+        <include refid="tableName"/>
+        where VIN= #{vin} and IS_EFFCTIVE = 1
+    </select>
+
+
+</mapper>

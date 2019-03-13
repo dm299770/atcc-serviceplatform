@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--
+    namespace：必须与对应的接口mapper.java全类名一致
+    id:必须与对应接口mapper.java的某个对应的方法名一致
+ -->
+<mapper namespace="com.acv.cloud.mapper.user.TsUserInfoMapper">
+
+    <!--数据库表字段名与models中类属性对应关系-->
+    <resultMap id="BaseResultMap" type="TsUserInfo">
+        <id column="USER_ID" property="userId" jdbcType="VARCHAR"/>
+        <id column="PROFILE_PHOTO" property="profilePhoto" jdbcType="BLOB"/>
+        <id column="NICK_NAME" property="nickName" jdbcType="VARCHAR"/>
+        <id column="REAL_NAME" property="realName" jdbcType="VARCHAR"/>
+        <id column="SEXUAL" property="sexual" jdbcType="VARCHAR"/>
+        <id column="EMEY_CONTACT" property="emeyContact" jdbcType="VARCHAR"/>
+        <id column="IS_EFFCTIVE" property="isEffctive" jdbcType="TINYINT"/>
+        <id column="CREATE_DATE" property="createDate" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="tableName">
+        TS_USER_INFO
+    </sql>
+
+    <sql id="baseColumns">
+        USER_ID,PROFILE_PHOTO,NICK_NAME,REAL_NAME,SEXUAL,EMEY_CONTACT,IS_EFFCTIVE,CREATE_DATE
+    </sql>
+
+    <insert id="save" parameterType="TsUser">
+        insert into
+        <include refid="tableName"/>
+        (USER_ID,NICK_NAME,CREATE_DATE)
+        VALUES (#{userId},#{nickName},#{createDate})
+    </insert>
+    <insert id="saveAccount" parameterType="TmChargeAccount">
+        insert into TM_CHARGE_ACCOUNT (USER_ACCOUNT,BALANCE,CREATE_TIME,UPDATE_TIME)
+        VALUES (#{userAccount},#{balance},#{createTime},#{updateTime})
+    </insert>
+
+
+    <update id="updateByType" parameterType="string">
+        update
+        <include refid="tableName"/>
+        set ${type} = #{value}
+        <!-- where USER_ID = (select USER_ID from TS_USER where PHONE_NUM = #{phoneNum} and IS_EFFCTIVE = 1 )
+        and IS_EFFCTIVE = 1 -->
+        where USER_ID = #{userId}
+    </update>
+
+</mapper>

@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="04a8759c-527b-471a-a6c2-4e0b14dce58a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_google_guava_guava_16_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_projectlombok_lombok_1_18_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/atcc-serviceplatform-b2badapter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/log/2019-03-01/2019-03-01.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/log/2019-03-04/2019-03-04.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/oauth/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/oauth/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/application-prod.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/jquery/jquery-3.2.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_authzserver_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_common_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_resourceserver_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20131018.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/PushJavaSDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atcc-serviceplatform-messageadapter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/2019-03-04/2019-03-04.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/2019-03-05/2019-03-05.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ACV-CA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ACV-CA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ACV-CA/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../ACV-CA/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ACV-EUREKA/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ACV-EUREKA/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ACV-UA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ACV-UA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ACV-UA/ACV-UA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ACV-UA/ACV-UA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ACV-UA/src/main/java/com/acv/cloud/controller/verification/VerificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ACV-UA/src/main/java/com/acv/cloud/controller/verification/VerificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ACV-VA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ACV-VA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/artifacts/ACV_UA_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_alibaba_fastjson_1_2_44.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_alibaba_fastjson_1_2_44.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_github_andrewoma_dexx_dexx_collections_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_github_andrewoma_dexx_dexx_collections_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_github_vlsi_compactmap_compactmap_1_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_github_vlsi_compactmap_compactmap_1_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_google_code_findbugs_annotations_3_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_google_code_findbugs_annotations_3_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_archaius_archaius_core_0_7_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_archaius_archaius_core_0_7_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_eureka_eureka_client_1_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_eureka_eureka_client_1_9_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_eureka_eureka_core_1_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_eureka_eureka_core_1_9_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_hystrix_hystrix_core_1_5_18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_hystrix_hystrix_core_1_5_18.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_commons_util_0_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_commons_util_0_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_eventbus_0_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_eventbus_0_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_infix_0_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_infix_0_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_statistics_0_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_statistics_0_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_core_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_core_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_eureka_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_eureka_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_httpclient_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_httpclient_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_loadbalancer_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_loadbalancer_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_transport_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_ribbon_ribbon_transport_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_netflix_servo_servo_core_0_12_21.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_netflix_servo_servo_core_0_12_21.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_apache_client4_1_19_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_apache_client4_1_19_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__commons_configuration_commons_configuration_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__commons_configuration_commons_configuration_1_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__commons_jxpath_commons_jxpath_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__commons_jxpath_commons_jxpath_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_github_openfeign_feign_core_10_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_github_openfeign_feign_core_10_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_github_openfeign_feign_hystrix_10_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_github_openfeign_feign_hystrix_10_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_10_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_10_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_github_openfeign_form_feign_form_3_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_github_openfeign_form_feign_form_3_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_github_openfeign_form_feign_form_spring_3_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_github_openfeign_form_feign_form_spring_3_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_micrometer_micrometer_core_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_micrometer_micrometer_core_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_netty_netty_buffer_4_1_31_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_netty_netty_buffer_4_1_31_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_netty_netty_codec_4_1_31_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_netty_netty_codec_4_1_31_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_netty_netty_common_4_1_31_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_netty_netty_common_4_1_31_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_netty_netty_handler_4_1_31_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_netty_netty_handler_4_1_31_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_netty_netty_resolver_4_1_31_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_netty_netty_resolver_4_1_31_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_netty_netty_transport_4_1_31_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_netty_netty_transport_4_1_31_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_reactivex_rxjava_1_3_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_reactivex_rxjava_1_3_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_reactivex_rxnetty_0_4_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_reactivex_rxnetty_0_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_reactivex_rxnetty_contexts_0_4_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_reactivex_rxnetty_contexts_0_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__io_reactivex_rxnetty_servo_0_4_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__io_reactivex_rxnetty_servo_0_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__joda_time_joda_time_2_10_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__joda_time_joda_time_2_10_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_antlr_antlr_runtime_3_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_antlr_antlr_runtime_3_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_authzserver_1_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_authzserver_1_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_common_1_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_common_1_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_resourceserver_1_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_oltu_oauth2_org_apache_oltu_oauth2_resourceserver_1_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_60.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_60.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_60.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_60.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_13_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_13_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_json_json_20131018.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_json_json_20131018.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_mongodb_bson_3_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_mongodb_bson_3_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_mongodb_mongodb_driver_3_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_mongodb_mongodb_driver_3_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_mybatis_mybatis_3_4_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_mybatis_mybatis_3_4_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_1_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_2_1_0_RC2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_2_1_0_RC2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_1_0_RC2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_1_0_RC2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_archaius_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_archaius_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_client_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_client_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_hystrix_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_hystrix_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_ribbon_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_ribbon_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_2_1_0_RC2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_2_1_0_RC2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_archaius_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_archaius_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_client_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_client_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_ribbon_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_ribbon_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_1_0_RC3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_1_0_RC3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_2_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_2_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_1_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_1_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_aop_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_aop_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_beans_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_beans_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_context_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_context_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_core_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_core_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_expression_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_expression_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_test_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_test_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_tx_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_tx_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_web_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_web_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-01-15/2019-01-15.log" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/log/2019-02-13/2019-02-13.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-02-12/2019-02-12.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-02-13/2019-02-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-02-18/2019-02-18.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-02-20/2019-02-20.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-02-21/2019-02-21.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-02-26/2019-02-26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-02-27/2019-02-27.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/log/2019-02-28/2019-02-28.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/remark" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/controller/account/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/controller/account/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/controller/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/controller/login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/controller/login/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/controller/login/LogoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/dto/sys/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/dto/sys/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/exception/LoginRequiredException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/exception/LoginRequiredException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/feign/VehicleStateFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/feign/VehicleStateFeign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/annotation/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/annotation/CurrentUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/annotation/LoginRequired.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/annotation/LoginRequired.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/constants/AppResultConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/constants/AppResultConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/constants/ApplicationPropertiesConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/constants/ApplicationPropertiesConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/constants/CurrentUserConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/constants/CurrentUserConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/constants/OauthConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/constants/OauthConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/constants/PackageConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/constants/PackageConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/init/AuthenticationInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/init/AuthenticationInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/init/CurrentUserMethodArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/init/CurrentUserMethodArgumentResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/init/FastJsonHttpMessageConverterEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/init/FastJsonHttpMessageConverterEx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/init/MongoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/init/MongoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/init/WebMvcConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/init/WebMvcConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/HttpUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/ResponseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/ResponseUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/SMSUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/SMSUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/TokenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/TokenUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/frame/util/VcUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/frame/util/VcUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/mapper/account/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/mapper/account/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/mapper/sys/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/mapper/sys/SysUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/mapper/user/TsUserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/mapper/user/TsUserInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/mapper/user/TsUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/mapper/user/TsUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/account/AccountBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/account/AccountBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/account/TtChargeFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/account/TtChargeFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/account/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/account/UserAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/login/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/login/LoginData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/user/UserInfoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/user/UserInfoData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/user/UserInfoRequsetBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/user/UserInfoRequsetBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/request/EVVehicleState.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/request/EVVehicleState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/request/RequestVehicleState.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/request/RequestVehicleState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/request/VehicleStateRequestParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/request/VehicleStateRequestParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/response/EVVehicleStateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/response/EVVehicleStateResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/status/Tirepressure.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/status/Tirepressure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/status/WindowStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/jsonBean/vehicle/status/WindowStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/sys/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/sys/SysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/sys/TmChargeAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/sys/TmChargeAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/sys/TsUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/sys/TsUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/models/sys/TsUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/models/sys/TsUserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/repository/mongotemplate/IPublicDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/repository/mongotemplate/IPublicDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/repository/mongotemplate/impl/PublicDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/repository/mongotemplate/impl/PublicDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/RedisRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/RedisRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/component/FastJsonRedisSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/component/FastJsonRedisSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/component/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/component/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/repository/redistemplate/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/services/account/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/services/account/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/services/account/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/services/account/impl/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/services/login/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/services/login/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/services/login/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/services/login/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/services/user/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/services/user/SysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/services/user/TsUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/services/user/TsUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/services/user/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/services/user/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/java/com/acv/cloud/services/user/impl/TsUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/java/com/acv/cloud/services/user/impl/TsUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/application-prod.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/lib/http.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/lib/http.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/mybatis/mapper/AccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/mybatis/mapper/AccountMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/mybatis/mapper/TsUserInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/mybatis/mapper/TsUserInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/mybatis/mapper/TsUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/mybatis/mapper/TsUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/mybatis/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/mybatis/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/sql/database.text" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/sql/database.text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/css/admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/css/amazeui.basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/css/amazeui.basic.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/css/amazeui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/css/amazeui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/css/amazeui.widgets.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/css/amazeui.widgets.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/account.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/app-icon72x72@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/bottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/admin-chrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/admin-firefox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/admin-ie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/admin-opera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/admin-safari.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/adminPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/blogPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/landing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/landingPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/loginPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/examples/sidebarPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/password.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/i/startup-640x1096.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/amazeui.basic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/amazeui.basic.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/amazeui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/amazeui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/amazeui.widgets.helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/amazeui.widgets.helper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/amazeui.widgets.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/amazeui.widgets.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/handlebars.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/assets/js/zepto.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/bootstrap-3.3.7-dist/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/jquery/jquery-3.2.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/jquery/jquery-3.2.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/jquery/jquery-3.2.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/static/js/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/static/js/test/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/templates/accesstoken.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/templates/login.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/templates/privacyPolicyForACV.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/resources/templates/test/test.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../atcc-serviceplatform-b2badapter/src/main/resources/templates/test/test.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/test/EncodeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/test/FileUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/test/ListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/test/RedisTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/test/TransactionalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atcc-serviceplartform-b2badapter/src/main/test/Ut8Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-03/2019-01-03.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-10/2019-01-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-11/2019-01-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-14/2019-01-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-15/2019-01-15.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-16/2019-01-16.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-17/2019-01-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-18/2019-01-18.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-21/2019-01-21.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-01-22/2019-01-22.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-02-12/2019-02-12.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-02-13/2019-02-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-02-19/2019-02-19.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2019-02-22/2019-02-22.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remark" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/message/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/message/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/notification/NotificationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/AliSmartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/AliSmartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/sms/SMSController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/unread/UnReadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/dto/sys/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/dto/sys/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/init/AuthenticationInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/init/AuthenticationInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/init/MongoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/init/MongoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/util/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/mapper/TsUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/mapper/TsUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/models/jsonBean/pageModel/PageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/models/jsonBean/pageModel/PageModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/models/mongdb/notification/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/models/mongdb/notification/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/models/mongdb/notification/NotificationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/models/mongdb/notification/NotificationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/INotificationMongoDBDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/INotificationMongoDBDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/ISMSDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/ISMSDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/impl/NotificationMongoDBnDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/impl/NotificationMongoDBnDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/impl/PublicDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/impl/PublicDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/redistemplate/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/redistemplate/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/redistemplate/component/FastJsonRedisSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/redistemplate/component/FastJsonRedisSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/redistemplate/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/redistemplate/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/impl/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/notification/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/notification/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/notification/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/notification/impl/NotificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/page/MongoDBPageable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/page/MongoDBPageable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/WeatherHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/WeatherHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/impl/AliSmartEvHandleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/impl/AliSmartEvHandleImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/impl/WeatherHandleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/impl/WeatherHandleImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/sms/impl/SMSServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/sms/impl/SMSServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/unread/UnReadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/unread/UnReadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/unread/impl/UnReadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/unread/impl/UnReadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/aligenie/cd65710fc56d8163dfaed043e4129690.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bootstrap-3.3.7-dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/bootstrap-3.3.7-dist/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/jquery/jquery-3.2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jquery/jquery-3.2.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/privacyPolicyForACV.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/FileUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/IdTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/Java8Tester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/ListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/MongoDBTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/PushMessageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/RedisTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/Ut8Test.java" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/message/MessageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/RequestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/AliSmartController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/impl/MessageServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Push</find>
+      <find>lan</find>
+      <find>ACV-VA</find>
+      <find>redis</find>
+      <find>contr</find>
+      <find>TsUser</find>
+      <find>TaskQuery</find>
+      <find>idm</find>
+      <find>framework</find>
+      <find>String</find>
+      <find>profiles</find>
+      <find>PushJava</find>
+      <find>configuration</find>
+      <find>spring-boot-maven-plugin</find>
+      <find>mongodb</find>
+    </findStrings>
+    <dirStrings>
+      <dir>E:\workspace\ACV-CLOUD\atcc-serviceplatform-messageadapter\src\main\java\com\acv\cloud\mapper</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/util/DateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/dto/sys/UserInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/notification/NotificationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/impl/WeatherHandleImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/RequestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/WeatherHandle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/AliSmartController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/notification/NotificationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/sms/impl/SMSServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/sms/SMSService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/unread/impl/UnReadServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/unread/UnReadService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/delete/DelMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/INotificationMongoDBDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/impl/NotificationMongoDBnDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/notification/impl/NotificationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/message/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-prod.properties" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="E:\apache-maven-3.3.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="atcc-serviceplatform-messageadapter" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="atcc-serviceplatform-messageadapter" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2151" />
+    <option name="y" value="-8" />
+    <option name="width" value="1229" />
+    <option name="height" value="659" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="atcc-serviceplatform-messageadapter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="atcc-serviceplatform-messageadapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="atcc-serviceplatform-messageadapter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="atcc-serviceplatform-messageadapter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="atcc-serviceplatform-messageadapter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="atcc-serviceplatform-messageadapter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="atcc-serviceplatform-messageadapter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="atcc-serviceplatform-messageadapter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="atcc-serviceplatform-messageadapter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="atcc-serviceplatform-messageadapter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="atcc-serviceplatform-messageadapter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="atcc-serviceplatform-messageadapter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552377868383" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.45107633" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\atcc-serviceplatform-messageadapter\src\main\resources\mybatis" />
+      <recent name="E:\workspace\atcc-serviceplatform-messageadapter\src\main\resources" />
+      <recent name="E:\workspace\atcc-serviceplatform-messageadapter\src\main\java\com\acv\cloud" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application (2)">
+    <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ACV-VA" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="atcc-serviceplatform-messageadapter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acv.cloud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ACV-VA" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xxx.demo.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04a8759c-527b-471a-a6c2-4e0b14dce58a" name="Default Changelist" comment="" />
+      <created>1550040831780</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550040831780</updated>
+      <workItem from="1550040834346" duration="49000" />
+      <workItem from="1550558819074" duration="13000" />
+      <workItem from="1551667179251" duration="6592000" />
+      <workItem from="1551679660757" duration="380000" />
+      <workItem from="1551681095231" duration="4010000" />
+      <workItem from="1551685253434" duration="1763000" />
+      <workItem from="1551687051209" duration="34000" />
+      <workItem from="1551687107530" duration="25646000" />
+      <workItem from="1551773425725" duration="1952000" />
+      <workItem from="1551836242872" duration="4232000" />
+      <workItem from="1552013092930" duration="3687000" />
+      <workItem from="1552267075086" duration="3612000" />
+      <workItem from="1552377757319" duration="114000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="52084000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.22228146" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Structure" order="5" sideWeight="0.5010846" side_tool="true" weight="0.2675906" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2570499" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.3991323" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.5780911" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.3991323" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.329718" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.32942432" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>mongoTemplate.remove(query, Notification.class).getDeletedCount();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mongoTemplate.updateMulti(query, update, Notification.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(NotificationRequest) mongoTemplate.find(query, NotificationRequest.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mongoTemplate.find(query, NotificationRequest.class);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mongoTemplate.findAndRemove(query, Notification.class);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mongoTemplate.findAndRemove(query, MessageResponse.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/dto/sys/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/sms/SMSController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/unread/UnReadController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/page/MongoDBPageable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/constants/ApplicationPropertiesConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/notification/NotificationController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/mapper/TsUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/models/sys/TsUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/aliGenie-intent-sematic.jar!/com/alibaba/da/coin/ide/spi/standard/TaskQuery.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/impl/WeatherHandleImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="26" column="33" selection-start-column="2" selection-end-line="72" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/WeatherHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="19" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/PushJavaSDK.jar!/com/tencent/xinge/XingeApp.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/TsUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.8/eureka-client-1.9.8.jar!/com/netflix/discovery/InstanceInfoReplicator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.jar!/org/apache/http/impl/client/CloseableHttpClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.3.RELEASE/spring-core-5.1.3.RELEASE.jar!/org/springframework/util/ReflectionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="399" selection-start-line="399" selection-end-line="399" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/PushJavaSDK.jar!/com/tencent/xinge/MessageIOS.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/sms/SMSService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/notification/NotificationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/delete/DelMessage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/models/jsonBean/message/request/MessageRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/constants/AppResultConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="49" column="44" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/2.1.3.RELEASE/spring-data-mongodb-2.1.3.RELEASE.jar!/org/springframework/data/mongodb/core/MongoTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="158" column="48" selection-start-line="158" selection-start-column="18" selection-end-line="158" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.3.RELEASE/spring-core-5.1.3.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/unread/UnReadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/INotificationMongoDBDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/3.8.2/mongodb-driver-core-3.8.2.jar!/com/mongodb/client/result/DeleteResult.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/models/mongdb/notification/Notification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/models/mongdb/notification/NotificationRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="128" column="45" selection-start-line="128" selection-start-column="38" selection-end-line="128" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/sms/impl/SMSServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/models/jsonBean/message/response/MessageResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/notification/impl/NotificationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3138">
+          <caret line="198" column="41" selection-start-line="198" selection-start-column="40" selection-end-line="198" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/frame/constants/DataFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/models/jsonBean/smartSpeaker/TaskRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/AliSmartEvHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/models/jsonBean/smartSpeaker/ali/AliTaskResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.44/fastjson-1.2.44.jar!/com/alibaba/fastjson/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/models/jsonBean/smartSpeaker/IntentModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/repository/mongotemplate/impl/NotificationMongoDBnDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="834">
+          <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/smartSpeaker/impl/AliSmartEvHandleImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/unread/impl/UnReadServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-prod.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="66" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/services/message/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/message/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/RequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acv/cloud/controller/smartSpeaker/AliSmartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>unnamed</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>atcc-serviceplatform-messageadapter</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>PushJavaSDK</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.45107633" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

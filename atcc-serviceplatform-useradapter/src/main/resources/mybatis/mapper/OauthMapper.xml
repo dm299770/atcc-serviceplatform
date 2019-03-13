@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.acv.cloud.mapper.oauth.OAuthMapper">
+
+    <insert id="addRefreshToken" parameterType="Map">
+        <selectKey keyProperty="count" resultType="int" order="BEFORE">
+            SELECT COUNT(*) from TC_OAUTH_REFRESHTOKEN WHERE APP_ACCOUNT_ID = #{APP_ACCOUNT_ID} AND CLIENT_ID =
+            #{CLIENT_ID}
+        </selectKey>
+        <if test="count > 0">
+            UPDATE TC_OAUTH_REFRESHTOKEN SET
+            REFRESHTOKEN = #{REFRESHTOKEN},EXPIREIN = #{EXPIREIN}
+            WHERE APP_ACCOUNT_ID = #{APP_ACCOUNT_ID} AND CLIENT_ID = #{CLIENT_ID}
+        </if>
+        <if test="count==0">
+            INSERT INTO TC_OAUTH_REFRESHTOKEN
+            (
+            REFRESHTOKEN,
+            CLIENT_ID,
+            APP_ACCOUNT_ID,
+            EXPIREIN)
+            VALUES(
+            #{REFRESHTOKEN},
+            #{CLIENT_ID},
+            #{APP_ACCOUNT_ID},
+            #{EXPIREIN})
+        </if>
+    </insert>
+
+    <select id="checkRefreshToken" resultType="String">
+        SELECT
+        EXPIREIN
+        FROM
+        TC_OAUTH_REFRESHTOKEN
+        WHERE REFRESHTOKEN = #{REFRESHTOKEN}
+    </select>
+
+    <update id="updateRefreshToken" parameterType="Map">
+        UPDATE TC_OAUTH_REFRESHTOKEN SET
+        REFRESHTOKEN = #{REFRESHTOKEN},EXPIREIN = #{EXPIREIN}
+        WHERE REFRESHTOKEN = #{REFRESHTOKEN_OLD}
+    </update>
+
+    <select id="findAppAccountIDByRefreshToken" resultType="String">
+        SELECT
+        APP_ACCOUNT_ID
+        FROM
+        TC_OAUTH_REFRESHTOKEN
+        WHERE REFRESHTOKEN = #{REFRESHTOKEN}
+    </select>
+
+    <select id="findUserByPhoneNum" resultType="com.acv.cloud.models.sys.TsUser">
+        select USER_ID as "userId",
+        PHONE_NUM as "phoneNum",
+        PASSWORD as "password",
+        IS_EFFCTIVE as "isEffctive",
+        CREATE_DATE as "createDate"
+        from TS_USER
+        where PHONE_NUM = #{PHONENUM}
+        and IS_EFFCTIVE = 1
+    </select>
+
+    <select id="checkOAuthThridparty" resultType="Map">
+        SELECT
+        CLIENT_ID as "client_id",
+        CLIENT_SECRET as "client_secret",
+        SCOPE as "scope",
+        REDIRECT_URI as "redirect_uri"
+        FROM
+        TC_OAUTH_THIRDPARTY
+        WHERE CLIENT_ID = #{CLIENT_ID}
+        <if test="CLIENT_SECRET!=null and CLIENT_SECRET!=''">
+            AND CLIENT_SECRET = #{CLIENT_SECRET}
+        </if>
+    </select>
+
+    <update id="updOAuthThridpartyMes" parameterType="Map">
+        UPDATE TC_OAUTH_THIRDPARTY SET
+        SCOPE = #{SCOPE},REDIRECT_URI = #{REDIRECT_URI}
+        WHERE CLIENT_ID = #{CLIENT_ID}
+    </update>
+</mapper>

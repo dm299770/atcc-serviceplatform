@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--
+    namespace：必须与对应的接口mapper.java全类名一致
+    id:必须与对应接口mapper.java的某个对应的方法名一致
+ -->
+<mapper namespace="com.acv.cloud.mapper.user.TsUserMapper">
+
+    <!--数据库表字段名与models中类属性对应关系-->
+    <resultMap id="BaseResultMap" type="TsUser">
+        <id column="USER_ID" property="userId" jdbcType="VARCHAR"/>
+        <id column="PHONE_NUM" property="phoneNum" jdbcType="VARCHAR"/>
+        <id column="PASSWORD" property="password" jdbcType="VARCHAR"/>
+        <id column="IS_EFFCTIVE" property="isEffctive" jdbcType="TINYINT"/>
+        <id column="CREATE_DATE" property="createDate" jdbcType="DATE"/>
+        <id column="TOKEN" property="token" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="UserInfoResultMap" type="com.acv.cloud.dto.sys.UserInfo">
+        <id column="USER_ID" property="userId" jdbcType="VARCHAR"/>
+        <id column="PHONE_NUM" property="phoneNum" jdbcType="VARCHAR"/>
+        <id column="PASSWORD" property="password" jdbcType="VARCHAR"/>
+        <id column="IS_EFFCTIVE" property="isEffctive" jdbcType="TINYINT"/>
+        <id column="CREATE_DATE" property="createDate" jdbcType="DATE"/>
+        <id column="PROFILE_PHOTO" property="profilePhoto" jdbcType="VARCHAR"/>
+        <id column="NICK_NAME" property="nickName" jdbcType="VARCHAR"/>
+        <id column="REAL_NAME" property="realName" jdbcType="VARCHAR"/>
+        <id column="SEXUAL" property="sexual" jdbcType="VARCHAR"/>
+        <id column="EMEY_CONTACT" property="emeyContact" jdbcType="VARCHAR"/>
+        <id column="TOKEN" property="token" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="tableName">
+        TS_USER
+    </sql>
+
+    <sql id="baseColumns">
+        USER_ID,PHONE_NUM,PASSWORD,IS_EFFCTIVE,CREATE_DATE,TOKEN
+    </sql>
+
+    <sql id="UserInfoColumns">
+        tu.USER_ID,tu.PHONE_NUM,tu.PASSWORD,tui.PROFILE_PHOTO,tui.NICK_NAME,tui.REAL_NAME,tui.SEXUAL,tui.EMEY_CONTACT,tu.IS_EFFCTIVE,tu.CREATE_DATE,tu.TOKEN
+    </sql>
+
+    <select id="findById" resultMap="BaseResultMap">
+        select
+        <include refid="baseColumns"/>
+        from
+        <include refid="tableName"/>
+        where USER_ID = #{userId}
+    </select>
+
+    <select id="findEffctiveByPhoneNum" resultMap="BaseResultMap">
+        select
+        <include refid="baseColumns"/>
+        from
+        <include refid="tableName"/>
+        where PHONE_NUM = #{phoneNum} and IS_EFFCTIVE = 1
+    </select>
+
+    <select id="findEffctiveUserInfoByPhoneNum" resultMap="UserInfoResultMap">
+        select
+        <include refid="UserInfoColumns"/>
+        from TS_USER tu left JOIN TS_USER_INFO tui
+        on tu.USER_ID = tui.USER_ID
+        where tu.PHONE_NUM = #{phoneNum} and tu.IS_EFFCTIVE = 1
+    </select>
+
+    <select id="findEffctiveUserInfoById" resultMap="UserInfoResultMap">
+        select
+        <include refid="UserInfoColumns"/>
+        from TS_USER tu left JOIN TS_USER_INFO tui
+        on tu.USER_ID = tui.USER_ID
+        where tu.USER_ID = #{id} and tu.IS_EFFCTIVE = 1
+    </select>
+
+    <insert id="save" parameterType="TsUser">
+        insert into
+        <include refid="tableName"/>
+        (<include refid="baseColumns"/>)
+        VALUES (#{userId},#{phoneNum},#{password},#{isEffctive},#{createDate},#{token})
+    </insert>
+
+    <delete id="delete" parameterType="string">
+        delete from
+        <include refid="tableName"/>
+        where USER_ID=#{userId}
+    </delete>
+
+    <update id="update" parameterType="TsUser">
+        UPDATE
+        <include refid="tableName"/>
+
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="phoneNum!=null and phoneNum!='' ">
+                PHONE_NUM = #{phoneNum},
+            </if>
+            <if test="password!=null and password!='' ">
+                PASSWORD = #{password},
+            </if>
+            <if test="isEffctive!=null ">
+                IS_EFFCTIVE = #{isEffctive},
+            </if>
+            <if test="token!=null and token!='' ">
+                TOKEN = #{token},
+            </if>
+        </trim>
+        WHERE
+        USER_ID = #{userId} and IS_EFFCTIVE = 1
+    </update>
+
+    <update id="updatePassword">
+        UPDATE
+        <include refid="tableName"/>
+
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="newPassword!=null and newPassword!='' ">
+                PASSWORD = #{newPassword},
+            </if>
+        </trim>
+        WHERE
+        PHONE_NUM = #{phoneNum} AND PASSWORD = #{oldPassword} and IS_EFFCTIVE = 1
+    </update>
+
+
+    <update id="reSetPassword">
+        UPDATE
+        <include refid="tableName"/>
+
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="newPassword!=null and newPassword!='' ">
+                PASSWORD = #{newPassword},
+            </if>
+        </trim>
+        WHERE
+        PHONE_NUM = #{phoneNum} and IS_EFFCTIVE = 1
+    </update>
+
+    <select id="findUserPhoneNum" resultMap="UserInfoResultMap">
+        select PHONE_NUM from TS_USER
+        WHERE USER_ID=#{userId}
+    </select>
+
+</mapper>

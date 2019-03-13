@@ -1,0 +1,14 @@
+curl -X POST host:port/shutdown # Demo
+$ curl -X POST http://localhost:8888/shutdown
+{"message":"Shutting down, bye..."} $ curl -X POST http://localhost:8080/manage/shutdown {"message":"Shutting down, bye..."}
+
+
+>mongod --dbpath c:\mongo
+
+ssh password0000000 : m]eaxXbeds73Nuki
+
+sudo chmod -R 777 某一目录
+
+qeWf25?Bo
+
+G7B6qJBim4f5

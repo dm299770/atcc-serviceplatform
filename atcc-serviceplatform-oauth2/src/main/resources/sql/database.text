@@ -1,0 +1,104 @@
+#1.IDM sqlScript mybatis file
+
+
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : locahost
+Source Server Version : 80012
+Source Host           : localhost:3306
+Source Database       : idm
+
+Target Server Type    : MYSQL
+Target Server Version : 80012
+File Encoding         : 65001
+
+Date: 2018-10-09 09:55:01
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for sys_user
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user`;
+CREATE TABLE `sys_user` (
+  `USER_ID` varchar(36) NOT NULL,
+  `USER_NAME` varchar(30) NOT NULL,
+  `REAL_NAME` varchar(30) DEFAULT NULL,
+  `USER_PASSWORD` varchar(32) NOT NULL,
+  `EMAIL` varchar(320) DEFAULT NULL,
+  `CELLPHONE` varchar(15) DEFAULT NULL,
+  `IS_FIRST_LOGIN` tinyint(1) NOT NULL DEFAULT '1',
+  `IS_DELETED` tinyint(1) NOT NULL DEFAULT '0',
+  `CREATED_TIME` datetime NOT NULL,
+  `DESCRIPTION` varchar(200) DEFAULT NULL,
+  `IS_SHOW_START_PAGE` tinyint(1) NOT NULL DEFAULT '1',
+  `IS_ENABLE` tinyint(1) NOT NULL DEFAULT '1',
+  `IS_PASSED` tinyint(4) NOT NULL,
+  PRIMARY KEY (`USER_ID`),
+  UNIQUE KEY `Index_2` (`USER_NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_user
+-- ----------------------------
+INSERT INTO `sys_user` VALUES ('e5792c05-fa1c-4ffa-9adb-aa66f2cd8863', 'admin', '管理员', '21232f297a57a5a743894a0e4a801fc3', '', '', '0', '0', '2013-04-04 00:00:00', null, '1', '1', '1');
+
+-- ----------------------------
+-- Table structure for tr_user_vin
+-- ----------------------------
+DROP TABLE IF EXISTS `tr_user_vin`;
+CREATE TABLE `tr_user_vin` (
+  `USER_ID` varchar(36) NOT NULL COMMENT '用户id',
+  `VIN` varchar(17) DEFAULT NULL COMMENT '车辆唯一标识码 17位',
+  `BINDING_DATE` datetime DEFAULT NULL COMMENT '绑定时间',
+  `UNBINDING_DATE` datetime DEFAULT NULL COMMENT '解绑日期',
+  `IS_EFFCTIVE` tinyint(1) DEFAULT NULL COMMENT '是否有效 0-无效,1-有效',
+  `CREATE_DATE` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`USER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tr_user_vin
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ts_user
+-- ----------------------------
+DROP TABLE IF EXISTS `ts_user`;
+CREATE TABLE `ts_user` (
+  `USER_ID` varchar(36) NOT NULL COMMENT 'uuid 主键',
+  `PHONE_NUM` varchar(15) NOT NULL COMMENT '用户手机号',
+  `PASSWORD` varchar(32) NOT NULL COMMENT '密码 md5加密',
+  `IS_EFFCTIVE` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否有效 0-无效 , 1-有效',
+  `CREATE_DATE` datetime DEFAULT NULL,
+  `TOKEN` varchar(255) DEFAULT NULL COMMENT '暂留 未来匹配Kamereon',
+  PRIMARY KEY (`USER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ts_user
+-- ----------------------------
+INSERT INTO `ts_user` VALUES ('87a8b831-ac77-4c30-951b-666a2d330851', '15900798629', '81dc9bdb52d04dc20036dbd8313ed055', '1', '2018-10-08 16:00:49', null);
+INSERT INTO `ts_user` VALUES ('e5792c05-fa1c-4ffa-9adb-aa66f2cd8863', '18101671990', '21232f297a57a5a743894a0e4a801fc3', '1', '2018-09-28 16:40:40', null);
+
+-- ----------------------------
+-- Table structure for ts_user_info
+-- ----------------------------
+DROP TABLE IF EXISTS `ts_user_info`;
+CREATE TABLE `ts_user_info` (
+  `USER_ID` varchar(36) NOT NULL COMMENT '用户id',
+  `PROFILE_PHOTO` varchar(255) DEFAULT NULL COMMENT '头像',
+  `NICK_NAME` varchar(30) DEFAULT NULL COMMENT '昵称',
+  `REAL_NAME` varchar(30) DEFAULT NULL COMMENT '姓名',
+  `SEXUAL` varchar(10) DEFAULT NULL,
+  `EMEY_CONTACT` varchar(36) DEFAULT NULL COMMENT '紧急联系人',
+  `IS_EFFCTIVE` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否有效 0-无效 ,1-有效',
+  `CREATE_DATE` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`USER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ts_user_info
+-- ----------------------------

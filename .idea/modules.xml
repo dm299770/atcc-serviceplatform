@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/atcc-serviceplatform.iml" filepath="$PROJECT_DIR$/.idea/atcc-serviceplatform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/atcc-serviceplatform-authentication.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-authentication/atcc-serviceplatform-authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter/atcc-serviceplatform-caradapter.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-caradapter/atcc-serviceplatform-caradapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-discovery/atcc-serviceplatform-discovery.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-discovery/atcc-serviceplatform-discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-gateway/atcc-serviceplatform-gateway.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-gateway/atcc-serviceplatform-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-messageadapter/atcc-serviceplatform-messageadapter.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-messageadapter/atcc-serviceplatform-messageadapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-oauth2/atcc-serviceplatform-oauth2.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-oauth2/atcc-serviceplatform-oauth2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-smarthomeadapter/atcc-serviceplatform-smarthomeadapter.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-smarthomeadapter/atcc-serviceplatform-smarthomeadapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-useradapter/atcc-serviceplatform-useradapter.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-useradapter/atcc-serviceplatform-useradapter.iml" />
+    </modules>
+  </component>
+</project>

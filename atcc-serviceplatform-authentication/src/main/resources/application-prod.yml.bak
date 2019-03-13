@@ -1,0 +1,91 @@
+
+
+#服务器配置
+server:
+  host: 40.73.1.192
+  port: 8887
+
+#EUREKA 注册中心配置
+eureka:
+  client:
+  service-url:
+   defaultZone: http://admin:admin@localhost:8761/eureka/
+spring:
+  application:
+   name: atcc-serviceplatform-authentication
+   #当前是开发环境dev还是正式环境prod，在日志文件logback-spring.xml中用到
+   profiles: prod
+
+  #Mysql
+  datasource:
+    url: jdbc:mysql://40.73.1.192:3306/idm?useSSL=false
+    username: root
+    password: 9GhMk=mp-6Uu
+   #password: root
+    driverClassName: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    initial-size: 10
+  #Redis
+  redis:
+    host: acmstest.redis.cache.chinacloudapi.cn
+    password: CSxHbkX71yV0mLKqKdtyE+8BIwP8hFf7uhnE4utGaII=
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+    timeout: 10000
+    # Freemarker 配置
+    freemarker:
+      template-loader-path: classpath:/templates/
+      cache: false
+      charset: UTF-8
+      check-template-location: true
+      content-type: text/html
+    #springboot mvc
+    mvc:
+      #出现错误时, 直接抛出异常
+      throw-exception-if-no-handler-found: true
+      #静态资源访问
+      static-path-pattern: /**
+    resources:
+      #不要为我们工程中的资源文件建立映射
+      add-mappings: true
+      static-locations: classpath:/static/,classpath:/templates/,file:${web.img-path}
+
+
+Spring:
+  cloud:
+    refresh:
+      refreshable: none
+#myBatis的配置路径
+mybatis:
+  config-locations: classpath:mybatis/mybatis-config.xml
+  #myBatis model的查询sql.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #自动扫描需要定义类别名的包，将包内的JAVA类的类名作为类别名，对应models
+  type-aliases-package: com.acv.cloud.models
+  #打印sql语句
+  #logging.level.com.acv.cloud.mapper=debug
+  #MongDB配置
+  #spring.data.mongodb.uri=mongodb://veems_ranqi:veems_ranqi@127.0.0.1:26185/veems_ranqi
+
+endpoints:
+  shutdown:
+    enabled: true  #启用shutdown
+    sensitive: false #禁用密码验证
+
+
+web:
+  img-path: /home/neuroot/idm/profilePhoto
+
+#验证码基础配置
+sms:
+  uri: http://hy.qixinhl.com/msg/
+  account: nissanchina
+  password: nissan@123
+
