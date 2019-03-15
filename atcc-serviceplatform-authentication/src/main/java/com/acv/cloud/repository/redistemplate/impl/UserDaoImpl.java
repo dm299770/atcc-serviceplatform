@@ -50,4 +50,14 @@ public class UserDaoImpl implements IUserDao {
     public void deleteDeviceNo(String phoneNum) {
         redisRepository.remove(phoneNum);
     }
+
+    @Override
+    public String getDeviceNo(String userid, String deviceType) {
+        String account_device = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userid,deviceType);
+        if(redisRepository.get(account_device)!=null){
+            return redisRepository.get(account_device).toString();
+        }else{
+            return null;
+        }
+    }
 }

@@ -139,12 +139,12 @@ public interface TsUserService {
     /**
      * 更新用户密码
      *
-     * @param phoneNum    用户电话号
+     * @param userId    用户id
      * @param oldPassword 旧密码
      * @param newPassword 新密码
      * @return 返回信息
      */
-    JSONObject modifyUserPassword(String phoneNum, String oldPassword, String newPassword);
+    JSONObject modifyUserPassword(String userId, String oldPassword, String newPassword);
 
     /**
      * 重置密码
@@ -153,7 +153,7 @@ public interface TsUserService {
      * @param newPassword 新密码
      * @return 返回信息
      */
-    JSONObject resetUserPassword(String phoneNum, String newPassword);
+    JSONObject resetUserPassword(String phoneNum, String newPassword,String code);
 
     /**
      * 上传更新用户头像

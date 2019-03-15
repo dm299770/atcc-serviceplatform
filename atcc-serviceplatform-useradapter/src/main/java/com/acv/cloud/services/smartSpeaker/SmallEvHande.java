@@ -2,7 +2,7 @@ package com.acv.cloud.services.smartSpeaker;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.models.jsonBean.smartSpeaker.TaskRequest;
+import com.acv.cloud.jsonBean.smartSpeaker.TaskRequest;
 
 
 public interface SmallEvHande {

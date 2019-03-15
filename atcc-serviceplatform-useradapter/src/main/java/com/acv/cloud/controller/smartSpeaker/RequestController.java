@@ -5,12 +5,11 @@ package com.acv.cloud.controller.smartSpeaker;
 //import com.alibaba.da.coin.ide.spi.standard.TaskResult;
 //import com.alibaba.da.coin.ide.spi.trans.MetaFormat;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 
 import com.acv.cloud.frame.constants.DataFormat;
-import com.acv.cloud.models.jsonBean.smartSpeaker.mi.MiTaskRequest;
+import com.acv.cloud.jsonBean.smartSpeaker.mi.MiTaskRequest;
 import com.acv.cloud.services.smartSpeaker.impl.MiAiSmallEvHandeImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Random;
 
 //import com.google.gson.JsonObject;
 

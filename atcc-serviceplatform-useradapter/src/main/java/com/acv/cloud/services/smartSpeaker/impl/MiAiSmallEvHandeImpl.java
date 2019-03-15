@@ -1,10 +1,10 @@
 package com.acv.cloud.services.smartSpeaker.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.models.jsonBean.smartSpeaker.IntentModel;
-import com.acv.cloud.models.jsonBean.smartSpeaker.TaskRequest;
-import com.acv.cloud.models.jsonBean.smartSpeaker.mi.MiTaskResponse;
-import com.acv.cloud.models.jsonBean.vehicle.status.ALLVehicleState;
+import com.acv.cloud.jsonBean.smartSpeaker.IntentModel;
+import com.acv.cloud.jsonBean.smartSpeaker.TaskRequest;
+import com.acv.cloud.jsonBean.smartSpeaker.mi.MiTaskResponse;
+import com.acv.cloud.jsonBean.vehicle.status.ALLVehicleState;
 import com.acv.cloud.repository.redistemplate.RedisRepository;
 import com.acv.cloud.services.smartSpeaker.SmallEvHande;
 import org.slf4j.Logger;

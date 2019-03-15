@@ -20,7 +20,7 @@ public class ErrorFileter extends ZuulFilter {
 
     @Override
     public int filterOrder() {
-        return 10;
+        return 0;
     }
 
     @Override
@@ -33,8 +33,12 @@ public class ErrorFileter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         Throwable throwable = ctx.getThrowable();
         logger.error("this is a ErrorFilter: {}",throwable.getCause().getMessage());
-        ctx.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        ctx.set("error.exception",throwable.getCause());
+        //ctx.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        //ctx.set("error.exception",throwable.getCause());
+
+        ctx.setResponseStatusCode(401);
+        ctx.setResponseBody("{\"status\":500,\"msg\":\"网关内部异常\"}");
+        ctx.getResponse().setContentType("text/html;charset=UTF-8");
         return null;
     }
 }

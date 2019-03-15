@@ -43,10 +43,10 @@ public interface VehicleMapper {
      * 根据车牌号设置默认车辆
      *
      * @param userId
-     * @param plateNum
+     * @param vin
      * @param defaultVehicle
      */
-    void setDefaultVehicle(@Param("userId") String userId, @Param("plateNum") String plateNum, @Param("defaultVehicle") Integer defaultVehicle);
+    void setDefaultVehicle(@Param("userId") String userId, @Param("vin") String vin, @Param("defaultVehicle") Integer defaultVehicle);
 
     /**
      * 去除当前用户下所有默认车辆

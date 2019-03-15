@@ -58,7 +58,7 @@ public class AuthorizeController {
     private LoginFegin loginFegin;
 
     @SuppressWarnings("unchecked")
-    @RequestMapping(value = "/authorize")
+    @RequestMapping(value = "/oauth2/authorize")
     public Object authorize(HttpServletRequest request, ModelMap map) throws URISyntaxException, OAuthSystemException {
         try {
             if (request.getParameter("flag") == null) {

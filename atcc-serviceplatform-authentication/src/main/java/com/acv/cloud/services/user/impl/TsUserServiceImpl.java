@@ -59,6 +59,7 @@ public class TsUserServiceImpl implements TsUserService {
 
     public final static String USER_ERROR = "用户信息错误";
     public final static String USER_NAME_ERROR = "账号格式不正确";
+    public final static String USER_DEVICETYPE_ERROR = "不支持此型号设备登录";
 
 
     @Autowired

@@ -1,7 +1,9 @@
 package com.acv.cloud.filter;
 
-import com.acv.cloud.constants.ua.CurrentUserConstants;
-import com.acv.cloud.feign.ua.ITsUserServiceFeign;
+import com.acv.cloud.constants.RedisConstants;
+import com.acv.cloud.constants.useradapter.CurrentUserConstants;
+import com.acv.cloud.feign.authentication.IAuthenticationFeign;
+import com.acv.cloud.feign.useradapter.ITsUserServiceFeign;
 import com.acv.cloud.model.ua.UserInfo;
 //import com.acv.cloud.util.JwtTokenUtil;
 import com.acv.cloud.util.JwtTokenUtil;
@@ -10,22 +12,16 @@ import com.alibaba.fastjson.JSONObject;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import com.netflix.zuul.http.ServletInputStreamWrapper;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.zuul.util.ZuulRuntimeException;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StreamUtils;
 
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.nio.charset.Charset;
 import java.util.Map;
 @Component
 public class AccessFilter extends ZuulFilter
@@ -35,6 +31,9 @@ public class AccessFilter extends ZuulFilter
 
     @Autowired
     private ITsUserServiceFeign iTsUserServiceFeign;
+
+    @Autowired
+    private IAuthenticationFeign iAuthenticationFeign;
 
 
     /**
@@ -76,7 +75,7 @@ public class AccessFilter extends ZuulFilter
      * @throws ZuulException
      */
     @Override
-    public Object run() throws ZuulException {
+    public Object run() throws ZuulException{
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
 
@@ -89,7 +88,45 @@ public class AccessFilter extends ZuulFilter
             if (!JwtTokenUtil.checkAccessToken(header.toString())) {
                 //Claims claims = TokenUtils.parseJWT(accessToken);
                 Map<String, Object> map = JwtTokenUtil.analysisToken(header.toString(), 1);
-                String uuid = map.get("id").toString();
+
+                String uuid = map.get("id").toString();//用户id
+                String deviceType = map.get(RedisConstants.LOGIN_DEVICETYPE).toString();//登录认证设备型号
+                //String deviceType = map.get("LOGIN_DEVICETYPE").toString();//登录认证设备型号
+                String deviceNo = map.get(RedisConstants.LOGIN_DEVICENO).toString();//登陆认证设备推送号
+
+                if(!containsType(deviceType)){
+                    logger.info("CurrentUser is logining deviceType :{}",deviceType);
+                    ctx.setResponseStatusCode(401);
+                    ctx.setResponseBody("{\"status\":400,\"msg\":\"未知设备,请重新登录\"}");
+                    ctx.getResponse().setContentType("text/html;charset=UTF-8");
+                    return null;
+
+                }
+                //如果是手机设备
+                if(containsType("IOS")||containsType("Android")){
+
+                    if(deviceNo == null){
+                        ctx.setResponseStatusCode(401);
+                        ctx.setResponseBody("{\"status\":400,\"msg\":\"未知设备,请重新登录\"}");
+                        ctx.getResponse().setContentType("text/html;charset=UTF-8");
+                        return null;
+                    }
+                    JSONObject deviceObject = iAuthenticationFeign.getDeviceNo(uuid,deviceType);
+
+                    if(deviceObject!=null){
+                        //String deviceNoCache = deviceObject.get("deviceNo").toString();
+                        String deviceNoCache = deviceObject.get("deviceNo").toString();
+                        if(!deviceNo.equals(deviceNoCache)){
+                            //throw new Exception("账号在其他设备登录,请重新登录");
+                            ctx.setResponseStatusCode(401);
+                            ctx.setResponseBody("{\"status\":400,\"msg\":\"账号在其他设备登录,请重新登录\"}");
+                            ctx.getResponse().setContentType("text/html;charset=UTF-8");
+                            return null;
+                        }
+                    }
+
+                }
+
                 UserInfo userInfo = null;
                 if (!StringUtils.isEmpty(uuid)) {
                     userInfo = iTsUserServiceFeign.getUser(uuid);
@@ -148,6 +185,10 @@ public class AccessFilter extends ZuulFilter
             }
         }else{
             logger.warn("token is empty");
+            ctx.setResponseStatusCode(401);
+            ctx.setResponseBody("{\"status\":400,\"msg\":\"accessToken为空,请登录\"}");
+            ctx.getResponse().setContentType("text/html;charset=UTF-8");
+            return null;
         }
         return null;
     }
@@ -157,10 +198,33 @@ public class AccessFilter extends ZuulFilter
     private Boolean needCertification(String url){
         Boolean falg = true;
 
-        if(url.contains("/login/login/")||url.contains("/user/registeredUser")){
+        if(url.contains("/auth/login/")
+                ||url.contains("/user/registeredUser")
+                ||url.contains("/user/getCode")
+                ||url.contains("/user/create")
+        ){
             falg = false;
         }
 
         return falg;
+    }
+
+   private static boolean containsType(String type) {
+
+        for (RedisConstants.ALL_DEVICETYPES devicetypes : RedisConstants.ALL_DEVICETYPES.values()) {
+            if (devicetypes.name().equals(type)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private  enum deviceno {IOS, Android, Oauth2, WeChart}
+
+    public static void main(String[] args){
+
+        System.out.println(containsType("ios"));
+
     }
 }

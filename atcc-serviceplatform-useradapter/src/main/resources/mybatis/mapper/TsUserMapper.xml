@@ -120,7 +120,7 @@
             </if>
         </trim>
         WHERE
-        PHONE_NUM = #{phoneNum} AND PASSWORD = #{oldPassword} and IS_EFFCTIVE = 1
+        USER_ID = #{userId} AND PASSWORD = #{oldPassword} and IS_EFFCTIVE = 1
     </update>
 
 

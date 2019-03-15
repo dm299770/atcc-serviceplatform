@@ -1,5 +1,6 @@
 package com.acv.cloud.frame.util;
 
+import com.acv.cloud.frame.constants.RedisConstants;
 import com.alibaba.fastjson.JSON;
 import com.acv.cloud.frame.constants.OauthConstants;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -110,6 +111,8 @@ public class JwtTokenUtil implements Serializable {
         }
         claims.put("id", app_account_id);
         claims.put("tnt", "Chery_CN");
+        claims.put(RedisConstants.LOGIN_DEVICETYPE,params.get(RedisConstants.LOGIN_DEVICETYPE));
+        claims.put(RedisConstants.LOGIN_DEVICENO,params.get(RedisConstants.LOGIN_DEVICENO));
 
         try {
             return Jwts.builder()

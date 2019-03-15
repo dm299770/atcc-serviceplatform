@@ -13,7 +13,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import java.util.Date;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = UserApplication.class)
 @WebAppConfiguration
 public class RedisTest {
     @Autowired
@@ -21,12 +21,14 @@ public class RedisTest {
 
     @Test
     public void test() {
-        TrUserVin vin = new TrUserVin();
-        vin.setIsEffctive(0);
-        vin.setCreateDate(new Date());
-        vin.setUserId("1234567890");
-        //redisRepository.set("testIntent1111", vin);
-        Object o = redisRepository.get("testIntent1111");
-        System.out.println("111111"+o);
+//        TrUserVin vin = new TrUserVin();
+//        vin.setIsEffctive(0);
+//        vin.setCreateDate(new Date());
+//        vin.setUserId("1234567890");
+//        //redisRepository.set("testIntent1111", vin);
+//        Object o = redisRepository.get("testIntent1111");
+//        System.out.println("111111"+o);
+
+        redisRepository.set("test_regiseter","test",60l);
     }
 }

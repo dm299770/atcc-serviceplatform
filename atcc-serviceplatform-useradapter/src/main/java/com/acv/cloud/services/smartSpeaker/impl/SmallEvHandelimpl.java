@@ -6,7 +6,7 @@ package com.acv.cloud.services.smartSpeaker.impl;
 //import com.alibaba.da.coin.ide.spi.standard.TaskResult;
 
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.models.jsonBean.smartSpeaker.TaskRequest;
+import com.acv.cloud.jsonBean.smartSpeaker.TaskRequest;
 import com.acv.cloud.services.smartSpeaker.SmallEvHande;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

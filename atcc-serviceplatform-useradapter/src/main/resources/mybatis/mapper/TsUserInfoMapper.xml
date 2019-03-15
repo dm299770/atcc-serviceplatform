@@ -45,7 +45,7 @@
         set ${type} = #{value}
         <!-- where USER_ID = (select USER_ID from TS_USER where PHONE_NUM = #{phoneNum} and IS_EFFCTIVE = 1 )
         and IS_EFFCTIVE = 1 -->
-        where USER_ID = #{userId}
+        where USER_ID = #{userId} and IS_EFFCTIVE = 1
     </update>
 
 </mapper>

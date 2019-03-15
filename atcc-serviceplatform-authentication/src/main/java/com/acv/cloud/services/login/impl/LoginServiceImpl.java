@@ -1,5 +1,6 @@
 package com.acv.cloud.services.login.impl;
 
+import com.acv.cloud.frame.constants.RedisConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.OauthConstants;
@@ -37,47 +38,58 @@ public class LoginServiceImpl implements LoginService {
             // 判断【用户名】、【密码】参数合法性
             JSONObject jsonObject = new JSONObject();
 
-            if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
-            } else if (null == password || "".equalsIgnoreCase(password)) {
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_ERROR);
-            } else {
-                // 查找用户，判断用户账号密码是否正确
-                TsUser tsUser = tsUserMapper.findEffctiveByPhoneNum(phoneNum);
-                if (null == tsUser) {
+            //如果是手机设备
+            if(containsType(deviceType)){
+                if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
-                    //} else if (!MD5Util.md5(password).equalsIgnoreCase(tsUser.getPassword())) {
-                } else if (!password.equalsIgnoreCase(tsUser.getPassword())) {
+                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
+                } else if (null == password || "".equalsIgnoreCase(password)) {
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_WRONG_ERROR);
+                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_ERROR);
                 } else {
-                    // 账号密码正确，生成token
-                    //String accessToken = TokenUtils.createJwtToken(phoneNum);
+                    // 查找用户，判断用户账号密码是否正确
+                    TsUser tsUser = tsUserMapper.findEffctiveByPhoneNum(phoneNum);
+                    if (null == tsUser) {
+                        jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                        jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
+                        //} else if (!MD5Util.md5(password).equalsIgnoreCase(tsUser.getPassword())) {
+                    } else if (!password.equalsIgnoreCase(tsUser.getPassword())) {
+                        jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                        jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_WRONG_ERROR);
+                    } else {
+                        // 账号密码正确，生成token
+                        //String accessToken = TokenUtils.createJwtToken(phoneNum);
 
-                    long currentTime = System.currentTimeMillis() / 1000;
-                    long accessToken_expireIn = currentTime + OauthConstants.ACCESS_TOKEN_EXPIREIN;
-                    Map<String, Object> params = new HashMap<String, Object>();
-                    //获取过期时间
-                    params.put("EXPIREIN", accessToken_expireIn);
-                    params.put("SCOPE", null);
-                    params.put("APP_ACCOUNT_ID", tsUser.getUserId());
-                    //生成access Token
-                    String accessToken = JwtTokenUtil.generateToken(params);
+                        long currentTime = System.currentTimeMillis() / 1000;
+                        long accessToken_expireIn = currentTime + OauthConstants.ACCESS_TOKEN_EXPIREIN;
+                        Map<String, Object> params = new HashMap<String, Object>();
+                        //获取过期时间
+                        params.put("EXPIREIN", accessToken_expireIn);
+                        params.put("SCOPE", null);
+                        params.put("APP_ACCOUNT_ID", tsUser.getUserId());
+                        params.put(RedisConstants.LOGIN_DEVICENO,deviceNo);
+                        params.put(RedisConstants.LOGIN_DEVICETYPE,deviceType);
+                        //生成access Token
+                        String accessToken = JwtTokenUtil.generateToken(params);
 
-                    //设备绑定唯一用户
-                    //单设备登陆暂未实现
-                    userDao.updateDeviceNo(tsUser.getUserId(), deviceType ,deviceNo);
+                        //设备绑定唯一用户
+                        //单设备登陆暂未实现
+                        userDao.updateDeviceNo(tsUser.getUserId(), deviceType ,deviceNo);
 
 
-                    LoginData data = new LoginData(accessToken);
-                    jsonObject.put(AppResultConstants.DATA, data);
-                    jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGIN_SUCCESS);
+                        LoginData data = new LoginData(accessToken);
+                        jsonObject.put(AppResultConstants.DATA, data);
+                        jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
+                        jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGIN_SUCCESS);
+                    }
                 }
+
+            }else{
+                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_DEVICETYPE_ERROR);
             }
+
+
 
             return jsonObject;
         } catch (Exception e) {
@@ -176,5 +188,17 @@ public class LoginServiceImpl implements LoginService {
         }
 
         return jsonObject;
+    }
+
+
+    private static boolean containsType(String type) {
+
+        for (RedisConstants.ALL_DEVICETYPES devicetypes : RedisConstants.ALL_DEVICETYPES.values()) {
+            if (devicetypes.name().equals(type)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -5,8 +5,8 @@ import com.acv.cloud.frame.constants.OauthConstants;
 import com.acv.cloud.frame.util.HttpUtil;
 import com.acv.cloud.frame.util.JwtTokenUtil;
 import com.acv.cloud.frame.util.ResponseUtil;
-import com.acv.cloud.models.jsonBean.oauth.Request;
-import com.acv.cloud.models.jsonBean.oauth.Response;
+import com.acv.cloud.jsonBean.oauth.Request;
+import com.acv.cloud.jsonBean.oauth.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

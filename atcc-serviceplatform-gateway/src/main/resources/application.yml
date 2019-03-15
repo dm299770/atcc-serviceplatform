@@ -14,6 +14,8 @@ spring:
       charset: UTF-8
       enabled: true
       force: true
+    multipart:
+      location: D:\\home\\neuroot\\profilePhoto
 
 ribbon:
   ReadTimeout: 60000
@@ -40,6 +42,9 @@ zuul:
   AccessFilter:
     pre:
       disable: false
+  SendErrorFilter:
+    post:
+      disable: true
 
   #retryable: false
 

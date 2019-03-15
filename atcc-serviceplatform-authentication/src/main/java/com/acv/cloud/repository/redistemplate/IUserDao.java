@@ -31,4 +31,9 @@ public interface IUserDao {
      * 删除设备号
      */
     void deleteDeviceNo(String phoneNum);
+
+    /**
+     * 获取设备号
+     * */
+    String getDeviceNo(String userid , String deviceType);
 }

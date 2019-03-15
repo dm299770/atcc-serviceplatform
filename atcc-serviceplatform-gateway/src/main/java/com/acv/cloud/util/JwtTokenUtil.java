@@ -1,8 +1,7 @@
 package com.acv.cloud.util;
 
-import com.acv.cloud.constants.ua.OauthConstants;
+import com.acv.cloud.constants.useradapter.OauthConstants;
 import com.alibaba.fastjson.JSON;
-import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 import org.apache.commons.codec.binary.Base64;

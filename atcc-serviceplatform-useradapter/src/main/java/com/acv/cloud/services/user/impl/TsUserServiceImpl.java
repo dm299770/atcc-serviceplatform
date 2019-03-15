@@ -1,5 +1,7 @@
 package com.acv.cloud.services.user.impl;
 
+import com.acv.cloud.frame.constants.RedisConstants;
+import com.acv.cloud.repository.redistemplate.RedisRepository;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.frame.constants.AppResultConstants;
@@ -23,6 +25,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.Registration;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.*;
@@ -43,6 +46,8 @@ public class TsUserServiceImpl implements TsUserService {
     public final static String CELL_EXIST_ERROR = "手机号已注册";
     public final static String CELL_NOTEXIST_ERROR = "手机号未注册或已失效";
     public final static String PASSWORD_ERROR = "密码格式不正确";
+    public final static String CODE_EMPTY = "验证码不能为空";
+    public final static String CODE_ERROR = "验证码不正确";
     public final static String PASSWORD_WRONG_ERROR = "密码错误";
     public final static String OLD_PASSWORD_ERROR = "原密码格式不正确";
     public final static String OLD_PASSWORD_WRONG_ERROR = "原密码不正确";
@@ -65,6 +70,8 @@ public class TsUserServiceImpl implements TsUserService {
     private TsUserMapper tsUserMapper;
     @Autowired
     private TsUserInfoMapper tsUserInfoMapper;
+    @Autowired
+    private RedisRepository redisRepository;
     @Autowired
     private ApplicationPropertiesConstants applicationConstants;
 
@@ -118,8 +125,8 @@ public class TsUserServiceImpl implements TsUserService {
     }
 
     @Override
-    public void updatePassword(String phoneNum, String oldPassword, String newPassword) {
-        tsUserMapper.updatePassword(phoneNum, oldPassword, newPassword);
+    public void updatePassword(String userId, String oldPassword, String newPassword) {
+        tsUserMapper.updatePassword(userId, oldPassword, newPassword);
     }
 
     @Override
@@ -135,10 +142,20 @@ public class TsUserServiceImpl implements TsUserService {
         JSONObject jsonObject = new JSONObject();
         // 1.校验参数合法性(phoneNum、password)
         if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
+            //手机号不能为空
             jsonObject.put(AppResultConstants.MSG, CELL_PHONE_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
         } else if (null == password || "".equalsIgnoreCase(password)) {
+            //密码不能为空
             jsonObject.put(AppResultConstants.MSG, PASSWORD_ERROR);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+        }else if(null == token || "".equals(token) ){
+            //验证码不能为空
+            jsonObject.put(AppResultConstants.MSG, CODE_EMPTY);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+        }else if(!verifyCode(phoneNum,token,RedisConstants.REGISTER_HEAD)){
+            //验证验证码是否正确
+            jsonObject.put(AppResultConstants.MSG, CODE_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
         }
         //注册用户是否存在验证
@@ -146,12 +163,8 @@ public class TsUserServiceImpl implements TsUserService {
             jsonObject.put(AppResultConstants.MSG, CELL_EXIST_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
         } else {
-            // AppResultConstants.FAIL_STATUS.保存用户
-            // isPassed:APP申请注册账号是否审核通过.1审核通过；0待审核；AppResultConstants.FAIL_STATUS审核不通过
-            // 密码加密-修改为前台加密
-            // password = MD5Util.md5(password);
-            //TsUser bean = new TsUser(UUID.randomUUID() + "",phoneNum ,password,1,new Date(),null);
-            //user基本信息
+
+            //验证码成功
             TsUser user = new TsUser();
             String uuid = UUID.randomUUID() + "";
             user.setUserId(uuid);
@@ -179,13 +192,12 @@ public class TsUserServiceImpl implements TsUserService {
             jsonObject.put(AppResultConstants.MSG, SIGNIN_SUCCESS);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
 
-
         }
         return jsonObject;
     }
 
     @Override
-    public JSONObject resetUserPassword(String phoneNum, String newPassword) {
+    public JSONObject resetUserPassword(String phoneNum, String newPassword,String code) {
         JSONObject jsonObject = new JSONObject();
         // 校验参数合法性
         if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
@@ -199,7 +211,12 @@ public class TsUserServiceImpl implements TsUserService {
         else if (findEffctiveByPhoneNum(phoneNum) == null) {
             jsonObject.put(AppResultConstants.MSG, CELL_NOTEXIST_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-        } else {
+        }
+        else if(!verifyCode(phoneNum,code,RedisConstants.FORGOTPASSWORD_HEAD)){
+            //验证验证码是否正确
+            jsonObject.put(AppResultConstants.MSG, CODE_ERROR);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+        }else {
             try {
                 reSetPassword(phoneNum, newPassword);
                 jsonObject.put(AppResultConstants.MSG, MODIFY_SUCCESS);
@@ -217,13 +234,10 @@ public class TsUserServiceImpl implements TsUserService {
 
 
     @Override
-    public JSONObject modifyUserPassword(String phoneNum, String oldPassword, String newPassword) {
+    public JSONObject modifyUserPassword(String userId, String oldPassword, String newPassword) {
         JSONObject jsonObject = new JSONObject();
         // 校验参数合法性
-        if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
-            jsonObject.put(AppResultConstants.MSG, CELL_PHONE_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-        } else if (null == oldPassword || "".equalsIgnoreCase(oldPassword)) {
+        if (null == oldPassword || "".equalsIgnoreCase(oldPassword)) {
             jsonObject.put(AppResultConstants.MSG, OLD_PASSWORD_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
         } else if (null == newPassword || "".equalsIgnoreCase(newPassword)) {
@@ -231,9 +245,10 @@ public class TsUserServiceImpl implements TsUserService {
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
         } else {
             try {
-                TsUser tsUser = findEffctiveByPhoneNum(phoneNum);
+                //TsUser tsUser = findEffctiveByPhoneNum(phoneNum);
+                TsUser tsUser = findById(userId);
                 if (null != tsUser && oldPassword.equalsIgnoreCase(tsUser.getPassword())) {
-                    updatePassword(phoneNum, oldPassword, newPassword);
+                    updatePassword(userId, oldPassword, newPassword);
                     jsonObject.put(AppResultConstants.MSG, MODIFY_SUCCESS);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
                 } else {
@@ -342,6 +357,22 @@ public class TsUserServiceImpl implements TsUserService {
         //根据status判断是否发送成功 ,并保存60秒后过期
 
         return null;
+    }
+
+    private Boolean verifyCode(String phoneNum, String code ,String type){
+        Boolean flag = false;
+
+        String reidsKey = String.format(type+":%s",phoneNum);
+        Object codeCache = redisRepository.get(reidsKey);
+        if(codeCache!=null){
+            //找到验证码
+            if(code.equals(codeCache.toString())){
+                flag = true ;
+            }
+        }else{
+            //未找到验证码
+        }
+        return flag;
     }
 
 

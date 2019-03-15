@@ -1,5 +1,6 @@
 package com.acv.cloud.controller.login;
 
+import com.acv.cloud.frame.constants.RedisConstants;
 import com.acv.cloud.models.jsonBean.login.requestJson.Attributes;
 import com.acv.cloud.models.jsonBean.login.requestJson.Data;
 import com.acv.cloud.models.jsonBean.login.requestJson.LoginParams;
@@ -49,10 +50,13 @@ public class LoginController {
                     .map(Attributes::getDeviceType).orElse(null);
 
 
+
+
         JSONObject result = loginService.login(phoneNum, password, deviceType, deviceNo);
         return result;
 
     }
+
 
 
 }

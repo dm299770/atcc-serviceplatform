@@ -34,6 +34,6 @@ TsUserInfoMapper {
      * @param type  需要更新的属性名
      * @param value 需要更新的属性值
      */
-    void updateByType(@Param("phoneNum") String phoneNum, @Param("type") String type, @Param("value") String value);
+    void updateByType(@Param("userId") String userId, @Param("type") String type, @Param("value") String value);
 
 }

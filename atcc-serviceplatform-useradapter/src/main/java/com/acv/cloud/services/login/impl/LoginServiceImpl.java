@@ -1,20 +1,14 @@
 package com.acv.cloud.services.login.impl;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.OauthConstants;
 import com.acv.cloud.frame.util.JwtTokenUtil;
-import com.acv.cloud.frame.util.MD5Util;
-import com.acv.cloud.frame.util.TokenUtils;
-import com.acv.cloud.mapper.sys.SysUserMapper;
 import com.acv.cloud.mapper.user.TsUserMapper;
-import com.acv.cloud.models.jsonBean.login.LoginData;
-import com.acv.cloud.models.sys.SysUser;
+import com.acv.cloud.jsonBean.login.LoginData;
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.repository.redistemplate.IUserDao;
 import com.acv.cloud.services.login.LoginService;
-import com.acv.cloud.services.user.impl.SysUserServiceImpl;
 import com.acv.cloud.services.user.impl.TsUserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

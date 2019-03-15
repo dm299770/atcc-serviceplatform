@@ -1,7 +1,7 @@
 package com.acv.cloud.frame.constants;
 
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.models.jsonBean.smartSpeaker.mi.MiTaskRequest;
+import com.acv.cloud.jsonBean.smartSpeaker.mi.MiTaskRequest;
 
 public class DataFormat {
     public static MiTaskRequest parseToQuery(JSONObject jsonParam){

@@ -10,6 +10,7 @@ import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +36,7 @@ import javax.sql.DataSource;
 @EnableAsync(proxyTargetClass = true)    //配置代理为cglib代理，默认使用 的是jdk动态代理
 @EnableEurekaClient
 @EnableDiscoveryClient
+@EnableFeignClients
 public class UserApplication {
 
     public static void main(String[] args) {

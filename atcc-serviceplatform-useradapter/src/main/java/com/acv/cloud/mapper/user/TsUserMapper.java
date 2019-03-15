@@ -57,11 +57,11 @@ public interface TsUserMapper {
     /**
      * 修改用户密码
      *
-     * @param phoneNum    用户手机号
+     * @param userId    用户id
      * @param oldPassword 旧密码
      * @param newPassword 新密码
      */
-    void updatePassword(@Param("phoneNum") String phoneNum, @Param("oldPassword") String oldPassword, @Param("newPassword") String newPassword);
+    void updatePassword(@Param("userId") String userId, @Param("oldPassword") String oldPassword, @Param("newPassword") String newPassword);
 
     /**
      * 重置用户密码

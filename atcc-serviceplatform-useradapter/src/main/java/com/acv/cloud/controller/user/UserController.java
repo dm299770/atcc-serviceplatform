@@ -1,8 +1,23 @@
 package com.acv.cloud.controller.user;
 
-import com.alibaba.fastjson.JSON;
+
+
+import com.acv.cloud.fegin.messageadapter.ImessageFegin;
+import com.acv.cloud.frame.constants.RedisConstants;
+import com.acv.cloud.frame.util.DateFormatUtil;
+import com.acv.cloud.jsonBean.user.changePassword.requestJson.ChangePasswordParams;
+import com.acv.cloud.jsonBean.user.forgotPassword.requestJson.ForgetPasswordParams;
+import com.acv.cloud.jsonBean.user.verifyCode.requestJson.Attributes;
+import com.acv.cloud.jsonBean.user.verifyCode.requestJson.Data;
+import com.acv.cloud.jsonBean.fegin.messageadapter.SMS;
+
+import com.acv.cloud.jsonBean.user.create.requestJson.CreateParams;
+import com.acv.cloud.jsonBean.user.verifyCode.requestJson.VerifyCodeParams;
+import com.acv.cloud.repository.redistemplate.RedisRepository;
+
+import com.acv.cloud.services.verification.VerificationCodeService;
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.serializer.ValueFilter;
+
 import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.frame.annotation.CurrentUser;
 import com.acv.cloud.frame.annotation.LoginRequired;
@@ -10,21 +25,20 @@ import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.util.FileUtil;
 import com.acv.cloud.frame.util.JsonUtil;
 import com.acv.cloud.frame.util.VcUtil;
-import com.acv.cloud.models.jsonBean.user.UserInfoRequsetBody;
-import com.acv.cloud.models.sys.SysUser;
-import com.acv.cloud.models.sys.TsUser;
-import com.acv.cloud.services.user.SysUserService;
+import com.acv.cloud.jsonBean.user.UserInfoRequsetBody;
+
 import com.acv.cloud.services.user.TsUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpSession;
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * 用户信息
@@ -42,10 +56,17 @@ public class UserController {
      */
     public final static String Ex_ERROR = "文件类型错误";
     public final static String SELECT_SUCCESS = "获取成功";
+    public final static String IMG_ERROR = "图片尺寸过大";
+
 
 
     @Autowired
     private TsUserService tsUserServices;
+
+    @Autowired
+    private VerificationCodeService verificationCodeService;
+
+
 
 
     /**
@@ -53,7 +74,7 @@ public class UserController {
      */
     @LoginRequired
     @ResponseBody
-    @RequestMapping(value = "/getUserInfo")
+    @RequestMapping(value = "/getInfo/v1")
     public Object getUserInfo(@CurrentUser UserInfo user) {
         JSONObject jsonObject = null;
         try {
@@ -90,12 +111,30 @@ public class UserController {
      * 注册用户
      **/
     @ResponseBody
-    @RequestMapping(value = "/registeredUser/{phoneNum}/{password}")
-    public Object registeredUser(@PathVariable("phoneNum") String phoneNum, @PathVariable("password") String password) {
-        logger.info("registeredUser:phoneNum:" + phoneNum + ",password:" + password);
+    //@RequestMapping(value = "/registeredUser/{phoneNum}/{password}")
+    @RequestMapping(value = "/create/v1")
+    public Object registeredUser(@RequestBody CreateParams createParams) {
+
+        logger.info("UserController createParams:" +createParams.toString());
+        //手机号
+        String phoneNum = Optional.ofNullable(createParams)
+                .map(CreateParams::getData)
+                .map(com.acv.cloud.jsonBean.user.create.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.create.requestJson.Attributes::getPhoneNumber).orElse(null);
+        //密码
+        String password = Optional.ofNullable(createParams)
+                .map(CreateParams::getData)
+                .map(com.acv.cloud.jsonBean.user.create.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.create.requestJson.Attributes::getPassword).orElse(null);
+        //验证码
+        String code = Optional.ofNullable(createParams)
+                .map(CreateParams::getData)
+                .map(com.acv.cloud.jsonBean.user.create.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.create.requestJson.Attributes::getCode).orElse(null);
+
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject = tsUserServices.registeredUser(phoneNum, password, null);
+            jsonObject = tsUserServices.registeredUser(phoneNum, password, code);
         } catch (Exception e) {
             logger.error("registeredUser:" + e);
             jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
@@ -110,10 +149,25 @@ public class UserController {
      **/
     //@LoginRequired (重置密码不需验证用户jwt)
     @ResponseBody
-    @RequestMapping(value = "/resetUserPassword/{phoneNum}/{newPassword}")
-    public Object resetUserPassword(@PathVariable("phoneNum") String phoneNum, @PathVariable("newPassword") String newPassword) {
+    @RequestMapping(value = "/resetPassword/v1")
+    public Object resetUserPassword(@RequestBody ForgetPasswordParams forgetPasswordParams) {
         //JSONObject jsonObject = sysUserServices.resetUserPassword(userId, newPassword);
-        JSONObject jsonObject = tsUserServices.resetUserPassword(phoneNum, newPassword);
+        logger.info("UserController forgetPasswordParams:" +forgetPasswordParams.toString());
+        //手机号
+        String phoneNum = Optional.ofNullable(forgetPasswordParams)
+                .map(ForgetPasswordParams::getData)
+                .map(com.acv.cloud.jsonBean.user.forgotPassword.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.forgotPassword.requestJson.Attributes::getPhoneNum).orElse(null);
+        String newPassword = Optional.ofNullable(forgetPasswordParams)
+                .map(ForgetPasswordParams::getData)
+                .map(com.acv.cloud.jsonBean.user.forgotPassword.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.forgotPassword.requestJson.Attributes::getNewPassword).orElse(null);
+        String code = Optional.ofNullable(forgetPasswordParams)
+                .map(ForgetPasswordParams::getData)
+                .map(com.acv.cloud.jsonBean.user.forgotPassword.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.forgotPassword.requestJson.Attributes::getCode).orElse(null);
+
+        JSONObject jsonObject = tsUserServices.resetUserPassword(phoneNum, newPassword, code);
         return jsonObject;
     }
 
@@ -122,10 +176,24 @@ public class UserController {
      */
     @LoginRequired
     @ResponseBody
-    @RequestMapping(value = "/modifyUserPassword/{oldPassword}/{newPassword}")
-    public Object modifyUserPassword(@CurrentUser UserInfo user, @PathVariable("oldPassword") String oldPassword, @PathVariable("newPassword") String newPassword) {
-        String phoneNum = user.getPhoneNum();
-        JSONObject jsonObject = tsUserServices.modifyUserPassword(phoneNum, oldPassword, newPassword);
+    @RequestMapping(value = "/changePassword/v1")
+    public Object modifyUserPassword(@CurrentUser UserInfo user, @RequestBody  ChangePasswordParams changePasswordParams) {
+        logger.info("UserController changePasswordParams:"+changePasswordParams.toString());
+
+        //旧密码
+        String oldPassword = Optional.ofNullable(changePasswordParams)
+                .map(ChangePasswordParams::getData)
+                .map(com.acv.cloud.jsonBean.user.changePassword.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.changePassword.requestJson.Attributes::getOldPassword).orElse(null);
+        //新密码
+        String newPassword = Optional.ofNullable(changePasswordParams)
+                .map(ChangePasswordParams::getData)
+                .map(com.acv.cloud.jsonBean.user.changePassword.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.changePassword.requestJson.Attributes::getNewPassword).orElse(null);
+
+
+        String userId = user.getUserId();
+        JSONObject jsonObject = tsUserServices.modifyUserPassword(userId, oldPassword, newPassword);
         return jsonObject;
     }
 
@@ -139,8 +207,9 @@ public class UserController {
     @LoginRequired
     @ResponseBody
     //@RequestMapping(value = "/modifyUserInfo/{type}/{value}")
-    @RequestMapping(value = "/modifyUserInfo")
+    @RequestMapping(value = "/changeInfo/v1")
     public Object modifyUserInfo(@CurrentUser UserInfo user, @RequestBody UserInfoRequsetBody userInfoRequsetBody) {
+        logger.info("UserController changeInfo:"+userInfoRequsetBody.toString());
         JSONObject jsonObject = null;
         String type = userInfoRequsetBody.getType();
         String value = userInfoRequsetBody.getValue();
@@ -163,9 +232,12 @@ public class UserController {
      */
     @LoginRequired
     @ResponseBody
-    @RequestMapping(value = "/uploadProfilePhoto")
+    @RequestMapping(value = "/uploadAvatar/v1")
     public Object uploadProfilePhoto(@CurrentUser UserInfo user, @RequestParam(value = "imageFile") MultipartFile imageFile) {
         //System.out.println(imageFile.getSize()) ;
+
+        logger.info("UserController uploadProfilePhoto:["+imageFile.getName()+"]");
+        long size = imageFile.getSize();
         JSONObject jsonObject = new JSONObject();
         String[] exArray = {"png", "jpg", "gif"};//属性值必须包含于这4项
         List<String> typeList = Arrays.asList(exArray);
@@ -175,7 +247,37 @@ public class UserController {
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
             return jsonObject;
         }
+        if(size>0 && size > 1024*1024 ){
+            jsonObject.put(AppResultConstants.MSG, IMG_ERROR);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            return jsonObject;
+        }
         jsonObject = tsUserServices.setProfilePhoto(user.getUserId(), user.getPhoneNum(), imageFile);
+
+        return jsonObject;
+    }
+
+
+    /**
+     * 手机验证码
+     *
+     * @param verifyCodeParams
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/getCode/v1")
+    public Object createVerificationCode(@RequestBody VerifyCodeParams verifyCodeParams) {
+        logger.info("UserController verifyCodeParams:"+verifyCodeParams.toString());
+        String phoneNum = Optional.ofNullable(verifyCodeParams)
+                .map(VerifyCodeParams::getData)
+                .map(Data::getAttributes)
+                .map(Attributes::getPhoneNum).orElse(null);
+        String type = Optional.ofNullable(verifyCodeParams)
+                .map(VerifyCodeParams::getData)
+                .map(Data::getAttributes)
+                .map(Attributes::getType).orElse(null);
+
+        JSONObject jsonObject = verificationCodeService.sendVcodeSms(phoneNum,type);
 
         return jsonObject;
     }
