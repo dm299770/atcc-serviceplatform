@@ -15,8 +15,8 @@ spring:
       enabled: true
       force: true
     multipart:
-      location: D:\\home\\neuroot\\profilePhoto
-
+      #location: D:\\home\\neuroot\\profilePhoto
+      location: /project/atcc-serviceplatform/profilePhoto
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
@@ -26,6 +26,10 @@ zuul:
     atcc-serviceplatform-authentication: /atcc-serviceplatform-authentication/**
     atcc-serviceplatform-oauth2: /atcc-serviceplatform-oauth2/**
     atcc-serviceplatform-smarthomeadapter: /atcc-serviceplatform-smarthomeadapter/**
+    atcc-serviceplatform-caradapter: /atcc-serviceplatform-caradapter/**
+    atcc-serviceplatform-messageadapter: /atcc-serviceplatform-messageadapter/**
+
+
 
       #面向服务路由
       #customSensitiveHeaders: true
@@ -33,8 +37,6 @@ zuul:
 
       #path:
       #serviceId:
-    ACV-VA: /ACV-VA/**
-    ACV-NA: /ACV-NA/**
 
     api-a-url:
       path: /api-a-url
