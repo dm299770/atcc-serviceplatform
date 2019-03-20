@@ -182,6 +182,12 @@ public class AccessFilter extends ZuulFilter
 
                 }
 
+            }else{
+                //token 过期
+                logger.warn("token is expried");
+                ctx.setResponseStatusCode(401);
+                ctx.setResponseBody("{\"status\":400,\"msg\":\"accessToken过期,请重新登录\"}");
+                ctx.getResponse().setContentType("text/html;charset=UTF-8");
             }
         }else{
             logger.warn("token is empty");
