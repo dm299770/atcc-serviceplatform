@@ -202,6 +202,7 @@ public class AccessFilter extends ZuulFilter
                 ||url.contains("/user/registeredUser")
                 ||url.contains("/user/getCode")
                 ||url.contains("/user/create")
+                ||url.contains("/remotecallback/remotecallback")
         ){
             falg = false;
         }
