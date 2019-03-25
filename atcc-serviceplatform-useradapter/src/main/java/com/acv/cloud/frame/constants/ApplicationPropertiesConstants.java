@@ -20,6 +20,12 @@ public class ApplicationPropertiesConstants {
     @Value("${sms.password}")
     private String SmsPassword;
 
+    @Value("${web.static-baseurl}")
+    private String webServer;
+
+//    @Value("web.forward")
+//    private String webForward;
+
 
     public String getPhotoPath() {
         return photoPath;
@@ -67,5 +73,13 @@ public class ApplicationPropertiesConstants {
 
     public void setSmsPassword(String smsPassword) {
         SmsPassword = smsPassword;
+    }
+
+    public String getWebServer() {
+        return webServer;
+    }
+
+    public void setWebServer(String webServer) {
+        this.webServer = webServer;
     }
 }

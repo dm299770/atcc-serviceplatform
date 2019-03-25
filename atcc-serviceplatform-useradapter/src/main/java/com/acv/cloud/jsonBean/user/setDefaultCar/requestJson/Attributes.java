@@ -12,6 +12,7 @@ package com.acv.cloud.jsonBean.user.setDefaultCar.requestJson;
 public class Attributes {
 
     private String vin;
+    private String code;
 
 
     public String getVin() {
@@ -20,5 +21,13 @@ public class Attributes {
 
     public void setVin(String vin) {
         this.vin = vin;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

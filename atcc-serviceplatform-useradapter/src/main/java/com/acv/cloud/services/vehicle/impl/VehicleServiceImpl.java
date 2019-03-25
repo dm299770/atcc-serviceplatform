@@ -1,6 +1,11 @@
 package com.acv.cloud.services.vehicle.impl;
 
 
+import com.acv.cloud.dto.sys.UserInfo;
+import com.acv.cloud.frame.constants.RedisConstants;
+import com.acv.cloud.repository.redistemplate.RedisRepository;
+import com.acv.cloud.services.user.TsUserService;
+import com.acv.cloud.services.user.impl.TsUserServiceImpl;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.mapper.vehicle.VehicleMapper;
@@ -49,6 +54,8 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Autowired
     VehicleMapper vehicleMapper;
+    @Autowired
+    RedisRepository redisRepository;
 
     @Override
     public JSONObject findBindVehicleByUser(String userId) {
@@ -112,33 +119,50 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public JSONObject updateVehicle(String userId, String vin) {
+    public JSONObject updateVehicle(UserInfo user, String vin , String code) {
         JSONObject jsonObject = new JSONObject();
 
         try {
             //验证车牌唯一性
-            List<TrUserVin> vehicles = vehicleMapper.findById(userId);
+            List<TrUserVin> vehicles = vehicleMapper.findById(user.getUserId());
             TrUserVin vehicle = vehicleMapper.findVehicleByVin(vin);
-            if (vehicle != null) {
+
+            if(!verifyCode(user.getPhoneNum(), RedisConstants.UNBINDCAR_HEAD,code)){
+                //验证验证码是否正确
+                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.CODE_ERROR);
+                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                return jsonObject;
+
+            }else if (vehicle != null) {
+
                 if (vehicle.getDefaultVehicle() == 1 && vehicles.size() > 1) {
                     //默认车辆,且绑定车辆数大于1
                     jsonObject.put(AppResultConstants.MSG, UNBIND_ISNOT_DEFAULT);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
                     logger.info(vin + "解绑失败,多辆绑定车辆不能解绑默认车辆");
+                    return jsonObject;
 
                 } else {
                     //车牌存在,且不是默认车辆
-                    vehicleMapper.unbindTrUserVin(userId, vin);
+                    vehicleMapper.unbindTrUserVin(user.getUserId(), vin);
                     jsonObject.put(AppResultConstants.MSG, UNBIND_VEHICLE_SUCCESS);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
                     logger.info(vin + "解绑成功");
+                    return jsonObject;
                 }
 
-            } else {
+            } else if(!vehicles.contains(vehicle)){
+                //不能解绑非当前用户车辆
+                jsonObject.put(AppResultConstants.MSG, UNBIND_VEHICLE_SUCCESS);
+                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
+                return jsonObject;
+            }else {
                 //车辆不存在
                 jsonObject.put(AppResultConstants.MSG, VEHICLE_ISNOT_EXIST);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
                 logger.info(vin + "信息不存在");
+                return jsonObject;
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -180,5 +204,21 @@ public class VehicleServiceImpl implements VehicleService {
         }
 
         return jsonObject;
+    }
+
+    private Boolean verifyCode(String phoneNum, String type , String code){
+        Boolean flag = false;
+
+        String reidsKey = String.format(type+":%s",phoneNum);
+        Object codeCache = redisRepository.get(reidsKey);
+        if(codeCache!=null){
+            //找到验证码
+            if(code.equals(codeCache.toString())){
+                flag = true ;
+            }
+        }else{
+            //未找到验证码
+        }
+        return flag;
     }
 }

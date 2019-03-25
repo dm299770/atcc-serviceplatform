@@ -11,6 +11,7 @@ public class RedisConstants {
 
     public static final String REGISTER_HEAD = "Register";//注册验证码
     public static final String FORGOTPASSWORD_HEAD = "Forgot"; // 忘记密码
+    public static final String UNBINDCAR_HEAD ="Unbind"; //解绑车辆
 
 
 }

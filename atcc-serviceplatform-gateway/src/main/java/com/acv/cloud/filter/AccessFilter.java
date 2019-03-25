@@ -189,13 +189,15 @@ public class AccessFilter extends ZuulFilter
                 ctx.setResponseBody("{\"status\":400,\"msg\":\"accessToken过期,请重新登录\"}");
                 ctx.getResponse().setContentType("text/html;charset=UTF-8");
             }
-        }else{
-            logger.warn("token is empty");
-            ctx.setResponseStatusCode(401);
-            ctx.setResponseBody("{\"status\":400,\"msg\":\"accessToken为空,请登录\"}");
-            ctx.getResponse().setContentType("text/html;charset=UTF-8");
-            return null;
         }
+        //去除网关验证token必要性
+//        else{
+//            logger.warn("token is empty");
+//            ctx.setResponseStatusCode(401);
+//            ctx.setResponseBody("{\"status\":400,\"msg\":\"accessToken为空,请登录\"}");
+//            ctx.getResponse().setContentType("text/html;charset=UTF-8");
+//            return null;
+//        }
         return null;
     }
     /**

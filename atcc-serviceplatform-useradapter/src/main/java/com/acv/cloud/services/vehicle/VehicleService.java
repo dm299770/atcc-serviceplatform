@@ -1,5 +1,6 @@
 package com.acv.cloud.services.vehicle;
 
+import com.acv.cloud.dto.sys.UserInfo;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.models.vehicle.TrUserVin;
 
@@ -24,7 +25,7 @@ public interface VehicleService {
     /**
      * 解绑车辆
      */
-    JSONObject updateVehicle(String userId, String vin);
+    JSONObject updateVehicle(UserInfo userInfo, String vin, String code);
 
     /**
      * 设置默认车辆

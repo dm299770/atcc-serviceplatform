@@ -331,8 +331,7 @@ public class TsUserServiceImpl implements TsUserService {
                 File targetFile = new File(fileRoot.getAbsolutePath(), newFileName);
                 file.transferTo(targetFile);
                 //更新用户头像url
-                String photo_url = applicationConstants.getServerHost() + ":" + applicationConstants.getServerPort()
-                        + "/" + userid + "/" + targetFile.getName();
+                String photo_url = applicationConstants.getWebServer()+"/"+ userid + "/" + targetFile.getName();
                 //modifyUserInfo(phoneNum,"PROFILE_PHOTO",photo_url);
                 updateUserInfo(phoneNum, "PROFILE_PHOTO", photo_url);
                 jsonObject.put(AppResultConstants.MSG, SAVE_SUCCESS);
@@ -359,7 +358,7 @@ public class TsUserServiceImpl implements TsUserService {
         return null;
     }
 
-    private Boolean verifyCode(String phoneNum, String code ,String type){
+    private  Boolean verifyCode(String phoneNum, String code ,String type){
         Boolean flag = false;
 
         String reidsKey = String.format(type+":%s",phoneNum);
@@ -374,6 +373,5 @@ public class TsUserServiceImpl implements TsUserService {
         }
         return flag;
     }
-
 
 }

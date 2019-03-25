@@ -134,12 +134,16 @@ public class VehicleController {
                 .map(SetDefaultCarParams::getData)
                 .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Data::getAttributes)
                 .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Attributes::getVin).orElse(null);
+
+        String code = Optional.ofNullable(setDefaultCarParams)
+                .map(SetDefaultCarParams::getData)
+                .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Data::getAttributes)
+                .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Attributes::getCode).orElse(null);
+
         JSONObject jsonObject = null;
         if (vin != null) {
 
-            jsonObject = vehicleServiceImpl.updateVehicle(user.getUserId(), vin);
-
-
+            jsonObject = vehicleServiceImpl.updateVehicle(user,vin,code);
 
         } else {
                 jsonObject.put(AppResultConstants.MSG, AppResultConstants.Paramer_ERROR);

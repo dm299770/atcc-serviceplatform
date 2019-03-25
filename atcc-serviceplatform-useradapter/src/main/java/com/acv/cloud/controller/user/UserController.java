@@ -1,19 +1,13 @@
 package com.acv.cloud.controller.user;
 
 
-
-import com.acv.cloud.fegin.messageadapter.ImessageFegin;
-import com.acv.cloud.frame.constants.RedisConstants;
-import com.acv.cloud.frame.util.DateFormatUtil;
 import com.acv.cloud.jsonBean.user.changePassword.requestJson.ChangePasswordParams;
 import com.acv.cloud.jsonBean.user.forgotPassword.requestJson.ForgetPasswordParams;
 import com.acv.cloud.jsonBean.user.verifyCode.requestJson.Attributes;
 import com.acv.cloud.jsonBean.user.verifyCode.requestJson.Data;
-import com.acv.cloud.jsonBean.fegin.messageadapter.SMS;
 
 import com.acv.cloud.jsonBean.user.create.requestJson.CreateParams;
 import com.acv.cloud.jsonBean.user.verifyCode.requestJson.VerifyCodeParams;
-import com.acv.cloud.repository.redistemplate.RedisRepository;
 
 import com.acv.cloud.services.verification.VerificationCodeService;
 import com.alibaba.fastjson.JSONObject;
@@ -24,7 +18,7 @@ import com.acv.cloud.frame.annotation.LoginRequired;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.util.FileUtil;
 import com.acv.cloud.frame.util.JsonUtil;
-import com.acv.cloud.frame.util.VcUtil;
+
 import com.acv.cloud.jsonBean.user.UserInfoRequsetBody;
 
 import com.acv.cloud.services.user.TsUserService;
@@ -232,7 +226,7 @@ public class UserController {
      */
     @LoginRequired
     @ResponseBody
-    @RequestMapping(value = "/uploadAvatar/v1")
+    @RequestMapping(value = "/uploadAvator/v1")
     public Object uploadProfilePhoto(@CurrentUser UserInfo user, @RequestParam(value = "imageFile") MultipartFile imageFile) {
         //System.out.println(imageFile.getSize()) ;
 
@@ -252,7 +246,7 @@ public class UserController {
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
             return jsonObject;
         }
-        jsonObject = tsUserServices.setProfilePhoto(user.getUserId(), user.getPhoneNum(), imageFile);
+        jsonObject = tsUserServices.setProfilePhoto(user.getUserId(), user.getUserId(), imageFile);
 
         return jsonObject;
     }

@@ -22,7 +22,7 @@ public class UserDaoImpl implements IUserDao {
     @Override
     public void updateDeviceNo(String userid, String deviceType,String deiviceNo) {
 
-        String device_account = String.format(RedisConstants.DEVICE_ACCOUNT+":%s",deiviceNo);
+        String device_account = String.format(RedisConstants.DEVICE_ACCOUNT+":%s:%s",deviceType,deiviceNo);
         String account_device = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userid,deviceType);
 
         redisRepository.remove(device_account);
