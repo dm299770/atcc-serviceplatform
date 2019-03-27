@@ -40,6 +40,7 @@ public class NotificationServiceImpl implements NotificationService {
     private static final String SUCCESS_EX = "推送成功";
     private final static String RETURN_EX = "推送接口返回异常";
     private final static String FAIL_EX = "推送失败";
+    private final static String DEVICE_ACCOUNT = "用户Id数据不一致,请检查后重试";
 
     @Value("${secretKey}")
     private String secretKey;
@@ -94,31 +95,47 @@ public class NotificationServiceImpl implements NotificationService {
                 List<String> phoneNumList = jsonArray.toJavaList(String.class);
                 logger.info("用户账号信息列表:" + phoneNumList);
                 for (String phoneNums : phoneNumList) {
-                    //通过redis查询token
-                    String token = notificationDao.getDeviceToken(phoneNums);
                     logger.info(phoneNums);
-                    //去数据库查userId
+                    //手机号去查uesr_id
                     TsUser userId = tsUserMapper.findUserId(phoneNums);
-                    //推送
-                    String returnCode = xinge.pushSingleDevice(token, mess, XingeApp.IOSENV_DEV).toString();
-                    //判断返回状态码是否推送成功
-                    if (returnCode.contains("ret_code")) {
-                        //{"err_msg":"无效帐号，请检查后重试","ret_code":48}
-                        JSONObject returnCodeJson = JSONObject.parseObject(returnCode);
-                        String returnCodeString = String.valueOf(returnCodeJson.get("ret_code"));
-                        if ("0".equals(returnCodeString)) {
-                            obj.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                            obj.put(AppResultConstants.MSG, SUCCESS_EX);
-                            //把推送消息插入mongodb
-                            notificationMongoDBDao.insertList(ids, phoneNums, token, title, vin, context, createDate, userId, type, readflag, imageURL);
+
+                    //用user_id去redis里面判断device_id(token)和设备类型
+                    String deviceId = notificationDao.getDeviceToken(userId.getUserId());
+                    logger.info("用户Id" + userId.getUserId());
+
+                    //用device_id去判断是否是当前设备一致的deviceAccount(user_id)
+                    String deviceAccount = notificationDao.getDeviceAccont(deviceId);
+
+                    //截取deviceId
+                    String token = deviceId.substring(1, deviceId.length() - 1).replaceAll(" +", "").trim();
+                    logger.info("设备ID:" + token);
+
+                    //数据一致再推送
+                    if (deviceAccount.equals(userId.getUserId())) {
+                        //推送
+                        String returnCode = xinge.pushSingleDevice(token, mess, XingeApp.IOSENV_DEV).toString();
+                        //判断返回状态码是否推送成功
+                        if (returnCode.contains("ret_code")) {
+                            //{"err_msg":"无效帐号，请检查后重试","ret_code":48}
+                            JSONObject returnCodeJson = JSONObject.parseObject(returnCode);
+                            String returnCodeString = String.valueOf(returnCodeJson.get("ret_code"));
+                            if ("0".equals(returnCodeString)) {
+                                obj.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
+                                obj.put(AppResultConstants.MSG, SUCCESS_EX);
+                                //把推送消息插入mongodb
+                                notificationMongoDBDao.insertList(ids, phoneNums, token, title, vin, context, createDate, userId, type, readflag, imageURL);
+                            } else {
+                                obj.put(AppResultConstants.MSG, RETURN_EX);
+                                obj.put(AppResultConstants.STATUS, "返回状态码:" + returnCodeString);
+                            }
                         } else {
-                            obj.put(AppResultConstants.MSG, RETURN_EX);
-                            obj.put(AppResultConstants.STATUS, "返回状态码:" + returnCodeString);
+                            obj.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                            obj.put(AppResultConstants.MSG, FAIL_EX);
+                            logger.info("返回状态码:" + returnCode);
                         }
                     } else {
                         obj.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                        obj.put(AppResultConstants.MSG, FAIL_EX);
-                        logger.info("返回状态码:" + returnCode);
+                        obj.put(AppResultConstants.MSG, DEVICE_ACCOUNT);
                     }
                 }
             }

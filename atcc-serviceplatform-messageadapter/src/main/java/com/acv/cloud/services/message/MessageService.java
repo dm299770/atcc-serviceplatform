@@ -12,5 +12,6 @@ public interface MessageService {
 
     JSONObject selectMessage(MessageRequest message);
 
+    JSONObject delMessage(String ids);
 
 }

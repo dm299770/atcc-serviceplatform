@@ -36,12 +36,23 @@ public class MessageController {
      * 公用通知查询接口
      */
     @ResponseBody
-    @RequestMapping(value = "/select")
+    @RequestMapping(value = "/select/v1")
     public Object selectMessage(@RequestBody MessageRequest message) {
         JSONObject result = messageService.selectMessage(message);
         return result;
     }
 
+    /**
+     * 删除推送通知接口
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/delete/v1")
+    public Object delMessage(@RequestBody String ids) {
+        JSONObject result = messageService.delMessage(ids);
+        return result;
+    }
 
     /**
      * 根据手机号发送短信
@@ -49,7 +60,7 @@ public class MessageController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/sms")
+    @RequestMapping(value = "/sms/v1")
     public Object sendSmsToPhone(@RequestBody SMS sms) {
         JSONObject jsonObject = smsService.sendSms(sms);
         return jsonObject;
@@ -61,7 +72,7 @@ public class MessageController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/update")
+    @RequestMapping(value = "/update/v1")
     public Object readSubmit(@RequestBody Notification no) {
         JSONObject json = unReadService.updateUnRead(no);
         return json;
@@ -74,7 +85,7 @@ public class MessageController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/pushAll")
+    @RequestMapping(value = "/pushAll/v1")
     public Object pushMsgAll(@RequestBody Notification no) {
         JSONObject jsonObject = notificationService.pushMsgDeviceAll(no);
         return jsonObject;
@@ -86,7 +97,7 @@ public class MessageController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/push")
+    @RequestMapping(value = "/push/v1")
     public JSONObject pushMsgList(@RequestBody Notification no) {
         JSONObject jsonObject = notificationService.pushMsgDeviceList(no);
         return jsonObject;

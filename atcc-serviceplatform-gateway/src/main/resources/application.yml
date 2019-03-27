@@ -28,6 +28,7 @@ zuul:
     atcc-serviceplatform-smarthomeadapter: /atcc-serviceplatform-smarthomeadapter/**
     atcc-serviceplatform-caradapter: /atcc-serviceplatform-caradapter/**
     atcc-serviceplatform-messageadapter: /atcc-serviceplatform-messageadapter/**
+    atcc-serviceplatform-b2badapter: /atcc-serviceplatform-b2badapter/**
 
 
 

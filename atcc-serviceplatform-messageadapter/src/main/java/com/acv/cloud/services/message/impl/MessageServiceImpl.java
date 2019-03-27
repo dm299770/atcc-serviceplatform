@@ -104,4 +104,23 @@ public class MessageServiceImpl implements MessageService {
         return json;
     }
 
+    @Override
+    public JSONObject delMessage(String ids) {
+        JSONObject json = new JSONObject();
+        try {
+            if (ids == null || ids.isEmpty()) {
+                json.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
+                json.put(AppResultConstants.MSG, IDS_ERROR);
+            } else {
+                notificationMongoDBDao.delMessage(ids);
+                json.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
+                json.put(AppResultConstants.MSG, DELETE_SUCCESS);
+            }
+        } catch (Exception e) {
+            json.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            json.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
+            e.printStackTrace();
+        }
+        return json;
+    }
 }

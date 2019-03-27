@@ -13,9 +13,20 @@ public class NotificationDaoImpl implements INotificationDao {
     @Autowired
     private RedisRepository redisRepository;
 
+
     @Override
-    public String getDeviceToken(String phoneNums) {
-        String token = String.valueOf(redisRepository.get(phoneNums));
-        return token;
+    public String getDeviceToken(String userId) {
+        redisRepository.init(1);
+        String deviceId = String.valueOf(redisRepository.get("account_device:" + userId + ":IOS"));
+        return deviceId;
     }
+
+    @Override
+    public String getDeviceAccont(String deviceId) {
+        redisRepository.init(1);
+        String deviceAccount = String.valueOf(redisRepository.get("device_account:IOS:" + deviceId));
+        return deviceAccount;
+    }
+
+
 }

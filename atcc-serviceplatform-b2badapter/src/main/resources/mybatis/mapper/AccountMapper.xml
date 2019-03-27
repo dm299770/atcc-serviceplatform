@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.acv.cloud.mapper.account.AccountMapper">
+
+    <resultMap id="BaseResultMap" type="com.acv.cloud.models.jsonBean.account.responseJson.UserAccount">
+        <id column="USER_ACCOUNT" property="userAccount" jdbcType="VARCHAR"/>
+        <id column="BALANCE" property="balance" jdbcType="VARCHAR"/>
+        <id column="CREATE_TIME" property="createTime" jdbcType="VARCHAR"/>
+        <id column="UPDATE_TIME" property="updateTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="TtChargeFlowResultMap" type="com.acv.cloud.models.jsonBean.account.responseJson.TtChargeFlow">
+        <id column="ID" property="id" jdbcType="VARCHAR"/>
+        <id column="USER_ACCOUNT" property="userAccount" jdbcType="VARCHAR"/>
+        <id column="CHARGE_DATE" property="chargeDate" jdbcType="VARCHAR"/>
+        <id column="CHARGE_FROM" property="chargeFrom" jdbcType="VARCHAR"/>
+        <id column="CHARGE_TO" property="chargeTo" jdbcType="VARCHAR"/>
+        <id column="DIRECTION" property="direction" jdbcType="TINYINT"/>
+        <id column="AMOUNT" property="amount" jdbcType="DOUBLE"/>
+        <id column="COMMENT" property="comment" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="tableName">
+        TM_CHARGE_ACCOUNT
+    </sql>
+
+    <sql id="baseColumns">
+        USER_ACCOUNT,BALANCE,CREATE_TIME,UPDATE_TIME
+    </sql>
+
+    <sql id="TtChargeFlowColumns">
+        ID,USER_ACCOUNT,AMOUNT,DIRECTION,CHARGE_DATE,CHARGE_FROM,CHARGE_TO,COMMENT
+    </sql>
+
+
+    <select id="selectBalance" resultMap="BaseResultMap">
+        select
+        <include refid="baseColumns"/>
+        FROM
+        <include refid="tableName"/>
+        WHERE USER_ACCOUNT =#{userAccount}
+    </select>
+
+    <update id="upadteBalance" parameterType="UserAccount">
+        UPDATE
+        <include refid="tableName"/>
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="balance!=null and balance!='' ">
+                BALANCE = #{balance},
+            </if>
+            <if test="updateTime!=null">
+                UPDATE_TIME=#{updateTime},
+            </if>
+        </trim>
+        WHERE
+        USER_ACCOUNT =#{userAccount}
+    </update>
+
+    <insert id="saveChargeFlow" parameterType="TtChargeFlow">
+        insert into TT_CHARGE_FLOW (<include refid="TtChargeFlowColumns"/>)
+        values (#{id},#{userAccount},#{amount},#{direction},#{chargeDate},#{chargeFrom},#{chargeTo},#{comment})
+    </insert>
+
+    <select id="selectAll" resultMap="TtChargeFlowResultMap">
+        SELECT
+        <include refid="TtChargeFlowColumns"/>
+        FROM TT_CHARGE_FLOW
+        WHERE
+        USER_ACCOUNT =#{userAccount}
+    </select>
+
+    <select id="selOrderNum" resultMap="TtChargeFlowResultMap">
+        SELECT
+        <include refid="TtChargeFlowColumns"/>
+        FROM TT_CHARGE_FLOW
+        WHERE
+        COMMENT=#{comment}
+    </select>
+
+    <select id="selBalance" resultMap="BaseResultMap">
+        SELECT
+        BALANCE
+        FROM
+        <include refid="tableName"/>
+        WHERE
+        USER_ACCOUNT =#{userAccount}
+    </select>
+
+
+</mapper>
