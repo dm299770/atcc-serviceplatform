@@ -1,6 +1,6 @@
 package com.acv.cloud.repository.mongotemplate.impl;
 
-import com.acv.cloud.models.mongdb.sms.SMS;
+import com.acv.cloud.models.mongdb.sms.Attributes;
 import com.acv.cloud.repository.mongotemplate.ISMSDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -20,7 +20,7 @@ public class SMSDaoImpl<T> implements ISMSDao {
 
     @Override
     public void insertSms(String phoneNum, String content, String createDate) {
-        SMS sms = new SMS();
+        Attributes sms = new Attributes();
         sms.setContent(content);
         sms.setCreateDate(createDate);
         sms.setPhoneNum(phoneNum);

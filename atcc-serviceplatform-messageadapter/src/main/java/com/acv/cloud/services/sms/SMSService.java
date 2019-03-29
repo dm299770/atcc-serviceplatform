@@ -1,6 +1,6 @@
 package com.acv.cloud.services.sms;
 
-import com.acv.cloud.models.mongdb.sms.SMS;
+import com.acv.cloud.models.mongdb.sms.SMSParams;
 import com.alibaba.fastjson.JSONObject;
 
 /**
@@ -13,5 +13,5 @@ public interface SMSService {
      *
      * @return
      */
-    JSONObject sendSms(SMS sms);
+    JSONObject sendSms(SMSParams sms);
 }

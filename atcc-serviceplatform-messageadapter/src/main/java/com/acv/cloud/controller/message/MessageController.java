@@ -2,7 +2,7 @@ package com.acv.cloud.controller.message;
 
 import com.acv.cloud.models.jsonBean.message.request.MessageRequest;
 import com.acv.cloud.models.mongdb.notification.Notification;
-import com.acv.cloud.models.mongdb.sms.SMS;
+import com.acv.cloud.models.mongdb.sms.SMSParams;
 import com.acv.cloud.services.message.MessageService;
 import com.acv.cloud.services.notification.NotificationService;
 import com.acv.cloud.services.sms.SMSService;
@@ -61,7 +61,7 @@ public class MessageController {
      */
     @ResponseBody
     @RequestMapping(value = "/sms/v1")
-    public Object sendSmsToPhone(@RequestBody SMS sms) {
+    public Object sendSmsToPhone(@RequestBody SMSParams sms) {
         JSONObject jsonObject = smsService.sendSms(sms);
         return jsonObject;
     }

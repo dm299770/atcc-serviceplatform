@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Created by liyang on 2018/12/24.
  */
 @Document(collection = "SMS")
-public class SMS {
+public class Attributes {
     private String phoneNum;//手机号
     private String content;//内容
     private String createDate;//发送日期

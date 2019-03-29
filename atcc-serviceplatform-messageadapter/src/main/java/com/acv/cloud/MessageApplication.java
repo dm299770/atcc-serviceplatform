@@ -15,8 +15,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan("com.acv.cloud.mapper")
 @EnableEurekaClient
 @EnableTransactionManagement
-public class Application {
+public class MessageApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(MessageApplication.class, args);
 	}
 }

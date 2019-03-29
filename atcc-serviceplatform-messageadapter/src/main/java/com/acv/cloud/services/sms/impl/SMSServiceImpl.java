@@ -4,7 +4,7 @@ import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.ApplicationPropertiesConstants;
 import com.acv.cloud.frame.util.DateUtil;
 import com.acv.cloud.frame.util.SMSUtil;
-import com.acv.cloud.models.mongdb.sms.SMS;
+import com.acv.cloud.models.mongdb.sms.SMSParams;
 import com.acv.cloud.repository.mongotemplate.ISMSDao;
 import com.acv.cloud.services.sms.SMSService;
 import com.alibaba.fastjson.JSONObject;
@@ -33,7 +33,7 @@ class SMSServiceImpl implements SMSService {
     private ISMSDao messagesDao;
 
     @Override
-    public JSONObject sendSms(SMS sms) {
+    public JSONObject sendSms(SMSParams sms) {
         JSONObject json = new JSONObject();
 
         //发送短信到目标手机号
@@ -48,8 +48,8 @@ class SMSServiceImpl implements SMSService {
         try {
             logger.info("请求体:" + sms);
 
-            String phoneNum = sms.getPhoneNum();
-            String content = sms.getContent();
+            String phoneNum = sms.getData().getAttributes().getPhoneNum();
+            String content = sms.getData().getAttributes().getContent();
             if (phoneNum == null || "".equals(phoneNum)) {
                 json.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
                 json.put(AppResultConstants.MSG, PHONE_ERROR);
