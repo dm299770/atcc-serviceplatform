@@ -3,7 +3,7 @@ package com.acv.cloud.services.notification.impl;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.util.DateUtil;
 import com.acv.cloud.mapper.TsUserMapper;
-import com.acv.cloud.models.mongdb.notification.Notification;
+import com.acv.cloud.models.mongdb.notification.requestJson.NotificationParams;
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.repository.mongotemplate.INotificationMongoDBDao;
 import com.acv.cloud.repository.redistemplate.INotificationDao;
@@ -58,17 +58,17 @@ public class NotificationServiceImpl implements NotificationService {
     private TsUserMapper tsUserMapper;
 
     @Override
-    public JSONObject pushMsgDeviceList(Notification no) {
+    public JSONObject pushMsgDeviceList(NotificationParams no) {
         JSONObject obj = new JSONObject();
         try {
             logger.info("请求体:" + no);
-            String phoneNum = no.getPhoneNum();
-            String title = no.getTitle();
-            String context = no.getContext();
-            String vin = no.getVin();
-            String type = no.getType();
+            String phoneNum = no.getData().getAttributes().getPhoneNum();
+            String title = no.getData().getAttributes().getTitle();
+            String context = no.getData().getAttributes().getContext();
+            String vin = no.getData().getAttributes().getVin();
+            String type = no.getData().getAttributes().getType();
             String ids = UUID.randomUUID().toString().replaceAll("-", "");
-            String imageURL = no.getImageURL();
+            String imageURL = no.getData().getAttributes().getImageURL();
 
             if (phoneNum == null || "".equals(phoneNum)) {
                 obj.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
@@ -107,7 +107,8 @@ public class NotificationServiceImpl implements NotificationService {
                     String deviceAccount = notificationDao.getDeviceAccont(deviceId);
 
                     //截取deviceId
-                    String token = deviceId.substring(1, deviceId.length() - 1).replaceAll(" +", "").trim();
+//                    String token = deviceId.substring(1, deviceId.length() - 1).replaceAll(" +", "").trim();
+                    String token = deviceId.replaceAll("[^(0-9)(A-Za-z)]", "").trim();
                     logger.info("设备ID:" + token);
 
                     //数据一致再推送
@@ -149,16 +150,16 @@ public class NotificationServiceImpl implements NotificationService {
 
 
     @Override
-    public JSONObject pushMsgDeviceAll(Notification no) {
+    public JSONObject pushMsgDeviceAll(NotificationParams no) {
         JSONObject obj = new JSONObject();
         try {
             logger.info("请求体:" + no);
-            String title = no.getTitle();
-            String context = no.getContext();
-            String type = no.getType();
-            String vin = no.getVin();
+            String title = no.getData().getAttributes().getTitle();
+            String context = no.getData().getAttributes().getContext();
+            String type = no.getData().getAttributes().getType();
+            String vin = no.getData().getAttributes().getVin();
             String ids = UUID.randomUUID().toString().replaceAll("-", "");
-            String imageURL = no.getImageURL();
+            String imageURL = no.getData().getAttributes().getImageURL();
             String phoneNum = "999999";
             String token = "999999";
             String userId = "999999";
@@ -212,9 +213,10 @@ public class NotificationServiceImpl implements NotificationService {
      * 封装信鸽IOS推送SDK
      */
     private MessageIOS pushIOSClient(String title, String context, String type, String imageURL) {
-        JSONObject obj = new JSONObject();
-        JSONObject aps = new JSONObject();
+        JSONObject data = new JSONObject();
+        JSONObject attributes = new JSONObject();
         JSONObject alert = new JSONObject();
+        JSONObject obj = new JSONObject();
         MessageIOS mess = new MessageIOS();
         mess.setExpireTime(86400);
         mess.setAlert("ios test");
@@ -228,14 +230,17 @@ public class NotificationServiceImpl implements NotificationService {
         alert.put("title", title);
         alert.put("body", context);
         alert.put("type", type);
-        aps.put("sound", "beep.wav");
-        aps.put("alert", alert);
-        aps.put("badge", 1);
-        aps.put("content-available", 1);
-        aps.put("mutable-content", 1);
-        obj.put("xg_media_resources", imageURL);
-        obj.put("aps", aps);
-        mess.setRaw(obj.toString());
+        attributes.put("sound", "beep.wav");
+        attributes.put("alert", alert);
+        attributes.put("badge", 1);
+        attributes.put("content-available", 1);
+        attributes.put("mutable-content", 1);
+        data.put("xg_media_resources", imageURL);
+        data.put("attributes", attributes);
+        obj.put("type", "UserAccount");
+        obj.put("id", "1001192");
+        obj.put("data", data);
+        mess.setRaw(data.toString());
         return mess;
     }
 

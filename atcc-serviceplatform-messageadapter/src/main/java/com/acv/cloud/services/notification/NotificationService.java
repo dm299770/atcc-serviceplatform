@@ -1,6 +1,6 @@
 package com.acv.cloud.services.notification;
 
-import com.acv.cloud.models.mongdb.notification.Notification;
+import com.acv.cloud.models.mongdb.notification.requestJson.NotificationParams;
 import com.alibaba.fastjson.JSONObject;
 
 /**
@@ -14,10 +14,10 @@ public interface NotificationService {
      *
      * @return
      */
-    JSONObject pushMsgDeviceAll(Notification no);
+    JSONObject pushMsgDeviceAll(NotificationParams no);
 
     /**
      * @return
      */
-    JSONObject pushMsgDeviceList(Notification no);
+    JSONObject pushMsgDeviceList(NotificationParams no);
 }

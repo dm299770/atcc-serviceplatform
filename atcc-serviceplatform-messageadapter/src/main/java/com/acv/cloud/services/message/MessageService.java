@@ -1,7 +1,6 @@
 package com.acv.cloud.services.message;
 
-import com.acv.cloud.models.jsonBean.message.request.MessageRequest;
-import com.acv.cloud.models.mongdb.notification.Notification;
+import com.acv.cloud.models.jsonBean.message.request.GetParams;
 import com.alibaba.fastjson.JSONObject;
 
 /**
@@ -9,7 +8,7 @@ import com.alibaba.fastjson.JSONObject;
  */
 public interface MessageService {
 
-    JSONObject selectMessage(MessageRequest message);
+    JSONObject selectMessage(GetParams message);
 
     JSONObject delMessage(String ids);
 

@@ -13,5 +13,5 @@ public interface SMSService {
      *
      * @return
      */
-    JSONObject sendSms(SMSParams sms);
+    JSONObject sendSms(String phoneNum, String content);
 }

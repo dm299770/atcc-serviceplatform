@@ -1,6 +1,6 @@
 package com.acv.cloud.services.page;
 
-import com.acv.cloud.models.mongdb.notification.NotificationRequest;
+import com.acv.cloud.models.jsonBean.message.request.NotificationRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 

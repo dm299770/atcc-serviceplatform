@@ -33,7 +33,7 @@ class SMSServiceImpl implements SMSService {
     private ISMSDao messagesDao;
 
     @Override
-    public JSONObject sendSms(SMSParams sms) {
+    public JSONObject sendSms(String phoneNum, String content) {
         JSONObject json = new JSONObject();
 
         //发送短信到目标手机号
@@ -46,10 +46,7 @@ class SMSServiceImpl implements SMSService {
 
         //校验参数是否为空
         try {
-            logger.info("请求体:" + sms);
-
-            String phoneNum = sms.getData().getAttributes().getPhoneNum();
-            String content = sms.getData().getAttributes().getContent();
+            logger.info("请求手机号:" + phoneNum + ",短信内容:" + content);
             if (phoneNum == null || "".equals(phoneNum)) {
                 json.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
                 json.put(AppResultConstants.MSG, PHONE_ERROR);

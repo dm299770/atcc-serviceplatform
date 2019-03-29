@@ -1,6 +1,5 @@
 package com.acv.cloud.models.jsonBean.message.request;
 
-import com.acv.cloud.models.mongdb.notification.NotificationRequest;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -10,14 +9,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document(collection = "Notification")
 public class MessageRequest {
-//    //通知推送实体
-    private NotificationRequest data;
+    //    //通知推送实体
+    private NotificationRequest attributes;
+    private String type;
 
-    public NotificationRequest getData() {
-        return data;
+    public NotificationRequest getAttributes() {
+        return attributes;
     }
 
-    public void setData(NotificationRequest data) {
-        this.data = data;
+    public void setAttributes(NotificationRequest attributes) {
+        this.attributes = attributes;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

@@ -1,7 +1,7 @@
 package com.acv.cloud.services.unread.impl;
 
 import com.acv.cloud.frame.constants.AppResultConstants;
-import com.acv.cloud.models.mongdb.notification.Notification;
+import com.acv.cloud.models.mongdb.notification.requestJson.Notification;
 import com.acv.cloud.repository.mongotemplate.INotificationMongoDBDao;
 import com.acv.cloud.services.unread.UnReadService;
 import com.alibaba.fastjson.JSONObject;
