@@ -32,5 +32,10 @@ public interface VehicleService {
      */
     JSONObject setDefaultVehicle(String userId, String vin);
 
+    /**
+     * vin号是否存在
+    */
+    Boolean existVin(String vin);
+
 
 }

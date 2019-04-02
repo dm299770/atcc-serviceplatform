@@ -50,7 +50,13 @@ public class AppResultConstants {
     /***
      * 参数异常
      */
-    public final static String Paramer_ERROR = "参数异常";
+    public final static String PARAMER_ERROR = "参数异常";
+
+    /***
+     *车辆已绑定
+     */
+
+    public final static String  VIN_EXIST = "此车辆已绑定";
 
     /***
      * 无效url

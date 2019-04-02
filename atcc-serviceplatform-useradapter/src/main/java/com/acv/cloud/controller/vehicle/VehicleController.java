@@ -5,6 +5,7 @@ import com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.SetDefaultCarParams
 import com.acv.cloud.jsonBean.user.verifyCode.requestJson.Attributes;
 import com.acv.cloud.jsonBean.user.verifyCode.requestJson.Data;
 import com.acv.cloud.jsonBean.user.verifyCode.requestJson.VerifyCodeParams;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.frame.annotation.CurrentUser;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -90,8 +92,26 @@ public class VehicleController {
                 .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Data::getAttributes)
                 .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Attributes::getLastSixPhoneNum).orElse(null);
 
-
         JSONObject jsonObject = null;
+        JSONObject appVehicleJSONObject = vehicleServiceImpl.findBindVehicleByUser(user.getUserId());
+        JSONArray vehiclesArray = appVehicleJSONObject.getJSONArray(AppResultConstants.DATA);
+        List<TrUserVin> vehicles = JSONObject.parseArray(vehiclesArray.toJSONString(),TrUserVin.class);
+        //判断vin时候已经存在
+        if(vin !=null){
+            if(vehicleServiceImpl.existVin(vin)){
+                jsonObject = new JSONObject();
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.VIN_EXIST);
+                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                return  jsonObject;
+            }
+
+//            for(TrUserVin  car :vehicles){
+//                if(car.getVin().equals(vin)){
+//
+//                }
+//            }
+        }
+
         Date now = new Date();
         if (user != null) {
             if (vin != null
@@ -110,7 +130,7 @@ public class VehicleController {
 
                 jsonObject = vehicleServiceImpl.saveVehicle(trUserVin);
             } else {
-                jsonObject.put(AppResultConstants.MSG, AppResultConstants.Paramer_ERROR);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAMER_ERROR);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
             }
 
@@ -146,7 +166,7 @@ public class VehicleController {
             jsonObject = vehicleServiceImpl.updateVehicle(user,vin,code);
 
         } else {
-                jsonObject.put(AppResultConstants.MSG, AppResultConstants.Paramer_ERROR);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAMER_ERROR);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
         }
 
@@ -177,7 +197,7 @@ public class VehicleController {
             jsonObject = vehicleServiceImpl.setDefaultVehicle(user.getUserId(), vin);
 
         } else {
-            jsonObject.put(AppResultConstants.MSG, AppResultConstants.Paramer_ERROR);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAMER_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
         }
 

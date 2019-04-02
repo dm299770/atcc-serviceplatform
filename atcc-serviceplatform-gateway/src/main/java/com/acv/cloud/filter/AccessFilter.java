@@ -103,7 +103,7 @@ public class AccessFilter extends ZuulFilter
 
                 }
                 //如果是手机设备
-                if(containsType("IOS")||containsType("Android")){
+                if(deviceType.equals("IOS")||deviceType.equals("Android")){
 
                     if(deviceNo == null){
                         ctx.setResponseStatusCode(401);
@@ -115,8 +115,9 @@ public class AccessFilter extends ZuulFilter
 
                     if(deviceObject!=null){
                         //String deviceNoCache = deviceObject.get("deviceNo").toString();
-                        String deviceNoCache = deviceObject.get("deviceNo").toString();
-                        if(!deviceNo.equals(deviceNoCache)){
+                        Object deviceNoCache = deviceObject.get("deviceNo");
+                        //根据设备型号在cache中查询不到设备号，提示其他设备登陆
+                        if(deviceNoCache==null||!deviceNo.equals(deviceNoCache)){
                             //throw new Exception("账号在其他设备登录,请重新登录");
                             ctx.setResponseStatusCode(401);
                             ctx.setResponseBody("{\"status\":400,\"msg\":\"账号在其他设备登录,请重新登录\"}");
@@ -230,7 +231,7 @@ public class AccessFilter extends ZuulFilter
         return false;
     }
 
-    private  enum deviceno {IOS, Android, Oauth2, WeChart}
+    private  enum deviceno {IOS, Android, Oauth2, WeChat}
 
     public static void main(String[] args){
 

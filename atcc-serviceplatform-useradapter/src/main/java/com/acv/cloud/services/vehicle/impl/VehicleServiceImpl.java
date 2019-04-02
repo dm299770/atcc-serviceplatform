@@ -206,6 +206,18 @@ public class VehicleServiceImpl implements VehicleService {
         return jsonObject;
     }
 
+    @Override
+    public Boolean existVin(String vin){
+        Boolean flag = false;
+
+        TrUserVin car = vehicleMapper.findVehicleByVin(vin);
+        if(car!=null){
+            flag = true;
+        }
+
+        return flag;
+    }
+
     private Boolean verifyCode(String phoneNum, String type , String code){
         Boolean flag = false;
 

@@ -1,6 +1,7 @@
 package com.acv.cloud.models.vehicle;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
@@ -17,8 +18,10 @@ public class TrUserVin implements java.io.Serializable {
     private String engineNum;             //发动机号
     private Integer defaultVehicle;       //默认车辆 1-是 ,0-否
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(pattern="yyyy-MM-dd HH:mm", timezone="GMT+8")
     private Date bindingDate;             //绑定时间
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(pattern="yyyy-MM-dd HH:mm", timezone="GMT+8")
     private Date unBindingDate;           //解绑时间
     private Integer isEffctive;           //有效性
     private Date createDate;              //创建时间

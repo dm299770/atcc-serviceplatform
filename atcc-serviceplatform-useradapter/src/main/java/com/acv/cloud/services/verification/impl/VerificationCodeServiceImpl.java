@@ -1,10 +1,14 @@
 package com.acv.cloud.services.verification.impl;
 
 import com.acv.cloud.fegin.messageadapter.ImessageFegin;
+import com.acv.cloud.frame.constants.DataFormat;
 import com.acv.cloud.frame.constants.RedisConstants;
 import com.acv.cloud.frame.util.DateFormatUtil;
 import com.acv.cloud.frame.util.VcUtil;
 import com.acv.cloud.jsonBean.fegin.messageadapter.SMS;
+import com.acv.cloud.jsonBean.fegin.messageadapter.sms.Attributes;
+import com.acv.cloud.jsonBean.fegin.messageadapter.sms.Data;
+import com.acv.cloud.jsonBean.fegin.messageadapter.sms.SMSParams;
 import com.acv.cloud.repository.redistemplate.RedisRepository;
 import com.acv.cloud.services.user.TsUserService;
 import com.acv.cloud.services.user.impl.TsUserServiceImpl;
@@ -20,6 +24,7 @@ import org.springframework.stereotype.Service;
 
 
 import javax.xml.bind.util.JAXBSource;
+import java.util.Date;
 
 /**
  * 验证码逻辑
@@ -142,7 +147,7 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
         }
 
         if(phoneNum == null || "".equals(phoneNum)){
-            jsonObject.put(AppResultConstants.MSG,AppResultConstants.Paramer_ERROR);
+            jsonObject.put(AppResultConstants.MSG,AppResultConstants.PARAMER_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
         }
         String vcode = null ;
@@ -163,7 +168,17 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
             String content = "【日产中国】 短信验证码为" + vcode + ",请在5分钟内按提示提交验证码,切勿将验证码泄露于他人";
             logger.info("VerificationCodeServiceImpl: 生成验证码为: "+vcode);
             try {
-                SMS sms = new SMS(phoneNum,content, DateFormatUtil.getTimesecond());
+                //SMS sms = new SMS(phoneNum,content, DateFormatUtil.getTimesecond());
+                //2019.03.29修改短信推送协议
+                Attributes attributes = new Attributes();
+                Data data = new Data();
+                SMSParams sms = new SMSParams();
+                attributes.setContent(content);
+                attributes.setPhoneNum(phoneNum);
+                data.setAttributes(attributes);
+                sms.setData(data);
+                //attributes.setCreateDate(new Date());
+
                 Object messageJsonObject = imessageFegin.sendSmsToPhone(sms);
                 if (messageJsonObject == null){
                     //远程调用短信服务失败

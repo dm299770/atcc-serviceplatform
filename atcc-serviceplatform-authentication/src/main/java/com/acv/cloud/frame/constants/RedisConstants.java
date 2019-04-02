@@ -7,7 +7,7 @@ public class RedisConstants {
     public static final String LOGIN_DEVICENO = "LOGIN_DEVICENO"; //jwt记录用户推送设备号
     public static final String LOGIN_DEVICETYPE = "LOGIN_DEVICETYPE"; //jwt记录用户推送设备型号
 
-    public static  enum ALL_DEVICETYPES {IOS, Android, Oauth2, WeChart};//获取token设备类型
+    public static  enum ALL_DEVICETYPES {IOS, Android, Oauth2, WeChat};//获取token设备类型
 
     public static final String REGISTER_CODE = "REGISTER_CODE";//注册验证码
 

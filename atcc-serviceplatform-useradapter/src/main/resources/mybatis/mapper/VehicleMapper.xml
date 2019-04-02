@@ -15,10 +15,10 @@
         <id column="LAST_SIX_PHONENUM" property="lastSixPhoneNum" jdbcType="VARCHAR"/>
         <id column="ENGINE_NUM" property="engineNum" jdbcType="VARCHAR"/>
         <id column="DEFAULT_VEHICLE" property="defaultVehicle" jdbcType="TINYINT"/>
-        <id column="BINDING_DATE" property="bindingDate" jdbcType="DATE"/>
-        <id column="UNBINDING_DATE" property="unBindingDate" jdbcType="DATE"/>
+        <id column="BINDING_DATE" property="bindingDate" jdbcType="TIMESTAMP"/>
+        <id column="UNBINDING_DATE" property="unBindingDate" jdbcType="TIMESTAMP"/>
         <id column="IS_EFFCTIVE" property="isEffctive" jdbcType="TINYINT"/>
-        <id column="CREATE_DATE" property="createDate" jdbcType="DATE"/>
+        <id column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP"/>
     </resultMap>
 
 

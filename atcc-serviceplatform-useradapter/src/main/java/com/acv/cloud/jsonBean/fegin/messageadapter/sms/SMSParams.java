@@ -1,4 +1,4 @@
-package com.acv.cloud.models.mongdb.sms;
+package com.acv.cloud.jsonBean.fegin.messageadapter.sms;
 
 public class SMSParams {
     private Data data;
@@ -10,6 +10,4 @@ public class SMSParams {
     public Data getData() {
         return data;
     }
-
-
 }

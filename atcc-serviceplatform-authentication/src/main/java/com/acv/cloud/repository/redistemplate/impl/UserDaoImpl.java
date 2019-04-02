@@ -21,13 +21,20 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public void updateDeviceNo(String userid, String deviceType,String deiviceNo) {
-
         String device_account = String.format(RedisConstants.DEVICE_ACCOUNT+":%s:%s",deviceType,deiviceNo);
         String account_device = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userid,deviceType);
+        if("IOS".equals(deviceType)){
+            String androidkey = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userid,"Android");
+            redisRepository.remove(androidkey);
+        }
 
-        redisRepository.remove(device_account);
-        redisRepository.set(device_account, userid);
+        if("Android".equals(deviceType)){
+            String ioskey = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userid,"IOS");
+            redisRepository.remove(ioskey);
+        }
         redisRepository.set(account_device, deiviceNo);
+        redisRepository.set(device_account, userid);
+
 
     }
 
