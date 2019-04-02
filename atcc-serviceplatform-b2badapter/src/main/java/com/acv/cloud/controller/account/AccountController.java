@@ -36,7 +36,7 @@ public class AccountController {
     @ResponseBody
     @RequestMapping(value = "account/deduct", method = RequestMethod.POST)
     public Object deduct(@CurrentUser UserInfo user, @RequestBody DeductParams dudectParams) {
-        logger.info(user.toString());
+        logger.info("AccountController:deduct params  money:" + dudectParams.getData().getMoney() + ",comment:" + dudectParams.getData().getComment());
         JSONObject jsonObject = null;
         try {
             jsonObject = accountService.deduct(user.getUserId(), dudectParams.getData().getMoney(),
@@ -88,7 +88,7 @@ public class AccountController {
     @ResponseBody
     @RequestMapping(value = "account/EVVehicleState")
     public Object EVVehicle(@RequestBody VehicleStateRequestParameter data) {
-        logger.info("请求体=" + data.toString());
+        logger.info("AccountController: EVVehicleState  params vin号:" + data.getData().getVin() + ",model:" + data.getData().getModel());
         JSONObject jsonObject = accountService.vehicleState(data);
         return jsonObject;
     }

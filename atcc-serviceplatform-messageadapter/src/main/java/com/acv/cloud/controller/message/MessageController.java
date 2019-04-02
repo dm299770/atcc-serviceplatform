@@ -70,7 +70,8 @@ public class MessageController {
     @ResponseBody
     @RequestMapping(value = "/sms/v1")
     public Object sendSmsToPhone(@RequestBody SMSParams sms) {
-        logger.info("MessageController: sms params :" + sms.toString());
+        logger.info("MessageController: sms params phoneNum:" + sms.getData().getAttributes().getPhoneNum() +
+                ",content:" + sms.getData().getAttributes().getContent());
         String phoneNum = Optional.ofNullable(sms)
                 .map(SMSParams::getData)
                 .map(Data::getAttributes)
