@@ -12,7 +12,7 @@
 
     <groupId>com.acv.cloud</groupId>
     <artifactId>atcc-serviceplatform-useradapter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>atcc-serviceplatform-useradapter</name>
     <description>useradapter</description>
@@ -23,6 +23,20 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
     </properties>
+
+
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>maven-releases</name>
+            <url>http://139.217.235.112:8081/repository/maven-releases/</url>
+        </repository>
+        <!--<snapshotRepository>-->
+        <!--<id>nexus-snapshots</id>-->
+        <!--<name>nexus-snapshots</name>-->
+        <!--<url>${NEXUS_URL}/repository/maven-snapshots</url>-->
+        <!--</snapshotRepository>-->
+    </distributionManagement>
 
     <dependencies>
 
