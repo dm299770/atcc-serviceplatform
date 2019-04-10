@@ -10,6 +10,7 @@
         <module name="acv-ca" />
         <module name="ACV-EUREKA" />
         <module name="atcc-serviceplatform-authentication" />
+        <module name="atcc-serviceplatform-b2badapter" />
         <module name="atcc-serviceplatform-caradapter" />
         <module name="atcc-serviceplatform-discovery" />
         <module name="atcc-serviceplatform-gateway" />
@@ -27,6 +28,7 @@
       <module name="ACV-VA" target="1.8" />
       <module name="atcc-serviceplatform" target="1.8" />
       <module name="atcc-serviceplatform-authentication" target="1.8" />
+      <module name="atcc-serviceplatform-b2badapter" target="1.8" />
       <module name="atcc-serviceplatform-caradapter" target="1.8" />
       <module name="atcc-serviceplatform-discovery" target="1.8" />
       <module name="atcc-serviceplatform-gateway" target="1.8" />

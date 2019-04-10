@@ -3,6 +3,7 @@
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/atcc-serviceplatform-authentication" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/atcc-serviceplatform-b2badapter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/atcc-serviceplatform-discovery" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/atcc-serviceplatform-gateway" charset="UTF-8" />

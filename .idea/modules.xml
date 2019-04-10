@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/atcc-serviceplatform.iml" filepath="$PROJECT_DIR$/.idea/atcc-serviceplatform.iml" />
       <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/atcc-serviceplatform-authentication.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-authentication/atcc-serviceplatform-authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-b2badapter/atcc-serviceplatform-b2badapter.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-b2badapter/atcc-serviceplatform-b2badapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter/atcc-serviceplatform-caradapter.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-caradapter/atcc-serviceplatform-caradapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-discovery/atcc-serviceplatform-discovery.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-discovery/atcc-serviceplatform-discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/atcc-serviceplatform-gateway/atcc-serviceplatform-gateway.iml" filepath="$PROJECT_DIR$/atcc-serviceplatform-gateway/atcc-serviceplatform-gateway.iml" />

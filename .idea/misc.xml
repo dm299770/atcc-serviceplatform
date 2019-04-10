@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/atcc-serviceplatform-smarthomeadapter/pom.xml" />
         <option value="$PROJECT_DIR$/atcc-serviceplatform-caradapter/pom.xml" />
         <option value="$PROJECT_DIR$/atcc-serviceplatform-messageadapter/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-b2badapter/pom.xml" />
       </list>
     </option>
   </component>
