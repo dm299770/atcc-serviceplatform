@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public interface VehicleStateFeign {
 
     @ResponseBody
-    @RequestMapping(value = "/vehiclestate/EVVehicleState",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/car/status",consumes = MediaType.APPLICATION_JSON_VALUE)
     public Object EVvehiclestate(@RequestBody VehicleStateRequestParameter data);
 
 }

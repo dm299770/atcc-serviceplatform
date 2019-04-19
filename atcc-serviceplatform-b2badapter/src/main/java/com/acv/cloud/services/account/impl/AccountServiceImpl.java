@@ -12,6 +12,8 @@ import com.acv.cloud.models.jsonBean.vehicle.request.VehicleStateRequestParamete
 import com.acv.cloud.models.jsonBean.vehicle.response.EVVehicleStateResponse;
 import com.acv.cloud.services.account.AccountService;
 import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -28,6 +30,7 @@ import java.util.UUID;
  */
 @Service
 public class AccountServiceImpl implements AccountService {
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private static final String BALANCE = "balance";
     private static final String DEDUCT_SUCCESS = "已扣款成功";
@@ -52,6 +55,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     @Transactional(readOnly = false, propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, timeout = 36000, rollbackFor = Exception.class)
     public JSONObject deduct(String user_id, String money, String comment) throws Exception {
+        logger.info("AccountService: deduct  params  money:" + money + ",comment:" + comment + ",userId:" + user_id);
         JSONObject json = new JSONObject();
         UserAccount userAccount = null;
         UserInfo userInfo = null;
@@ -78,8 +82,10 @@ public class AccountServiceImpl implements AccountService {
                 BigDecimal moneyD = new BigDecimal(money);//扣款金额
                 BigDecimal balanceD = amount.subtract(moneyD);//消费后的余额
                 String balance = String.valueOf(balanceD);
+                logger.info("AccountService: deduct params 扣款金额为:" + moneyD + ",账户余额为:" + amount + ",扣款后剩余金额:" + balanceD);
                 //比较标识符
                 int comTo = moneyD.compareTo(amount);
+                logger.info("comTo:" + comTo);
                 //下单修改时间
                 String updateTime = DateUtil.getDate("yyyy/MM/dd HH:mm:ss");
                 //扣费操作
@@ -113,9 +119,9 @@ public class AccountServiceImpl implements AccountService {
         return json;
     }
 
-
     @Override
     public JSONObject selAll(String user_id) {
+        logger.info("AccountService: selAll  params userId:" + user_id);
         JSONObject json = new JSONObject();
         try {
             if (user_id.isEmpty() || "".equals(user_id)) {
@@ -137,6 +143,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public JSONObject selBalance(String user_id) {
+        logger.info("AccountService: selBalance  params userId:" + user_id);
         JSONObject json = new JSONObject();
         try {
             if (user_id.isEmpty() || "".equals(user_id)) {
@@ -161,12 +168,27 @@ public class AccountServiceImpl implements AccountService {
     public JSONObject vehicleState(VehicleStateRequestParameter data) {
         JSONObject json = new JSONObject();
         JSONObject jsonObject = new JSONObject();
-        Object obj = vehicleStateFeign.EVvehiclestate(data);
-        json.put("obj", obj);
-        Float resbatterycap = Float.valueOf(json.getJSONObject("obj").getJSONObject("data").getString("resbatterycap"));
-        Float usablekm = Float.valueOf(json.getJSONObject("obj").getJSONObject("data").getString("usablekm"));
-        EVVehicleStateResponse evVehicleStateResponse = new EVVehicleStateResponse(resbatterycap, usablekm);
-        jsonObject.put("data", evVehicleStateResponse);
+        try {
+            if (data.getData().getVin() == null || "".equals(data.getData().getVin())) {
+                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.Paramer_ERROR);
+            } else {
+                logger.info("AccountController: EVVehicleState  params vin号:" + data.getData().getVin() + ",model:" + data.getData().getModel());
+                Object obj = vehicleStateFeign.EVvehiclestate(data);
+                json.put("obj", obj);
+                logger.info("feign调用返回值:" + json);
+                Float resbatterycap = Float.valueOf(json.getJSONObject("obj").getJSONObject("data").getString("resbatterycap"));
+                Float usablekm = Float.valueOf(json.getJSONObject("obj").getJSONObject("data").getString("usablekm"));
+                EVVehicleStateResponse evVehicleStateResponse = new EVVehicleStateResponse(resbatterycap, usablekm);
+                logger.info("json调用返回值:" + evVehicleStateResponse.getResbatterycap() + "," + evVehicleStateResponse.getUsablekm());
+                jsonObject.put("data", evVehicleStateResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("系统内部错误!");
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
+        }
         return jsonObject;
     }
 }

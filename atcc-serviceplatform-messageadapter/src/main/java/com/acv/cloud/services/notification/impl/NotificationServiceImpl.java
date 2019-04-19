@@ -61,7 +61,10 @@ public class NotificationServiceImpl implements NotificationService {
     public JSONObject pushMsgDeviceList(NotificationParams no) {
         JSONObject obj = new JSONObject();
         try {
-            logger.info("请求体:" + no);
+            logger.info("MessageController: push params phoneNum:" + no.getData().getAttributes().getPhoneNum() +
+                    ",context:" + no.getData().getAttributes().getContext() + ",type:" + no.getData().getAttributes().getType() +
+                    ",title:" + no.getData().getAttributes().getTitle());
+
             String phoneNum = no.getData().getAttributes().getPhoneNum();
             String title = no.getData().getAttributes().getTitle();
             String context = no.getData().getAttributes().getContext();
@@ -95,7 +98,7 @@ public class NotificationServiceImpl implements NotificationService {
                 List<String> phoneNumList = jsonArray.toJavaList(String.class);
                 logger.info("用户账号信息列表:" + phoneNumList);
                 for (String phoneNums : phoneNumList) {
-                    logger.info(phoneNums);
+                    logger.info("当前准备推送的账户:" + phoneNums);
                     //手机号去查uesr_id
                     TsUser userId = tsUserMapper.findUserId(phoneNums);
 
@@ -132,7 +135,7 @@ public class NotificationServiceImpl implements NotificationService {
                         } else {
                             obj.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
                             obj.put(AppResultConstants.MSG, FAIL_EX);
-                            logger.info("返回状态码:" + returnCode);
+                            logger.info("推送返回状态码:" + returnCode);
                         }
                     } else {
                         obj.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
