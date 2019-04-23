@@ -28,6 +28,7 @@
     <modules>
         <module>atcc-serviceplatform-discovery</module>
         <module>atcc-serviceplatform-gateway</module>
+        <module>atcc-serviceplatform-common</module>
 
         <!--<module>atcc-serviceplatform-caradapter</module>-->
         <!--<module>atcc-serviceplatform-messageadapter</module>-->
