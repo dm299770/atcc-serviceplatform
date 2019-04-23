@@ -25,7 +25,7 @@ public interface LoginService {
      * @param password 密码
      * @return 返回登录结果及用户信息
      */
-    JSONObject login(String phoneNum, String password);
+    //JSONObject login(String phoneNum, String password);
 
     /**
      * 退出登录

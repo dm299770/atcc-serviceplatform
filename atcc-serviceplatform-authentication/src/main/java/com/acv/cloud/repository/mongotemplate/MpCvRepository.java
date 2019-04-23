@@ -1,4 +1,4 @@
-package com.acv.cloud.repository;
+package com.acv.cloud.repository.mongotemplate;
 
 import com.acv.cloud.models.mongdb.MpCv;
 //import org.springframework.data.mongodb.repository.MongoRepository;

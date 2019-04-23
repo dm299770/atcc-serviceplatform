@@ -1,7 +1,7 @@
 package com.acv.cloud.services.user.impl;
 
+import com.acv.cloud.domain.dto.UserInfo;
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.ApplicationPropertiesConstants;
 import com.acv.cloud.frame.util.FileUtil;

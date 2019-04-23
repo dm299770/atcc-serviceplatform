@@ -196,7 +196,7 @@ public class AuthorizeController {
             //查询用户信息
             //TsUser user = oAuthService.findByPhoneNum(phoneNum);
             //JSONObject jsonObject = loginService.login(phoneNum, MD5Util.md5(password), "");
-            Object object = loginFegin.login(phoneNum,MD5Util.md5(password),"webclient");
+            Object object = loginFegin.login(phoneNum,MD5Util.md5(password),"Oauth2");
             JSONObject jsonObject = JSONObject.parseObject(object.toString());
 
             if (jsonObject.getInteger(AppResultConstants.STATUS) != 200) {

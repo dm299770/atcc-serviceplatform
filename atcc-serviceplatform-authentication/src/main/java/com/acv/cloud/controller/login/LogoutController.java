@@ -1,7 +1,7 @@
 package com.acv.cloud.controller.login;
 
+import com.acv.cloud.domain.dto.UserInfo;
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.frame.annotation.CurrentUser;
 import com.acv.cloud.frame.annotation.LoginRequired;
 import com.acv.cloud.frame.constants.AppResultConstants;

@@ -1,7 +1,7 @@
 package com.acv.cloud.services.user;
 
+import com.acv.cloud.domain.dto.UserInfo;
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.models.sys.TmChargeAccount;
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.models.sys.TsUserInfo;

@@ -1,9 +1,10 @@
 package com.acv.cloud.controller.login;
 
+import com.acv.cloud.domain.body.req.login.Attributes;
+import com.acv.cloud.domain.body.req.login.Data;
+import com.acv.cloud.domain.body.req.login.LoginParams;
 import com.acv.cloud.frame.constants.RedisConstants;
-import com.acv.cloud.models.jsonBean.login.requestJson.Attributes;
-import com.acv.cloud.models.jsonBean.login.requestJson.Data;
-import com.acv.cloud.models.jsonBean.login.requestJson.LoginParams;
+
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.services.login.LoginService;
 import org.slf4j.Logger;
@@ -25,10 +26,13 @@ public class LoginController {
     private LoginService loginService;
 
     @ResponseBody
-    @RequestMapping(value = "login/v1")
-    public Object login(@RequestBody LoginParams params) {
+    @RequestMapping(value = "login/{version}")
+    public Object login(@RequestBody LoginParams params,@PathVariable String version) {
 
-            logger.info("LoginController: login params :" + params.toString());
+            logger.info("LoginController: login params :{} --version:{}" , params.toString(), version);
+
+            //暂未开发version检测 后续开发
+
             String phoneNum = Optional.ofNullable(params)
                     .map(LoginParams::getData)
                     .map(Data::getAttributes)
@@ -53,6 +57,7 @@ public class LoginController {
 
 
         JSONObject result = loginService.login(phoneNum, password, deviceType, deviceNo);
+
         return result;
 
     }

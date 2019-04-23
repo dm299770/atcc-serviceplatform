@@ -2,7 +2,6 @@ package com.acv.cloud.services.mpcv.impl;
 
 import com.acv.cloud.repository.mongotemplate.IPublicDao;
 import com.acv.cloud.models.mongdb.MpCv;
-import com.acv.cloud.repository.MpCvRepository;
 import com.acv.cloud.services.mpcv.MpCvService;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.data.mongodb.core.query.Criteria;

@@ -1,7 +1,7 @@
 /**
   * Copyright 2019 bejson.com 
   */
-package com.acv.cloud.models.jsonBean.login.requestJson;
+package com.acv.cloud.domain.body.req.login;
 
 /**
  * Auto-generated: 2019-03-12 14:36:32

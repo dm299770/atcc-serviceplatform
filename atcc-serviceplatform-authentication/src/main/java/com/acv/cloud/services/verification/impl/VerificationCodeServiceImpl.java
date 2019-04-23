@@ -27,6 +27,7 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
     private final static String SMS_VCODE_ERROR = "验证码格式不正确";
     private final static String SMS_VCODE_SUCCESS = "验证成功";
     private final static String SMS_VCODE_FAIL = "验证失败";
+
     //private final static String SMS_VCODE_INVALID = "验证码失效";
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());

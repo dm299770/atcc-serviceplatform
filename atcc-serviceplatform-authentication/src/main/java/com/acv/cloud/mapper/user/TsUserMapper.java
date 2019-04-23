@@ -1,6 +1,6 @@
 package com.acv.cloud.mapper.user;
 
-import com.acv.cloud.dto.sys.UserInfo;
+import com.acv.cloud.domain.dto.UserInfo;
 import com.acv.cloud.models.sys.TsUser;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
