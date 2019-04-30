@@ -33,7 +33,13 @@ public class RedisTest {
        //redisRepository.lPush("testlPush","111");
         //redisRepository.lPush("testlPush","222");
 
-        List<Object> list = redisRepository.lRange("testlPush",0,1);
-        System.out.println("------------------------->"+list.toString());
+        //List<Object> list = redisRepository.lRange("testlPush",0,1);
+        //System.out.println("------------------------->"+list.toString());
+
+        //redisRepository.lPush("testlPush","test2");
+        //List<Object> list = redisRepository.lRange("testlPush",0,2);
+        //System.out.println(list.toString());
+
+        redisRepository.hmSet("device_account:Oauth2:oauth_clientid_miui","111111","20190426T18:10:10");
     }
 }

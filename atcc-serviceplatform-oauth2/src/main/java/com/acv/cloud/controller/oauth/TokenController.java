@@ -1,5 +1,6 @@
 package com.acv.cloud.controller.oauth;
 
+import com.acv.cloud.frame.constants.RedisConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.frame.constants.OauthConstants;
 import com.acv.cloud.frame.util.JwtTokenUtil;
@@ -143,11 +144,13 @@ public class TokenController {
                 //生成refresh Token
                 OAuthIssuer oauthIssuerImpl = new OAuthIssuerImpl(new MD5Generator());
                 refreshToken = oauthIssuerImpl.refreshToken();
+
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("REFRESHTOKEN", refreshToken);
                 map.put("CLIENT_ID", oauthRequest.getClientId());
                 map.put("APP_ACCOUNT_ID", app_account_id);
                 map.put("EXPIREIN", String.valueOf(refreshToken_expireIn));
+
                 try {
                     oAuthService.addRefreshToken(map);
                 } catch (Exception e) {
@@ -155,13 +158,21 @@ public class TokenController {
                             new Object[]{oauthRequest.getClientId(), request.getParameter("grant_type"), "addRefreshToken添加刷新token异常:", e});
                     return ResponseUtil.getAbnormalResponse(oauthRequest.getClientId(), request.getParameter("grant_type"), OauthConstants.SERVER_EXCEPTION);
                 }
+
                 Map<String, Object> params = new HashMap<String, Object>();
                 //获取过期时间
                 params.put("EXPIREIN", accessToken_expireIn);
                 params.put("SCOPE", scope);
                 params.put("APP_ACCOUNT_ID", app_account_id);
+                params.put("SCOPE", null);
+                params.put(RedisConstants.LOGIN_DEVICENO,client_id);
+                params.put(RedisConstants.LOGIN_DEVICETYPE,"Oauth2");
+
                 //生成access Token
                 accessToken = JwtTokenUtil.generateToken(params);
+
+
+
             } else
                 //客户端模式CLIENT_CREDENTIALS
                 if (oauthRequest.getParam(OAuth.OAUTH_GRANT_TYPE).equals(GrantType.CLIENT_CREDENTIALS.toString())) {
@@ -232,6 +243,10 @@ public class TokenController {
                         params.put("EXPIREIN", accessToken_expireIn);
                         params.put("SCOPE", scope);
                         params.put("APP_ACCOUNT_ID", app_account_id);
+                        params.put("SCOPE", null);
+                        params.put(RedisConstants.LOGIN_DEVICENO,client_id);
+                        params.put(RedisConstants.LOGIN_DEVICETYPE,"Oauth2");
+
                         //生成access Token
                         accessToken = JwtTokenUtil.generateToken(params);
                     }

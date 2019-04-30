@@ -1,7 +1,11 @@
 package com.acv.cloud.controller.oauth;
 
+import com.acv.cloud.domain.body.req.login.Attributes;
+import com.acv.cloud.domain.body.req.login.Data;
+import com.acv.cloud.domain.body.req.login.LoginParams;
 import com.acv.cloud.fegin.authentication.LoginFegin;
 import com.acv.cloud.fegin.useradapter.ITsUserServiceFeign;
+import com.acv.cloud.frame.util.JwtTokenUtil;
 import com.acv.cloud.frame.util.StrUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -184,6 +188,7 @@ public class AuthorizeController {
 
         String phoneNum = request.getParameter("phoneNum");
         String password = request.getParameter("password");
+        String client_id = request.getParameter("client_id");
         String flag = request.getParameter("flag");
 
         if (StringUtils.isEmpty(phoneNum) || StringUtils.isEmpty(password)) {
@@ -196,14 +201,29 @@ public class AuthorizeController {
             //查询用户信息
             //TsUser user = oAuthService.findByPhoneNum(phoneNum);
             //JSONObject jsonObject = loginService.login(phoneNum, MD5Util.md5(password), "");
-            Object object = loginFegin.login(phoneNum,MD5Util.md5(password),"Oauth2");
+            //Object object = loginFegin.login(phoneNum,MD5Util.md5(password),"Oauth2");
+            LoginParams loginParams = new LoginParams(
+                    new Data(
+                            "User",new Attributes(phoneNum,MD5Util.md5(password),client_id,"Oauth2")
+                    )
+            );
+
+            Object object = loginFegin.login(loginParams);
+
             JSONObject jsonObject = JSONObject.parseObject(object.toString());
 
-            if (jsonObject.getInteger(AppResultConstants.STATUS) != 200) {
+            if (jsonObject.getInteger(AppResultConstants.STATUS) != (int)AppResultConstants.SUCCESS_STATUS) {
                 request.setAttribute("error", "账号或密码不正确");
                 return false;
             }
-            request.setAttribute("app_account_id",phoneNum);
+            String accessToken = jsonObject.getJSONObject(AppResultConstants.DATA).getString("accessToken");
+            String uuid = null;
+            if(accessToken!=null && !"".equals(accessToken)){
+                Map<String, Object> map = JwtTokenUtil.analysisToken(accessToken.toString(), 1);
+                uuid = map.get("id").toString();//用户id
+            }
+
+            request.setAttribute("app_account_id",uuid);
         } catch (Exception e) {
             logger.error("{}<{}>{}{}",
                     new Object[]{request.getParameter("client_id"), request.getParameter("response_type"), "findByUsername查询用户信息异常:", e});

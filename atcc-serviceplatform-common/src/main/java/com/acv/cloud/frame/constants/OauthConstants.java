@@ -33,6 +33,8 @@ public class OauthConstants {
     //路径分隔符
     public static String FILE_SEPARATOR = System.getProperty("file.separator");
 
+    public static String PROTOCOL = "Oauth2";
+
 
     //CHRTSP01秘钥
 

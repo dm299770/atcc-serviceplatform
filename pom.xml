@@ -29,9 +29,13 @@
         <module>atcc-serviceplatform-discovery</module>
         <module>atcc-serviceplatform-gateway</module>
         <module>atcc-serviceplatform-common</module>
-
-        <!--<module>atcc-serviceplatform-caradapter</module>-->
-        <!--<module>atcc-serviceplatform-messageadapter</module>-->
+        <module>atcc-serviceplatform-authentication</module>
+        <module>atcc-serviceplatform-useradapter</module>
+        <module>atcc-serviceplatform-messageadapter</module>
+        <module>atcc-serviceplatform-caradapter</module>
+        <module>atcc-serviceplatform-oauth2</module>
+        <module>atcc-serviceplatform-b2badapter</module>
+        <module>atcc-serviceplatform-smarthomeadapter</module>
     </modules>
 
     <packaging>pom</packaging>

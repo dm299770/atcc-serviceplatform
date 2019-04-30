@@ -1,28 +1,21 @@
 package com.acv.cloud.controller.vehicle;
 
-import com.acv.cloud.jsonBean.user.bindCar.requetJson.BindCarParams;
-import com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.SetDefaultCarParams;
-import com.acv.cloud.jsonBean.user.verifyCode.requestJson.Attributes;
-import com.acv.cloud.jsonBean.user.verifyCode.requestJson.Data;
-import com.acv.cloud.jsonBean.user.verifyCode.requestJson.VerifyCodeParams;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.frame.annotation.CurrentUser;
 import com.acv.cloud.frame.annotation.LoginRequired;
 import com.acv.cloud.frame.constants.AppResultConstants;
+import com.acv.cloud.frame.constants.app.VehicleAppResultConstants;
 import com.acv.cloud.frame.util.JsonUtil;
-import com.acv.cloud.jsonBean.vehicle.VehicleInfoData;
+import com.acv.cloud.jsonBean.user.bindCar.requetJson.BindCarParams;
+import com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.SetDefaultCarParams;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.models.vehicle.TrUserVin;
 import com.acv.cloud.services.vehicle.VehicleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -67,8 +60,9 @@ public class VehicleController {
 
     @LoginRequired
     @ResponseBody
-    @RequestMapping(value = "/bindCar/v1")
-    public Object bindVehicle(@CurrentUser UserInfo user, @RequestBody BindCarParams bindCarParams) {
+    @RequestMapping(value = "/bindCar/{version}")
+    public Object bindVehicle(@CurrentUser UserInfo user, @RequestBody BindCarParams bindCarParams,@PathVariable String version) {
+
         logger.info("VehicleController BindCarParams:"+bindCarParams.toString());
 
         String vin = Optional.ofNullable(bindCarParams)
@@ -100,16 +94,11 @@ public class VehicleController {
         if(vin !=null){
             if(vehicleServiceImpl.existVin(vin)){
                 jsonObject = new JSONObject();
-                jsonObject.put(AppResultConstants.MSG, AppResultConstants.VIN_EXIST);
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                jsonObject.put(AppResultConstants.STATUS, VehicleAppResultConstants.VIN_EXIST);
+                jsonObject.put(AppResultConstants.MSG, VehicleAppResultConstants.VIN_EXIST_MSG);
                 return  jsonObject;
             }
 
-//            for(TrUserVin  car :vehicles){
-//                if(car.getVin().equals(vin)){
-//
-//                }
-//            }
         }
 
         Date now = new Date();
@@ -130,13 +119,13 @@ public class VehicleController {
 
                 jsonObject = vehicleServiceImpl.saveVehicle(trUserVin);
             } else {
-                jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAMER_ERROR);
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
             }
 
         } else {
-            jsonObject.put(AppResultConstants.MSG, AppResultConstants.LOGIN_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.AUTHENTICATION_FAILURE);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.AUTHENTICATION_FAILURE_MSG);
         }
         return jsonObject;
     }
@@ -148,6 +137,7 @@ public class VehicleController {
     @ResponseBody
     @RequestMapping(value = "/unbindCar/v1")
     public Object unbindVehicle(@CurrentUser UserInfo user, @RequestBody SetDefaultCarParams setDefaultCarParams) {
+
         logger.info("VehicleController SetDefaultCarParams:"+setDefaultCarParams.toString());
 
         String vin = Optional.ofNullable(setDefaultCarParams)
@@ -166,8 +156,8 @@ public class VehicleController {
             jsonObject = vehicleServiceImpl.updateVehicle(user,vin,code);
 
         } else {
-                jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAMER_ERROR);
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
         }
 
 
@@ -197,8 +187,8 @@ public class VehicleController {
             jsonObject = vehicleServiceImpl.setDefaultVehicle(user.getUserId(), vin);
 
         } else {
-            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAMER_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
         }
 
 

@@ -19,6 +19,10 @@ public class LoginParams {
          return data;
      }
 
+    public LoginParams(Data data) {
+        this.data = data;
+    }
+
     @Override
     public String toString() {
         return "LoginParams{" +

@@ -13,6 +13,11 @@ public class Data {
 
     private String type;
     private Attributes attributes;
+
+    public Data(String type , Attributes attributes) {
+        this.attributes = attributes;
+    }
+
     public void setType(String type) {
          this.type = type;
      }

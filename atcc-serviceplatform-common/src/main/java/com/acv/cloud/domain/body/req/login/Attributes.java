@@ -15,6 +15,18 @@ public class Attributes {
     private String password;
     private String deviceNo;
     private String deviceType;
+
+
+    public Attributes(String phoneNum, String password, String deviceNo, String deviceType) {
+        this.phoneNum = phoneNum;
+        this.password = password;
+        this.deviceNo = deviceNo;
+        this.deviceType = deviceType;
+    }
+
+    public Attributes() {
+    }
+
     public void setPhoneNum(String phoneNum) {
          this.phoneNum = phoneNum;
      }

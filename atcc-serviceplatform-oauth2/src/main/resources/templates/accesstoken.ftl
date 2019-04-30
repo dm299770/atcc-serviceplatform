@@ -65,7 +65,7 @@
     </div>
     <div class="row marketing">
         <div class="col-lg-10">
-            <form class="form-horizontal" method="post" action="/accessToken">
+            <form class="form-horizontal" method="post" action="/atcc-serviceplatform-oauth2/accessToken">
                 <div class="form-group">
                     <label for="client_id" class="col-sm-4 control-label">应用id</label>
                     <div class="col-sm-8">
@@ -104,19 +104,19 @@
     </div>
     <div class="row marketing">
         <div class="col-lg-10">
-            <form class="form-horizontal" method="post" action="/accessToken">
+            <form class="form-horizontal" method="post" action="/atcc-serviceplatform-oauth2/accessToken">
                 <div class="form-group">
                     <label for="client_id" class="col-sm-4 control-label">应用id</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control" id="client_id" name="client_id"
-                               value="oauth_clientid_Aligen">
+                               value="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="client_secret" class="col-sm-4 control-label">应用secret</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control" id="client_secret" name="client_secret"
-                               value="oauth_clientid_Aligen">
+                               value="">
                     </div>
                 </div>
                 <div class="form-group">

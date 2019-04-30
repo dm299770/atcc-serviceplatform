@@ -1,11 +1,14 @@
 package com.acv.cloud.repository.redistemplate.impl;
 
 import com.acv.cloud.frame.constants.RedisConstants;
+import com.acv.cloud.frame.util.DateUtil;
 import com.acv.cloud.repository.redistemplate.IUserDao;
 import com.acv.cloud.repository.redistemplate.RedisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Repository;
+
+import java.util.Date;
 
 
 @Repository
@@ -23,6 +26,7 @@ public class UserDaoImpl implements IUserDao {
     public void updateDeviceNo(String userid, String deviceType,String deiviceNo) {
         String device_account = String.format(RedisConstants.DEVICE_ACCOUNT+":%s:%s",deviceType,deiviceNo);
         String account_device = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userid,deviceType);
+
         if("IOS".equals(deviceType)){
             String androidkey = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userid,"Android");
             redisRepository.remove(androidkey);
@@ -32,8 +36,15 @@ public class UserDaoImpl implements IUserDao {
             String ioskey = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userid,"IOS");
             redisRepository.remove(ioskey);
         }
+
+        if("Oauth2".equals(deviceType)){
+
+            redisRepository.hmSet(device_account,userid, DateUtil.parseDateToStr(new Date(),DateUtil.DATE_TIME_FORMAT_YYYYMMDDHHMISSSSS));
+        }else{
+            redisRepository.set(device_account, userid);
+        }
         redisRepository.set(account_device, deiviceNo);
-        redisRepository.set(device_account, userid);
+
 
 
     }

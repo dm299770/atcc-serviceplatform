@@ -2,6 +2,7 @@ package com.acv.cloud.services.login.impl;
 
 import com.acv.cloud.domain.body.resp.login.LoginData;
 import com.acv.cloud.frame.constants.RedisConstants;
+import com.acv.cloud.frame.constants.app.LoginAppResultConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.OauthConstants;
@@ -44,21 +45,22 @@ public class LoginServiceImpl implements LoginService {
             //如果是手机设备
             if(containsType(deviceType)){
                 if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
-                    jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
+                    jsonObject.put(AppResultConstants.STATUS, LoginAppResultConstants.PHONENUM_EMPTY);
+                    jsonObject.put(AppResultConstants.MSG, LoginAppResultConstants.PARAMER_ERROR_MSG);
                 } else if (null == password || "".equalsIgnoreCase(password)) {
-                    jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_ERROR);
+                    jsonObject.put(AppResultConstants.STATUS, LoginAppResultConstants.PASSWORD_EMPTY);
+                    jsonObject.put(AppResultConstants.MSG, LoginAppResultConstants.PARAMER_ERROR_MSG);
                 } else {
                     // 查找用户，判断用户账号密码是否正确
                     TsUser tsUser = tsUserMapper.findEffctiveByPhoneNum(phoneNum);
                     if (null == tsUser) {
-                        jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                        jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
+                        jsonObject.put(AppResultConstants.STATUS, LoginAppResultConstants.USERINFO_EMPTY);
+                        jsonObject.put(AppResultConstants.MSG, LoginAppResultConstants.USERINFO_EMPTY_MSG);
                         //} else if (!MD5Util.md5(password).equalsIgnoreCase(tsUser.getPassword())) {
+
                     } else if (!password.equalsIgnoreCase(tsUser.getPassword())) {
-                        jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                        jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_WRONG_ERROR);
+                        jsonObject.put(AppResultConstants.STATUS, LoginAppResultConstants.PASSWORD_ERROR);
+                        jsonObject.put(AppResultConstants.MSG, LoginAppResultConstants.PARAMER_ERROR_MSG);
                     } else {
                         // 账号密码正确，生成token
                         //String accessToken = TokenUtils.createJwtToken(phoneNum);
@@ -84,13 +86,13 @@ public class LoginServiceImpl implements LoginService {
                         LoginData data = new LoginData(accessToken,refreshToken);
                         jsonObject.put(AppResultConstants.DATA, data);
                         jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                        jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGIN_SUCCESS);
+                        jsonObject.put(AppResultConstants.MSG, LoginAppResultConstants.LOGIN_SUCCESS_MSG);
                     }
                 }
 
             }else{
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_DEVICETYPE_ERROR);
+                jsonObject.put(AppResultConstants.STATUS, LoginAppResultConstants.LOGIN_DEVICETYPE_ERROR);
+                jsonObject.put(AppResultConstants.MSG, LoginAppResultConstants.PARAMER_ERROR_MSG);
             }
 
 
@@ -169,7 +171,7 @@ public class LoginServiceImpl implements LoginService {
 
         if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-            jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
+            jsonObject.put(AppResultConstants.MSG, LoginAppResultConstants.PARAMER_ERROR_MSG);
         } else {
             // 查找用户，判断用户账号密码是否正确
             TsUser tsUser = tsUserMapper.findEffctiveByPhoneNum(phoneNum);

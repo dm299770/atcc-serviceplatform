@@ -90,9 +90,9 @@ public class AccessFilter extends ZuulFilter
                 Map<String, Object> map = JwtTokenUtil.analysisToken(header.toString(), 1);
 
                 String uuid = map.get("id").toString();//用户id
-                String deviceType = map.get(RedisConstants.LOGIN_DEVICETYPE).toString();//登录认证设备型号
+                String deviceType = map.get(RedisConstants.LOGIN_DEVICETYPE)+"";//登录认证设备型号
                 //String deviceType = map.get("LOGIN_DEVICETYPE").toString();//登录认证设备型号
-                String deviceNo = map.get(RedisConstants.LOGIN_DEVICENO).toString();//登陆认证设备推送号
+                String deviceNo = map.get(RedisConstants.LOGIN_DEVICENO)+"";//登陆认证设备推送号
 
                 if(!containsType(deviceType)){
                     logger.info("CurrentUser is logining deviceType :{}",deviceType);

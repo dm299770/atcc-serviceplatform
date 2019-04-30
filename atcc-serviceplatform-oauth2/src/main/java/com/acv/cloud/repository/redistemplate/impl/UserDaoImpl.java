@@ -13,37 +13,37 @@ public class UserDaoImpl implements IUserDao {
     @Autowired
     private RedisRepository redisRepository;
 
-    private int redisDb = OauthConstants.reidsdb;
+    //private int redisDb = OauthConstants.reidsdb;
 
 
     @Override
     public void addDeviceNo(String phoneNum, String deiviceNo) {
-        redisRepository.init(redisDb);
+        //redisRepository.init(redisDb);
         redisRepository.set(phoneNum, deiviceNo);
     }
 
     @Override
     public void updateDeviceNo(String phoneNum, String deiviceNo) {
-        redisRepository.init(redisDb);
+        //redisRepository.init(redisDb);
         redisRepository.remove(phoneNum);
         redisRepository.set(phoneNum, deiviceNo);
     }
 
     @Override
     public void addAuthCode(String authCode, String phoneNum) {
-        redisRepository.init(redisDb);
-        redisRepository.set(authCode, phoneNum);
+        //redisRepository.init(redisDb);
+        redisRepository.set(authCode, phoneNum,300l);
     }
 
     @Override
     public void deleteAuthCode(String phoneNum) {
-        redisRepository.init(redisDb);
+        //redisRepository.init(redisDb);
         redisRepository.remove(phoneNum);
     }
 
     @Override
     public String getPhoneNumByAuthCode(String authCode) {
-        redisRepository.init(redisDb);
+        //redisRepository.init(redisDb);
         Object o = redisRepository.get(authCode);
         if(o!=null){
             return o.toString();
@@ -54,7 +54,7 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public void deleteDeviceNo(String phoneNum) {
-        redisRepository.init(redisDb);
+        //redisRepository.init(redisDb);
         redisRepository.remove(phoneNum);
     }
 }

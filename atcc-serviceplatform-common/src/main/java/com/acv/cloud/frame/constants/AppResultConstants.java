@@ -47,14 +47,28 @@ public class AppResultConstants {
      */
     public final static String NOTFOUND_URL = "未知url ";
 
-    /***
-     * 参数异常
-     */
-    public final static String Paramer_ERROR = "参数异常";
+
+
 
     /***
      * 无效url
      */
     public final static Integer NOTFOUND_ERROR = 404;
+
+    /**
+     *Authentication failure
+     * */
+    public final static Integer AUTHENTICATION_FAILURE = 1003 ;
+
+    /**
+     *param format error
+     */
+    public final static Integer PARAM_ERROR = 1004;
+    /***
+     * 参数异常
+     */
+    public final static String PARAM_ERROR_MSG = "参数异常";
+
+    public final static String AUTHENTICATION_FAILURE_MSG = "登录异常";
 
 }

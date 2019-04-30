@@ -26,7 +26,7 @@ public class RedisTest {
         vin.setIsEffctive(0);
         vin.setCreateDate(new Date());
         vin.setUserId("1234567890");
-        redisRepository.init(3);
+        redisRepository.init(0);
         //redisRepository.set("testIntent1111", vin);
         //Object o = redisRepository.get("oauth2:oauth_clientid_miui:2234567890");
 

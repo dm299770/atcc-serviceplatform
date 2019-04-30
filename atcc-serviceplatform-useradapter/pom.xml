@@ -80,6 +80,11 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
+        <dependency>
+            <artifactId>atcc-serviceplatform-common</artifactId>
+            <groupId>com.acv.cloud</groupId>
+            <version>2.0-SNAPSHOT</version>
+        </dependency>
 
 
         <dependency>
