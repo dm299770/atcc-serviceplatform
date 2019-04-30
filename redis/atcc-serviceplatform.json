@@ -1,0 +1,24 @@
+[
+    {
+        "auth": "",
+        "host": "127.0.0.1",
+        "keys_pattern": "*",
+        "name": "localhost",
+        "namespace_separator": ":",
+        "port": 6379,
+        "ssh_port": 22,
+        "timeout_connect": 60000,
+        "timeout_execute": 60000
+    },
+    {
+        "auth": "CSxHbkX71yV0mLKqKdtyE+8BIwP8hFf7uhnE4utGaII=",
+        "host": "acmstest.redis.cache.chinacloudapi.cn",
+        "keys_pattern": "*",
+        "name": "acmstest.redis.cache.chinacloudapi.cn",
+        "namespace_separator": ":",
+        "port": 6379,
+        "ssh_port": 22,
+        "timeout_connect": 60000,
+        "timeout_execute": 60000
+    }
+]

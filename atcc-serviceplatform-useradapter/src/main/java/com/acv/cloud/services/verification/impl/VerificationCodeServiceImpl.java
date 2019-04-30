@@ -1,9 +1,7 @@
 package com.acv.cloud.services.verification.impl;
 
 import com.acv.cloud.fegin.messageadapter.ImessageFegin;
-import com.acv.cloud.frame.constants.DataFormat;
 import com.acv.cloud.frame.constants.RedisConstants;
-import com.acv.cloud.frame.util.DateFormatUtil;
 import com.acv.cloud.frame.util.VcUtil;
 import com.acv.cloud.jsonBean.fegin.messageadapter.SMS;
 import com.acv.cloud.jsonBean.fegin.messageadapter.sms.Attributes;
@@ -147,7 +145,7 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
         }
 
         if(phoneNum == null || "".equals(phoneNum)){
-            jsonObject.put(AppResultConstants.MSG,AppResultConstants.PARAMER_ERROR);
+            jsonObject.put(AppResultConstants.MSG,AppResultConstants.PARAM_ERROR_MSG);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
         }
         String vcode = null ;

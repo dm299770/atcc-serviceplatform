@@ -99,6 +99,16 @@
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.31.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.31.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.31.Final" level="project" />
+    <orderEntry type="module" module-name="atcc-serviceplatform-common" />
+    <orderEntry type="module-library">
+      <library name="Maven: httpsender:httpsender:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../atcc-serviceplatform-common/src/main/resources/lib/http.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="module-library">
       <library name="Maven: idm:idm:1.0">
         <CLASSES>
