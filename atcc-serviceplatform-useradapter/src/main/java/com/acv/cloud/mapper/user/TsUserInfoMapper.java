@@ -1,9 +1,7 @@
 package com.acv.cloud.mapper.user;
 
 import com.acv.cloud.models.sys.TmChargeAccount;
-import com.acv.cloud.models.sys.TsUser;
-import com.acv.cloud.models.sys.TsUserInfo;
-import org.apache.ibatis.annotations.Param;
+import com.acv.cloud.domain.model.user.TsUserInfo;
 
 /**
  * 用户信息
@@ -31,9 +29,9 @@ TsUserInfoMapper {
     /**
      * 更新用户基本信息(只更新一个属性)
      *
-     * @param type  需要更新的属性名
-     * @param value 需要更新的属性值
+     * @param tsUserInfo 用户信息
+     *
      */
-    void updateByType(@Param("userId") String userId, @Param("type") String type, @Param("value") String value);
+    void updateByType(TsUserInfo tsUserInfo);
 
 }

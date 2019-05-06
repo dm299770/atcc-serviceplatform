@@ -1,15 +1,17 @@
 package com.acv.cloud.controller.vehicle;
 
+import com.acv.cloud.domain.body.req.vehicle.bind.Attributes;
+import com.acv.cloud.domain.body.req.vehicle.bind.Data;
+import com.acv.cloud.domain.body.req.vehicle.setDefault.SetDefaultCarParams;
+import com.acv.cloud.domain.dto.UserInfo;
 import com.acv.cloud.frame.annotation.CurrentUser;
 import com.acv.cloud.frame.annotation.LoginRequired;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.app.VehicleAppResultConstants;
 import com.acv.cloud.frame.util.JsonUtil;
-import com.acv.cloud.jsonBean.user.bindCar.requetJson.BindCarParams;
-import com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.SetDefaultCarParams;
+import com.acv.cloud.domain.body.req.vehicle.bind.BindCarParams;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.models.vehicle.TrUserVin;
 import com.acv.cloud.services.vehicle.VehicleService;
 import org.slf4j.Logger;
@@ -40,8 +42,9 @@ public class VehicleController {
      */
     @LoginRequired
     @ResponseBody
-    @RequestMapping(value = "/cars/v1")
-    public Object getVehicleList(@CurrentUser UserInfo user) {
+    @RequestMapping(value = "/cars/{version}")
+    public Object getVehicleList(@CurrentUser UserInfo user, @PathVariable String version) {
+
         JSONObject jsonObject = null;
         if (user != null) {
             jsonObject = vehicleServiceImpl.findBindVehicleByUser(user.getUserId());
@@ -67,24 +70,24 @@ public class VehicleController {
 
         String vin = Optional.ofNullable(bindCarParams)
                 .map(BindCarParams::getData)
-                .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Data::getAttributes)
-                .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Attributes::getVin).orElse(null);
+                .map(Data::getAttributes)
+                .map(Attributes::getVin).orElse(null);
 
         String engineNum = Optional.ofNullable(bindCarParams)
                 .map(BindCarParams::getData)
-                .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Data::getAttributes)
-                .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Attributes::getEngineNum).orElse(null);
+                .map(Data::getAttributes)
+                .map(Attributes::getEngineNum).orElse(null);
 
         String plateNum = Optional.ofNullable(bindCarParams)
                 .map(BindCarParams::getData)
-                .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Data::getAttributes)
-                .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Attributes::getPlateNum).orElse(null);
+                .map(Data::getAttributes)
+                .map(Attributes::getPlateNum).orElse(null);
 
 
         String lastSixPhoneNum = Optional.ofNullable(bindCarParams)
                 .map(BindCarParams::getData)
-                .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Data::getAttributes)
-                .map(com.acv.cloud.jsonBean.user.bindCar.requetJson.Attributes::getLastSixPhoneNum).orElse(null);
+                .map(Data::getAttributes)
+                .map(Attributes::getLastSixPhoneNum).orElse(null);
 
         JSONObject jsonObject = null;
         JSONObject appVehicleJSONObject = vehicleServiceImpl.findBindVehicleByUser(user.getUserId());
@@ -135,20 +138,20 @@ public class VehicleController {
      */
     @LoginRequired
     @ResponseBody
-    @RequestMapping(value = "/unbindCar/v1")
-    public Object unbindVehicle(@CurrentUser UserInfo user, @RequestBody SetDefaultCarParams setDefaultCarParams) {
+    @RequestMapping(value = "/unbindCar/{version}")
+    public Object unbindVehicle(@CurrentUser UserInfo user, @RequestBody SetDefaultCarParams setDefaultCarParams,@PathVariable String version) {
 
         logger.info("VehicleController SetDefaultCarParams:"+setDefaultCarParams.toString());
 
         String vin = Optional.ofNullable(setDefaultCarParams)
                 .map(SetDefaultCarParams::getData)
-                .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Data::getAttributes)
-                .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Attributes::getVin).orElse(null);
+                .map(com.acv.cloud.domain.body.req.vehicle.setDefault.Data::getAttributes)
+                .map(com.acv.cloud.domain.body.req.vehicle.setDefault.Attributes::getVin).orElse(null);
 
         String code = Optional.ofNullable(setDefaultCarParams)
                 .map(SetDefaultCarParams::getData)
-                .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Data::getAttributes)
-                .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Attributes::getCode).orElse(null);
+                .map(com.acv.cloud.domain.body.req.vehicle.setDefault.Data::getAttributes)
+                .map(com.acv.cloud.domain.body.req.vehicle.setDefault.Attributes::getCode).orElse(null);
 
         JSONObject jsonObject = null;
         if (vin != null) {
@@ -171,15 +174,15 @@ public class VehicleController {
 
     @LoginRequired
     @ResponseBody
-    @RequestMapping(value = "/setDefaultCar/v1")
-    public Object setDefaultVehicle(@CurrentUser UserInfo user, @RequestBody SetDefaultCarParams setDefaultCarParams) {
+    @RequestMapping(value = "/setDefaultCar/{version}")
+    public Object setDefaultVehicle(@CurrentUser UserInfo user, @RequestBody SetDefaultCarParams setDefaultCarParams, @PathVariable String version) {
 
         logger.info("VehicleController SetDefaultCarParams:"+setDefaultCarParams.toString());
 
         String vin = Optional.ofNullable(setDefaultCarParams)
                 .map(SetDefaultCarParams::getData)
-                .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Data::getAttributes)
-                .map(com.acv.cloud.jsonBean.user.setDefaultCar.requestJson.Attributes::getVin).orElse(null);
+                .map(com.acv.cloud.domain.body.req.vehicle.setDefault.Data::getAttributes)
+                .map(com.acv.cloud.domain.body.req.vehicle.setDefault.Attributes::getVin).orElse(null);
 
 
         JSONObject jsonObject = null;

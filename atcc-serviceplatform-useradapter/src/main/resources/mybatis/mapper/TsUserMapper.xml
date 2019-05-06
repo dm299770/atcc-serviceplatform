@@ -17,7 +17,7 @@
         <id column="TOKEN" property="token" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <resultMap id="UserInfoResultMap" type="com.acv.cloud.dto.sys.UserInfo">
+    <resultMap id="UserInfoResultMap" type="com.acv.cloud.domain.dto.UserInfo">
         <id column="USER_ID" property="userId" jdbcType="VARCHAR"/>
         <id column="PHONE_NUM" property="phoneNum" jdbcType="VARCHAR"/>
         <id column="PASSWORD" property="password" jdbcType="VARCHAR"/>

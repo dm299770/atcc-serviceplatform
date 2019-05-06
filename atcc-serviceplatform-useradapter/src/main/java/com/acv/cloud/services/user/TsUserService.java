@@ -1,11 +1,11 @@
 package com.acv.cloud.services.user;
 
+import com.acv.cloud.domain.body.req.userInfo.changeInfo.ChangInfoReqBody;
+import com.acv.cloud.domain.model.user.TsUserInfo;
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.dto.sys.UserInfo;
-import com.acv.cloud.models.sys.SysUser;
+import com.acv.cloud.domain.dto.UserInfo;
 import com.acv.cloud.models.sys.TmChargeAccount;
 import com.acv.cloud.models.sys.TsUser;
-import com.acv.cloud.models.sys.TsUserInfo;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -76,10 +76,13 @@ public interface TsUserService {
      * 更新用户属性（每次更新一项）
      *
      * @param userId   用户id
-     * @param type     要修改的属性名
-     * @param value    要修改的属性值
+     * @param nickName     昵称
+     * @param realName    姓名
+     * @param sex 性别
+     * @param emeyContact 紧急联系人
+     * @param phoneNum 电话号码
      */
-    void updateUserInfo(String userId, String type, String value);
+    void updateUserInfo(String userId, String nickName, String realName,String sex , String emeyContact, String phoneNum,String profilePhoto);
 //
 //    /**
 //     * 修改用户密码
@@ -130,11 +133,10 @@ public interface TsUserService {
      * 更新用户信息
      *
      * @param userId   用户id
-     * @param type     需要修改的属性名
-     * @param value    修改后的值
+     * @param changInfoReqBody     修改后的属性
      * @return 返回信息
      */
-    JSONObject modifyUserInfo(String userId, String type, String value);
+    JSONObject modifyUserInfo(String userId, ChangInfoReqBody changInfoReqBody);
 
     /**
      * 更新用户密码

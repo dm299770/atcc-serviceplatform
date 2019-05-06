@@ -1,7 +1,7 @@
 package com.acv.cloud.services.vehicle.impl;
 
 
-import com.acv.cloud.dto.sys.UserInfo;
+import com.acv.cloud.domain.dto.UserInfo;
 import com.acv.cloud.frame.constants.RedisConstants;
 import com.acv.cloud.repository.redistemplate.RedisRepository;
 import com.acv.cloud.services.user.TsUserService;

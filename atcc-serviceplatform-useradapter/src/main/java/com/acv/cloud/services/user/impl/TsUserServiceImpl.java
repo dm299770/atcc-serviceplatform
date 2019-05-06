@@ -1,32 +1,27 @@
 package com.acv.cloud.services.user.impl;
 
+import com.acv.cloud.domain.body.req.userInfo.changeInfo.ChangInfoReqBody;
+import com.acv.cloud.domain.dto.UserInfo;
 import com.acv.cloud.frame.constants.RedisConstants;
 import com.acv.cloud.repository.redistemplate.RedisRepository;
 import com.alibaba.fastjson.JSONObject;
-import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.frame.constants.AppResultConstants;
-import com.acv.cloud.frame.constants.ApplicationPropertiesConstants;
+import com.acv.cloud.constants.ApplicationPropertiesConstants;
 import com.acv.cloud.frame.util.FileUtil;
-import com.acv.cloud.frame.util.MD5Util;
-import com.acv.cloud.frame.util.SMSUtil;
-import com.acv.cloud.frame.util.VcUtil;
+
 import com.acv.cloud.mapper.user.TsUserInfoMapper;
 import com.acv.cloud.mapper.user.TsUserMapper;
 import com.acv.cloud.models.sys.TmChargeAccount;
 import com.acv.cloud.models.sys.TsUser;
-import com.acv.cloud.models.sys.TsUserInfo;
 import com.acv.cloud.services.user.TsUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import com.acv.cloud.domain.model.user.TsUserInfo;
 
-import javax.servlet.Registration;
-import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.*;
 
@@ -120,8 +115,9 @@ public class TsUserServiceImpl implements TsUserService {
 
 
     @Override
-    public void updateUserInfo(String userId, String type, String value) {
-        tsUserInfoMapper.updateByType(userId, type, value);
+    public void updateUserInfo(String userId, String nickName, String realName, String sex, String emeyContact, String phoneNum,String profilePhoto) {
+        TsUserInfo tsUserInfo = new TsUserInfo(userId,nickName,realName,sex,emeyContact,profilePhoto);
+        tsUserInfoMapper.updateByType(tsUserInfo);
     }
 
     @Override
@@ -266,24 +262,42 @@ public class TsUserServiceImpl implements TsUserService {
     }
 
     @Override
-    public JSONObject modifyUserInfo(String userId, String type, String value) {
+    public JSONObject modifyUserInfo(String userId, ChangInfoReqBody changInfoReqBody) {
         JSONObject jsonObject = new JSONObject();
+        //List<String> typeList = Arrays.asList(typeArray);
 
-        List<String> typeList = Arrays.asList(typeArray);
         // 1.校验参数合法性
-       /* if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
-            jsonObject.put(AppResultConstants.MSG, CELL_PHONE_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-        } else*/ if (null == type || "".equalsIgnoreCase(type)) {
-            jsonObject.put(AppResultConstants.MSG, TYPE_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-        } else if (!typeList.contains(type)) {
-            jsonObject.put(AppResultConstants.MSG, TYPE_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-        } else {
+        if(changInfoReqBody !=null){
+
+            String nickName = Optional.ofNullable(changInfoReqBody)
+                    .map(ChangInfoReqBody::getData)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Data::getAttributes)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Attributes::getNickName).orElse(null);
+
+            String realName = Optional.ofNullable(changInfoReqBody)
+                    .map(ChangInfoReqBody::getData)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Data::getAttributes)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Attributes::getRealName).orElse(null);
+            String sex  = Optional.ofNullable(changInfoReqBody)
+                    .map(ChangInfoReqBody::getData)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Data::getAttributes)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Attributes::getSex).orElse(null);
+            String emeyContact = Optional.ofNullable(changInfoReqBody)
+                    .map(ChangInfoReqBody::getData)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Data::getAttributes)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Attributes::getEmeyContact).orElse(null);
+            String phoneNum = Optional.ofNullable(changInfoReqBody)
+                    .map(ChangInfoReqBody::getData)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Data::getAttributes)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Attributes::getPhoneNum).orElse(null);
+            String profilePhoto = Optional.ofNullable(changInfoReqBody)
+                    .map(ChangInfoReqBody::getData)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Data::getAttributes)
+                    .map(com.acv.cloud.domain.body.req.userInfo.changeInfo.Attributes::getProfilePhoto).orElse(null);
+
             // 更新用户信息
             try {
-                updateUserInfo(userId, type, value);
+                updateUserInfo(userId,nickName,realName,sex,emeyContact,phoneNum,profilePhoto);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
                 jsonObject.put(AppResultConstants.MSG, MODIFY_SUCCESS);
             } catch (Exception e) {
@@ -291,7 +305,13 @@ public class TsUserServiceImpl implements TsUserService {
                 jsonObject.put(AppResultConstants.MSG, SERVER_ERROR);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
             }
+
+        }else{
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
+            jsonObject.put(AppResultConstants.MSG,AppResultConstants.PARAM_ERROR_MSG );
         }
+
+
         return jsonObject;
     }
 
@@ -333,7 +353,9 @@ public class TsUserServiceImpl implements TsUserService {
                 //更新用户头像url
                 String photo_url = applicationConstants.getWebServer()+"/"+ userid + "/" + targetFile.getName();
                 //modifyUserInfo(phoneNum,"PROFILE_PHOTO",photo_url);
-                updateUserInfo(phoneNum, "PROFILE_PHOTO", photo_url);
+                updateUserInfo(userid,null,null,null,null,null,photo_url);
+
+                //updateUserInfo(phoneNum, "PROFILE_PHOTO", photo_url);
                 jsonObject.put(AppResultConstants.MSG, SAVE_SUCCESS);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
             } catch (Exception e) {

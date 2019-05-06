@@ -1,6 +1,6 @@
 package com.acv.cloud.mapper.vehicle;
 
-import com.acv.cloud.dto.sys.UserInfo;
+
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.models.vehicle.TrUserVin;
 import org.apache.ibatis.annotations.Param;

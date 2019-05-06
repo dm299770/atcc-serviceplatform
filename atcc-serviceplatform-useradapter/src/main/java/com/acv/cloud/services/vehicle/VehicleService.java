@@ -1,6 +1,7 @@
 package com.acv.cloud.services.vehicle;
 
-import com.acv.cloud.dto.sys.UserInfo;
+
+import com.acv.cloud.domain.dto.UserInfo;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.models.vehicle.TrUserVin;
 

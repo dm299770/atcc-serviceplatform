@@ -3,7 +3,6 @@ package com.acv.cloud.services.verification.impl;
 import com.acv.cloud.fegin.messageadapter.ImessageFegin;
 import com.acv.cloud.frame.constants.RedisConstants;
 import com.acv.cloud.frame.util.VcUtil;
-import com.acv.cloud.jsonBean.fegin.messageadapter.SMS;
 import com.acv.cloud.jsonBean.fegin.messageadapter.sms.Attributes;
 import com.acv.cloud.jsonBean.fegin.messageadapter.sms.Data;
 import com.acv.cloud.jsonBean.fegin.messageadapter.sms.SMSParams;
@@ -12,17 +11,13 @@ import com.acv.cloud.services.user.TsUserService;
 import com.acv.cloud.services.user.impl.TsUserServiceImpl;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.frame.constants.AppResultConstants;
-import com.acv.cloud.frame.constants.ApplicationPropertiesConstants;
+import com.acv.cloud.constants.ApplicationPropertiesConstants;
 import com.acv.cloud.frame.util.SMSUtil;
 import com.acv.cloud.services.verification.VerificationCodeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
-import javax.xml.bind.util.JAXBSource;
-import java.util.Date;
 
 /**
  * 验证码逻辑

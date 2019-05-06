@@ -1,5 +1,4 @@
 import com.acv.cloud.UserApplication;
-import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.frame.constants.AppResultConstants;
 //import com.acv.cloud.mapper.account.AccountMapper;
 import com.acv.cloud.mapper.user.TsUserMapper;
