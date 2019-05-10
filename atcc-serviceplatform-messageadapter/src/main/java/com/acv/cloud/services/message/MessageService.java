@@ -1,6 +1,6 @@
 package com.acv.cloud.services.message;
 
-import com.acv.cloud.models.jsonBean.message.request.GetParams;
+import com.acv.cloud.domain.body.req.message.GetParams;
 import com.alibaba.fastjson.JSONObject;
 
 /**

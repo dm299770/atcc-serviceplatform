@@ -1,5 +1,5 @@
 package com.acv.cloud.services.unread;
-import com.acv.cloud.models.mongdb.notification.requestJson.Notification;
+import com.acv.cloud.domain.body.req.notification.Notification;
 import com.alibaba.fastjson.JSONObject;
 
 /**

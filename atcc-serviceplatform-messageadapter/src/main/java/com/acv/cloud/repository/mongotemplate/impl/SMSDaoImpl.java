@@ -1,6 +1,6 @@
 package com.acv.cloud.repository.mongotemplate.impl;
 
-import com.acv.cloud.models.mongdb.sms.Attributes;
+import com.acv.cloud.domain.model.sms.Attributes;
 import com.acv.cloud.repository.mongotemplate.ISMSDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;

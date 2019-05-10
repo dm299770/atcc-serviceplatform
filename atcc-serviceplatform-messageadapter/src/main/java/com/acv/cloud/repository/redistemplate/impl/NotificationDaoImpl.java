@@ -1,9 +1,11 @@
 package com.acv.cloud.repository.redistemplate.impl;
 
+import com.acv.cloud.frame.constants.RedisConstants;
 import com.acv.cloud.repository.redistemplate.INotificationDao;
 import com.acv.cloud.repository.redistemplate.RedisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 
 /**
  * Created by liyang on 2018/12/19.
@@ -17,6 +19,7 @@ public class NotificationDaoImpl implements INotificationDao {
     @Override
     public String getDeviceToken(String userId) {
         redisRepository.init(1);
+//        String deviceId = String.format(RedisConstants.ACCOUNT_DEVICE+":%s:%s",userId,"IOS");
         String deviceId = String.valueOf(redisRepository.get("account_device:" + userId + ":IOS"));
         return deviceId;
     }

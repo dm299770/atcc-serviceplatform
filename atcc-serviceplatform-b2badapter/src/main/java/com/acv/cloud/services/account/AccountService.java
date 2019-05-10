@@ -1,6 +1,5 @@
 package com.acv.cloud.services.account;
 
-import com.acv.cloud.models.jsonBean.vehicle.request.VehicleStateRequestParameter;
 import com.alibaba.fastjson.JSONObject;
 
 public interface AccountService {
@@ -25,12 +24,5 @@ public interface AccountService {
      */
     JSONObject selBalance(String user_id);
 
-    /**
-     * 车辆状态
-     *
-     * @param data
-     * @return
-     */
-    JSONObject vehicleState(VehicleStateRequestParameter data);
 
 }

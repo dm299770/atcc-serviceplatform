@@ -1,6 +1,6 @@
 package com.acv.cloud.repository.mongotemplate;
 
-import com.acv.cloud.models.jsonBean.message.response.MessageResponse;
+import com.acv.cloud.domain.body.resp.message.MessageResponse;
 import com.acv.cloud.models.sys.TsUser;
 
 import java.util.List;

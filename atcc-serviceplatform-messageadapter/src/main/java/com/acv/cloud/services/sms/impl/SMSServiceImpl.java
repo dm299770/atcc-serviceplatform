@@ -2,9 +2,9 @@ package com.acv.cloud.services.sms.impl;
 
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.ApplicationPropertiesConstants;
+import com.acv.cloud.frame.constants.app.NotificationResultConstants;
 import com.acv.cloud.frame.util.DateUtil;
 import com.acv.cloud.frame.util.SMSUtil;
-import com.acv.cloud.models.mongdb.sms.SMSParams;
 import com.acv.cloud.repository.mongotemplate.ISMSDao;
 import com.acv.cloud.services.sms.SMSService;
 import com.alibaba.fastjson.JSONObject;
@@ -20,11 +20,6 @@ import org.springframework.stereotype.Service;
 class SMSServiceImpl implements SMSService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private final static String SMS_ERROR = "短信发送失败";
-    private final static String SMS_SUCCESS = "短信发送成功";
-    private final static String SMS_RETURN_EX = "短信接口返回异常";
-    private static final String PHONE_ERROR = "手机号异常,请检查后重试";
-    private static final String CONTENT_ERROR = "短信内容异常,请检查后重试";
 
     @Autowired
     private ApplicationPropertiesConstants applicationConstants;
@@ -48,39 +43,41 @@ class SMSServiceImpl implements SMSService {
         try {
             logger.info("请求手机号:" + phoneNum + ",短信内容:" + content);
             if (phoneNum == null || "".equals(phoneNum)) {
-                json.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
-                json.put(AppResultConstants.MSG, PHONE_ERROR);
+                json.put(AppResultConstants.STATUS, NotificationResultConstants.PHONE_EMPTY);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.PARAM_ERROR_MSG);
             } else if (content == null || "".equals(content)) {
-                json.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
-                json.put(AppResultConstants.MSG, CONTENT_ERROR);
+                json.put(AppResultConstants.STATUS, NotificationResultConstants.SMS_CONTENT_EMPTY);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.PARAM_ERROR_MSG);
             } else {
                 //String returnString = "20181225174804,0\n2361225174804155400\n";
                 String returnString = SMSUtil.sendSms(uri, account, pswd, phoneNum, content, needstatus, product, extno);
                 if (returnString.contains("\n") || returnString.contains("\r\n")) {
                     if (returnString.charAt(returnString.indexOf(",") + 1) == '0') {
                         //换行,且","后面为0代表发送成功
-                        json.put(AppResultConstants.MSG, SMS_SUCCESS);
                         json.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
+                        json.put(AppResultConstants.MSG, NotificationResultConstants.SUCCESS_MSG);
 
                         //将手机号和短信内容存到mongoDB中
                         String createDate = DateUtil.getDate("yyyy/MM/dd HH:mm:ss");
                         messagesDao.insertSms(phoneNum, content, createDate);
                     } else {
-                        json.put(AppResultConstants.MSG, SMS_RETURN_EX);
-                        json.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                        //发送失败,","后为错误代码
+                        String errorcode = returnString.substring(returnString.indexOf(","), returnString.length());
+                        json.put(AppResultConstants.MSG, NotificationResultConstants.RETURN_CODE_ERROR);
+                        json.put(AppResultConstants.STATUS, NotificationResultConstants.RESULT_ERROR);
+                        json.put("ErrorCode", Integer.parseInt(errorcode));
+                        logger.info("ErrorCode" + Integer.parseInt(errorcode));
                     }
                 } else {
-                    //发送失败,","后为错误代码
-                    String errorcode = returnString.substring(returnString.indexOf(","), returnString.length());
-                    json.put(AppResultConstants.MSG, SMS_RETURN_EX);
-                    json.put(AppResultConstants.STATUS, Integer.parseInt(errorcode));
+                    json.put(AppResultConstants.MSG, NotificationResultConstants.RETURN_CODE_ERROR);
+                    json.put(AppResultConstants.STATUS, NotificationResultConstants.RETURN_ERROR);
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("短信接口发送短信异常:" + e.getMessage());
-            json.put(AppResultConstants.MSG, SMS_ERROR);
             json.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            json.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
         }
         return json;
     }

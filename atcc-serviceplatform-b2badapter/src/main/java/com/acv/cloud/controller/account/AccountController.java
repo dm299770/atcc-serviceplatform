@@ -5,7 +5,6 @@ import com.acv.cloud.frame.annotation.CurrentUser;
 import com.acv.cloud.frame.annotation.LoginRequired;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.models.jsonBean.account.requestJson.DeductParams;
-import com.acv.cloud.models.jsonBean.vehicle.request.VehicleStateRequestParameter;
 import com.acv.cloud.services.account.AccountService;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
@@ -59,8 +58,14 @@ public class AccountController {
     @ResponseBody
     @RequestMapping(value = "account/selAll", method = RequestMethod.POST)
     public Object selAll(@CurrentUser UserInfo user) {
-        logger.info(user.toString());
-        JSONObject jsonObject = accountService.selAll(user.getUserId());
+        JSONObject jsonObject = null;
+        if (user == null) {
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.AUTHENTICATION_FAILURE_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.AUTHENTICATION_FAILURE);
+        } else {
+            logger.info(user.toString());
+            jsonObject = accountService.selAll(user.getUserId());
+        }
         return jsonObject;
     }
 
@@ -74,23 +79,14 @@ public class AccountController {
     @ResponseBody
     @RequestMapping(value = "account/selBalance", method = RequestMethod.POST)
     public Object selBalance(@CurrentUser UserInfo user) {
-        logger.info(user.toString());
-        JSONObject jsonObject = accountService.selBalance(user.getUserId());
+        JSONObject jsonObject = null;
+        if (user == null) {
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.AUTHENTICATION_FAILURE_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.AUTHENTICATION_FAILURE);
+        } else {
+            logger.info(user.toString());
+            jsonObject = accountService.selBalance(user.getUserId());
+        }
         return jsonObject;
     }
-
-    /**
-     * 车辆状态
-     *
-     * @param data
-     * @return
-     */
-    @ResponseBody
-    @RequestMapping(value = "account/EVVehicleState")
-    public Object EVVehicle(@RequestBody VehicleStateRequestParameter data) {
-        logger.info("AccountController: EVVehicleState  params vin号:" + data.getData().getVin() + ",model:" + data.getData().getModel());
-        JSONObject jsonObject = accountService.vehicleState(data);
-        return jsonObject;
-    }
-
 }
