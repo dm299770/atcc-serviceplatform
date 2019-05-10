@@ -28,7 +28,7 @@ public class AppResultConstants {
     /**
      * 服务器异常 500
      */
-    public final static Integer ERROR_STATUS = 500;
+    public final static Integer ERROR_STATUS = 5000;
     /**
      * 服务器内部错误
      */

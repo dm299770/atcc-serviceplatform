@@ -40,30 +40,30 @@ public class VerificationController {
      * @param phoneNum
      * @return
      */
-    @ResponseBody
-    @RequestMapping(value = "/getVerificationCode/{phoneNum}")
-    public Object createVerificationCode(HttpServletResponse response, HttpServletRequest request, @PathVariable("phoneNum") String phoneNum) {
-        JSONObject jsonObject = new JSONObject();
-
-        //生成验证码并发送到目标手机
-        //相同手机号是否阻止一段时间?
-        String vcode = VcUtil.createRandomVcode();//生成6位随机验证码
-        // 存入会话session
-        HttpSession session = request.getSession();
-        session.setAttribute(phoneNum, vcode);
-        String content = "【日产中国】 您正在验证手机,验证码为" + vcode + ",请在5分钟内按提示提交验证码,切勿将验证码泄露于他人";
-        System.out.println("-------vcode:" + vcode);
-        try {
-            jsonObject = verificationCodeServices.sendSmsToPhone(phoneNum, content);
-            removeAttrbute(session, phoneNum);
-        } catch (Exception e) {
-            e.printStackTrace();
-            logger.error("发送验证码异常:" + e.getMessage());
-            jsonObject.put(AppResultConstants.MSG, e.getMessage());
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
-        }
-        return jsonObject;
-    }
+//    @ResponseBody
+//    @RequestMapping(value = "/getVerificationCode/{phoneNum}")
+//    public Object createVerificationCode(HttpServletResponse response, HttpServletRequest request, @PathVariable("phoneNum") String phoneNum) {
+//        JSONObject jsonObject = new JSONObject();
+//
+//        //生成验证码并发送到目标手机
+//        //相同手机号是否阻止一段时间?
+//        String vcode = VcUtil.createRandomVcode();//生成6位随机验证码
+//        // 存入会话session
+//        HttpSession session = request.getSession();
+//        session.setAttribute(phoneNum, vcode);
+//        String content = "【日产中国】 您正在验证手机,验证码为" + vcode + ",请在5分钟内按提示提交验证码,切勿将验证码泄露于他人";
+//        System.out.println("-------vcode:" + vcode);
+//        try {
+//            jsonObject = verificationCodeServices.sendSmsToPhone(phoneNum, content);
+//            removeAttrbute(session, phoneNum);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            logger.error("发送验证码异常:" + e.getMessage());
+//            jsonObject.put(AppResultConstants.MSG, e.getMessage());
+//            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+//        }
+//        return jsonObject;
+//    }
 
     /**
      * 设置1分钟后删除session中的验证码
@@ -93,37 +93,37 @@ public class VerificationController {
         }, 5 * 1000 * 60, TimeUnit.MILLISECONDS);
     }
 
-    /**
-     * 提交验证码对比是否和短信中一致
-     *
-     * @param response
-     * @param request
-     * @param phoneNum 手机号
-     * @param vcode    验证码
-     * @return
-     */
-    @ResponseBody
-    @RequestMapping(value = "/checkVerificationCode/{phoneNum}/{vcode}")
-    public Object checkVerificationCode(HttpServletResponse response, HttpServletRequest request, @PathVariable("phoneNum") String phoneNum, @PathVariable("vcode") String vcode) {
-        JSONObject jsonObject = new JSONObject();
-        HttpSession session = request.getSession();
-        String sessionVcode = "";
-
-        try {
-            Object sessionVcodeObject = session.getAttribute(phoneNum);
-            if (sessionVcodeObject != null) {
-                sessionVcode = sessionVcodeObject.toString();
-            }
-            jsonObject = verificationCodeServices.checkVerificationCode(phoneNum, vcode, sessionVcode);
-        } catch (Exception e) {
-            e.printStackTrace();
-            logger.error("验证码比对异常:" + e.getMessage());
-            jsonObject.put(AppResultConstants.MSG, e.getMessage());
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
-        }
-
-        return jsonObject;
-    }
+//    /**
+//     * 提交验证码对比是否和短信中一致
+//     *
+//     * @param response
+//     * @param request
+//     * @param phoneNum 手机号
+//     * @param vcode    验证码
+//     * @return
+//     */
+//    @ResponseBody
+//    @RequestMapping(value = "/checkVerificationCode/{phoneNum}/{vcode}")
+//    public Object checkVerificationCode(HttpServletResponse response, HttpServletRequest request, @PathVariable("phoneNum") String phoneNum, @PathVariable("vcode") String vcode) {
+//        JSONObject jsonObject = new JSONObject();
+//        HttpSession session = request.getSession();
+//        String sessionVcode = "";
+//
+//        try {
+//            Object sessionVcodeObject = session.getAttribute(phoneNum);
+//            if (sessionVcodeObject != null) {
+//                sessionVcode = sessionVcodeObject.toString();
+//            }
+//            jsonObject = verificationCodeServices.checkVerificationCode(phoneNum, vcode, sessionVcode);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            logger.error("验证码比对异常:" + e.getMessage());
+//            jsonObject.put(AppResultConstants.MSG, e.getMessage());
+//            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+//        }
+//
+//        return jsonObject;
+//    }
 
 //    public static void main(String args[]){
 //        System.out.println("begin" );

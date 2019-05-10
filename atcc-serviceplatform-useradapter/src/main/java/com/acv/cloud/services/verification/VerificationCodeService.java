@@ -14,14 +14,14 @@ public interface VerificationCodeService {
      * @param phoneNum       手机号
      * @param content        短信内容
      */
-    JSONObject sendSmsToPhone(String phoneNum, String content);
+    //JSONObject sendSmsToPhone(String phoneNum, String content);
 
     /**
      * @param phoneNum     手机号
      * @param SendVcode    手机发送的验证码
      * @return
      */
-    JSONObject checkVerificationCode(String phoneNum, String SendVcode, String SessionVcode);
+    //JSONObject checkVerificationCode(String phoneNum, String SendVcode, String SessionVcode);
 
     /**
      * 根据验证码用途生成验证码存入缓存并发送sms到手机

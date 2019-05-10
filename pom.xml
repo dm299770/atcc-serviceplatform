@@ -36,6 +36,7 @@
         <module>atcc-serviceplatform-oauth2</module>
         <module>atcc-serviceplatform-b2badapter</module>
         <module>atcc-serviceplatform-smarthomeadapter</module>
+        <module>atcc-serviceplatform-configserver</module>
     </modules>
 
     <packaging>pom</packaging>
