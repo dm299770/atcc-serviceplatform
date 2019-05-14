@@ -6,6 +6,7 @@ import com.acv.cloud.domain.body.req.userInfo.forgetPassword.ForgetPasswordParam
 import com.acv.cloud.domain.body.req.verifycode.getCode.VerifyCodeParams;
 import com.acv.cloud.domain.dto.UserInfo;
 import com.acv.cloud.domain.body.req.userInfo.changeInfo.ChangInfoReqBody;
+import com.acv.cloud.frame.constants.app.UserAppResultConstants;
 import com.acv.cloud.services.verification.VerificationCodeService;
 import com.alibaba.fastjson.JSONObject;
 
@@ -67,16 +68,16 @@ public class UserController {
         JSONObject jsonObject = null;
         try {
             jsonObject = new JSONObject();
-            jsonObject.put("msg", SELECT_SUCCESS);
-            jsonObject.put("status", AppResultConstants.SUCCESS_STATUS);
-            jsonObject.put("data", user);
+            jsonObject.put(AppResultConstants.MSG , UserAppResultConstants.GET_DATA_SUCCESS_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
+            jsonObject.put(AppResultConstants.DATA, user);
 
             jsonObject = JsonUtil.EraseNull(jsonObject);
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("获取用户信息异常");
-            jsonObject.put("msg", "服务器异常");
-            jsonObject.put("status", AppResultConstants.ERROR_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
         }
         return jsonObject;
     }
@@ -228,13 +229,13 @@ public class UserController {
         List<String> typeList = Arrays.asList(exArray);
         //判断拓展名
         if (!typeList.contains(FileUtil.getTypePart(imageFile.getOriginalFilename()))) {
-            jsonObject.put(AppResultConstants.MSG, Ex_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
             return jsonObject;
         }
         if(size>0 && size > 1024*1024 ){
-            jsonObject.put(AppResultConstants.MSG, IMG_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
             return jsonObject;
         }
         jsonObject = tsUserServices.setProfilePhoto(user.getUserId(), user.getUserId(), imageFile);

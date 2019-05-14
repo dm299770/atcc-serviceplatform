@@ -1,10 +1,9 @@
 package com.acv.cloud.services.message.impl;
 
+import com.acv.cloud.domain.body.req.message.GetParams;
+import com.acv.cloud.domain.body.resp.message.MessageResponse;
 import com.acv.cloud.frame.constants.AppResultConstants;
-
-import com.acv.cloud.models.jsonBean.message.request.GetParams;
-import com.acv.cloud.models.jsonBean.message.request.MessageRequest;
-import com.acv.cloud.models.jsonBean.message.response.MessageResponse;
+import com.acv.cloud.frame.constants.app.NotificationResultConstants;
 import com.acv.cloud.repository.mongotemplate.INotificationMongoDBDao;
 import com.acv.cloud.services.message.MessageService;
 import com.alibaba.fastjson.JSON;
@@ -24,12 +23,6 @@ import java.util.List;
 public class MessageServiceImpl implements MessageService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private static final String PHONE_ERROR = "手机号异常,请检查后重试";
-    private static final String TYPE_ERROR = "通知类型异常,请检查后重试";
-    private static final String QUERY_SUCCESS = "推送通知查询成功";
-    private static final String IDS_ERROR = "通知消息id异常,请检查后重试";
-    private static final String DELETE_SUCCESS = "推送通知删除成功";
-
     @Autowired
     private INotificationMongoDBDao notificationMongoDBDao;
 
@@ -47,16 +40,16 @@ public class MessageServiceImpl implements MessageService {
             Integer pageSize = message.getData().getAttributes().getPageSize();
 
             if (phoneNum == null || "".equals(phoneNum)) {
-                json.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
-                json.put(AppResultConstants.MSG, PHONE_ERROR);
+                json.put(AppResultConstants.STATUS, NotificationResultConstants.PHONE_EMPTY);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.PARAM_ERROR_MSG);
             } else if (type == null || "".equals(type)) {
-                json.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
-                json.put(AppResultConstants.MSG, TYPE_ERROR);
+                json.put(AppResultConstants.STATUS, NotificationResultConstants.TYPE_EMPTY);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.PARAM_ERROR_MSG);
             } else if ("all".equals(type)) {
                 //查全部类型通知
                 List<MessageResponse> messageResponse = notificationMongoDBDao.queryList(phoneNum, type, pageSize, pageNum);
                 json.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                json.put(AppResultConstants.MSG, QUERY_SUCCESS);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.SUCCESS_MSG);
                 json.put("data", messageResponse);
                 attributes.put("attributes", json);
                 attributes.put("type", "UserAccount");
@@ -66,7 +59,7 @@ public class MessageServiceImpl implements MessageService {
                 //查系统类型
                 List<MessageResponse> messageResponse = notificationMongoDBDao.queryList(phoneNum, type, pageSize, pageNum);
                 json.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                json.put(AppResultConstants.MSG, QUERY_SUCCESS);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.SUCCESS_MSG);
                 json.put("data", messageResponse);
                 attributes.put("attributes", json);
                 attributes.put("type", "UserAccount");
@@ -76,7 +69,7 @@ public class MessageServiceImpl implements MessageService {
                 //查提醒类型
                 List<MessageResponse> messageResponse = notificationMongoDBDao.queryList(phoneNum, type, pageSize, pageNum);
                 json.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                json.put(AppResultConstants.MSG, QUERY_SUCCESS);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.SUCCESS_MSG);
                 json.put("data", messageResponse);
                 attributes.put("attributes", json);
                 attributes.put("type", "UserAccount");
@@ -86,19 +79,19 @@ public class MessageServiceImpl implements MessageService {
                 //查警告类型
                 List<MessageResponse> messageResponse = notificationMongoDBDao.queryList(phoneNum, type, pageSize, pageNum);
                 json.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                json.put(AppResultConstants.MSG, QUERY_SUCCESS);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.SUCCESS_MSG);
                 json.put("data", messageResponse);
                 attributes.put("attributes", json);
                 attributes.put("type", "UserAccount");
                 attributes.put("id", "1001192");
                 data.put("data", attributes);
             } else {
-                json.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                json.put(AppResultConstants.MSG, TYPE_ERROR);
+                json.put(AppResultConstants.STATUS, NotificationResultConstants.TYPE_ERROR);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.PARAM_ERROR_MSG);
             }
         } catch (Exception e) {
-            json.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
-            json.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
+            json.put(AppResultConstants.STATUS, NotificationResultConstants.RETURN_ERROR);
+            json.put(AppResultConstants.MSG, NotificationResultConstants.SEVER_ERROR);
             e.printStackTrace();
         }
         return data;
@@ -109,16 +102,16 @@ public class MessageServiceImpl implements MessageService {
         JSONObject json = new JSONObject();
         try {
             if (ids == null || ids.isEmpty()) {
-                json.put(AppResultConstants.STATUS, AppResultConstants.Paramer_ERROR);
-                json.put(AppResultConstants.MSG, IDS_ERROR);
+                json.put(AppResultConstants.STATUS, NotificationResultConstants.ID_EMPTY);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.PARAM_ERROR_MSG);
             } else {
                 notificationMongoDBDao.delMessage(ids);
                 json.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                json.put(AppResultConstants.MSG, DELETE_SUCCESS);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.SUCCESS_MSG);
             }
         } catch (Exception e) {
-            json.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
-            json.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
+            json.put(AppResultConstants.STATUS, NotificationResultConstants.RETURN_ERROR);
+            json.put(AppResultConstants.MSG, NotificationResultConstants.SEVER_ERROR);
             e.printStackTrace();
         }
         return json;

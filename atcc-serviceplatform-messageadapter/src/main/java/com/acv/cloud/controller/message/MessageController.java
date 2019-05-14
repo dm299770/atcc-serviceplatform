@@ -1,11 +1,11 @@
 package com.acv.cloud.controller.message;
 
-import com.acv.cloud.models.jsonBean.message.request.GetParams;
-import com.acv.cloud.models.mongdb.notification.requestJson.Notification;
-import com.acv.cloud.models.mongdb.notification.requestJson.NotificationParams;
-import com.acv.cloud.models.mongdb.sms.Attributes;
-import com.acv.cloud.models.mongdb.sms.Data;
-import com.acv.cloud.models.mongdb.sms.SMSParams;
+import com.acv.cloud.domain.body.req.message.GetParams;
+import com.acv.cloud.domain.body.req.notification.Notification;
+import com.acv.cloud.domain.body.req.notification.NotificationParams;
+import com.acv.cloud.domain.model.sms.Attributes;
+import com.acv.cloud.domain.model.sms.Data;
+import com.acv.cloud.domain.model.sms.SMSParams;
 import com.acv.cloud.services.message.MessageService;
 import com.acv.cloud.services.notification.NotificationService;
 import com.acv.cloud.services.sms.SMSService;
@@ -76,10 +76,12 @@ public class MessageController {
                 .map(SMSParams::getData)
                 .map(Data::getAttributes)
                 .map(Attributes::getPhoneNum).orElse(null);
+
         String content = Optional.ofNullable(sms)
                 .map(SMSParams::getData)
                 .map(Data::getAttributes)
-                .map(Attributes::getPhoneNum).orElse(null);
+                .map(Attributes::getContent).orElse(null);
+
         JSONObject jsonObject = smsService.sendSms(phoneNum, content);
         return jsonObject;
     }

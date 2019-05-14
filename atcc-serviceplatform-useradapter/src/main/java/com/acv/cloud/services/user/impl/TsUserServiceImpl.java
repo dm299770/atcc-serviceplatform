@@ -3,6 +3,7 @@ package com.acv.cloud.services.user.impl;
 import com.acv.cloud.domain.body.req.userInfo.changeInfo.ChangInfoReqBody;
 import com.acv.cloud.domain.dto.UserInfo;
 import com.acv.cloud.frame.constants.RedisConstants;
+import com.acv.cloud.frame.constants.app.UserAppResultConstants;
 import com.acv.cloud.repository.redistemplate.RedisRepository;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.frame.constants.AppResultConstants;
@@ -37,28 +38,28 @@ public class TsUserServiceImpl implements TsUserService {
     /**
      * 返回给APP端提示信息
      */
-    public final static String CELL_PHONE_ERROR = "手机号格式不正确";
-    public final static String CELL_EXIST_ERROR = "手机号已注册";
-    public final static String CELL_NOTEXIST_ERROR = "手机号未注册或已失效";
-    public final static String PASSWORD_ERROR = "密码格式不正确";
-    public final static String CODE_EMPTY = "验证码不能为空";
-    public final static String CODE_ERROR = "验证码不正确";
-    public final static String PASSWORD_WRONG_ERROR = "密码错误";
-    public final static String OLD_PASSWORD_ERROR = "原密码格式不正确";
-    public final static String OLD_PASSWORD_WRONG_ERROR = "原密码不正确";
-    public final static String NEW_PASSWORD_ERROR = "新密码格式不正确";
-    public final static String TYPE_ERROR = "属性值不存在或不能为空";
-    public final static String SAVE_SUCCESS = "保存成功";
-    public final static String SIGNIN_SUCCESS = "注册成功";
-    public final static String LOGIN_SUCCESS = "登录成功";
-    public final static String LOGOUT_SUCCESS = "注销成功";
-    public final static String LOGOUT_ERROR = "注销失败";
-    public final static String MODIFY_SUCCESS = "修改成功";
-    public final static String SERVER_ERROR = "服务器异常";
-    public final static String MODIFY_FAIL = "修改失败";
-
-    public final static String USER_ERROR = "用户信息错误";
-    public final static String USER_NAME_ERROR = "账号格式不正确";
+//    public final static String CELL_PHONE_ERROR = "手机号格式不正确";
+//    public final static String CELL_EXIST_ERROR = "手机号已注册";
+//    public final static String CELL_NOTEXIST_ERROR = "手机号未注册或已失效";
+//    public final static String PASSWORD_ERROR = "密码格式不正确";
+//    public final static String CODE_EMPTY = "验证码不能为空";
+//    public final static String CODE_ERROR = "验证码不正确";
+//    public final static String PASSWORD_WRONG_ERROR = "密码错误";
+//    public final static String OLD_PASSWORD_ERROR = "原密码格式不正确";
+//    public final static String OLD_PASSWORD_WRONG_ERROR = "原密码不正确";
+//    public final static String NEW_PASSWORD_ERROR = "新密码格式不正确";
+//    public final static String TYPE_ERROR = "属性值不存在或不能为空";
+//    public final static String SAVE_SUCCESS = "保存成功";
+//    public final static String SIGNIN_SUCCESS = "注册成功";
+//    public final static String LOGIN_SUCCESS = "登录成功";
+//    public final static String LOGOUT_SUCCESS = "注销成功";
+//    public final static String LOGOUT_ERROR = "注销失败";
+//    public final static String MODIFY_SUCCESS = "修改成功";
+//    public final static String SERVER_ERROR = "服务器异常";
+//    public final static String MODIFY_FAIL = "修改失败";
+//
+//    public final static String USER_ERROR = "用户信息错误";
+//    public final static String USER_NAME_ERROR = "账号格式不正确";
 
 
     @Autowired
@@ -139,25 +140,25 @@ public class TsUserServiceImpl implements TsUserService {
         // 1.校验参数合法性(phoneNum、password)
         if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
             //手机号不能为空
-            jsonObject.put(AppResultConstants.MSG, CELL_PHONE_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
         } else if (null == password || "".equalsIgnoreCase(password)) {
             //密码不能为空
-            jsonObject.put(AppResultConstants.MSG, PASSWORD_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
         }else if(null == token || "".equals(token) ){
             //验证码不能为空
-            jsonObject.put(AppResultConstants.MSG, CODE_EMPTY);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
         }else if(!verifyCode(phoneNum,token,RedisConstants.REGISTER_HEAD)){
             //验证验证码是否正确
-            jsonObject.put(AppResultConstants.MSG, CODE_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.VERIFYCODE_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, UserAppResultConstants.VERIFYCODE_ERROR);
         }
         //注册用户是否存在验证
         else if (findEffctiveByPhoneNum(phoneNum) != null) {
-            jsonObject.put(AppResultConstants.MSG, CELL_EXIST_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.PHONE_EXIST_MSG);
+            jsonObject.put(AppResultConstants.STATUS, UserAppResultConstants.PHONE_EXIST);
         } else {
 
             //验证码成功
@@ -185,7 +186,7 @@ public class TsUserServiceImpl implements TsUserService {
             tsUserInfoMapper.save(userInfo);
             tsUserInfoMapper.saveAccount(userAccount);
             // 3.组织返回信息
-            jsonObject.put(AppResultConstants.MSG, SIGNIN_SUCCESS);
+            jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.REGISTERED_SUCCESS_MSG);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
 
         }
@@ -197,29 +198,29 @@ public class TsUserServiceImpl implements TsUserService {
         JSONObject jsonObject = new JSONObject();
         // 校验参数合法性
         if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
-            jsonObject.put(AppResultConstants.MSG, CELL_PHONE_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
         } else if (null == newPassword || "".equalsIgnoreCase(newPassword)) {
-            jsonObject.put(AppResultConstants.MSG, NEW_PASSWORD_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
         }
         //注册用户是否存在验证
         else if (findEffctiveByPhoneNum(phoneNum) == null) {
-            jsonObject.put(AppResultConstants.MSG, CELL_NOTEXIST_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.PHONE_EXIST_MSG);
+            jsonObject.put(AppResultConstants.STATUS, UserAppResultConstants.PHONE_EXIST);
         }
         else if(!verifyCode(phoneNum,code,RedisConstants.FORGOTPASSWORD_HEAD)){
             //验证验证码是否正确
-            jsonObject.put(AppResultConstants.MSG, CODE_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG,UserAppResultConstants.VERIFYCODE_ERROR_MSG);
+            jsonObject.put(AppResultConstants.STATUS, UserAppResultConstants.VERIFYCODE_ERROR);
         }else {
             try {
                 reSetPassword(phoneNum, newPassword);
-                jsonObject.put(AppResultConstants.MSG, MODIFY_SUCCESS);
+                jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.MODIFY_PASS_SUCCESS);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
             } catch (Exception e) {
                 logger.error("resetUserPassword:" + e);
-                jsonObject.put(AppResultConstants.MSG, SERVER_ERROR);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
 
 
@@ -234,27 +235,27 @@ public class TsUserServiceImpl implements TsUserService {
         JSONObject jsonObject = new JSONObject();
         // 校验参数合法性
         if (null == oldPassword || "".equalsIgnoreCase(oldPassword)) {
-            jsonObject.put(AppResultConstants.MSG, OLD_PASSWORD_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR_MSG);
         } else if (null == newPassword || "".equalsIgnoreCase(newPassword)) {
-            jsonObject.put(AppResultConstants.MSG, NEW_PASSWORD_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR_MSG);
         } else {
             try {
                 //TsUser tsUser = findEffctiveByPhoneNum(phoneNum);
                 TsUser tsUser = findById(userId);
                 if (null != tsUser && oldPassword.equalsIgnoreCase(tsUser.getPassword())) {
                     updatePassword(userId, oldPassword, newPassword);
-                    jsonObject.put(AppResultConstants.MSG, MODIFY_SUCCESS);
+                    jsonObject.put(AppResultConstants.MSG,UserAppResultConstants.MODIFY_PASS_SUCCESS);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
                 } else {
-                    jsonObject.put(AppResultConstants.MSG, OLD_PASSWORD_WRONG_ERROR);
+                    jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.PASS_ERROR_MSG);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
                 }
 
             } catch (Exception e) {
                 logger.error("modifyUserPassword:" + e);
-                jsonObject.put(AppResultConstants.MSG, SERVER_ERROR);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
             }
         }
@@ -299,10 +300,10 @@ public class TsUserServiceImpl implements TsUserService {
             try {
                 updateUserInfo(userId,nickName,realName,sex,emeyContact,phoneNum,profilePhoto);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                jsonObject.put(AppResultConstants.MSG, MODIFY_SUCCESS);
+                jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.MODIFY_INFO_SUCCESS);
             } catch (Exception e) {
                 logger.error("modifyUserInfo:" + e);
-                jsonObject.put(AppResultConstants.MSG, SERVER_ERROR);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
             }
 
@@ -323,13 +324,13 @@ public class TsUserServiceImpl implements TsUserService {
         String photopath = applicationConstants.getPhotoPath();
         if (photopath == null && photopath.equalsIgnoreCase("")) {
             logger.debug("头像文件目标路径不存在");
-            jsonObject.put(AppResultConstants.MSG, SERVER_ERROR);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
 
         } else if (file == null) {
             //验证文件不能为空
-            jsonObject.put(AppResultConstants.MSG, MODIFY_FAIL);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+            jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
         } else {
 
             try {
@@ -356,12 +357,12 @@ public class TsUserServiceImpl implements TsUserService {
                 updateUserInfo(userid,null,null,null,null,null,photo_url);
 
                 //updateUserInfo(phoneNum, "PROFILE_PHOTO", photo_url);
-                jsonObject.put(AppResultConstants.MSG, SAVE_SUCCESS);
+                jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.AVATOR_SUCCESS);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
             } catch (Exception e) {
                 e.printStackTrace();
                 logger.error("拷贝头像到目标路径异常:" + e.getMessage());
-                jsonObject.put(AppResultConstants.MSG, SERVER_ERROR);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.SEVER_ERROR);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
             }
         }

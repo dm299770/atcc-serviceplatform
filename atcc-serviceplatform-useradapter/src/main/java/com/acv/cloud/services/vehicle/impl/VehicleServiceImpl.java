@@ -3,6 +3,8 @@ package com.acv.cloud.services.vehicle.impl;
 
 import com.acv.cloud.domain.dto.UserInfo;
 import com.acv.cloud.frame.constants.RedisConstants;
+import com.acv.cloud.frame.constants.app.UserAppResultConstants;
+import com.acv.cloud.frame.constants.app.VehicleAppResultConstants;
 import com.acv.cloud.repository.redistemplate.RedisRepository;
 import com.acv.cloud.services.user.TsUserService;
 import com.acv.cloud.services.user.impl.TsUserServiceImpl;
@@ -62,7 +64,7 @@ public class VehicleServiceImpl implements VehicleService {
         JSONObject jsonObject = new JSONObject();
         try {
             List<TrUserVin> vehicles = vehicleMapper.findById(userId);
-            jsonObject.put(AppResultConstants.MSG, FIND_VEHICLE_SUCCESS);
+            jsonObject.put(AppResultConstants.MSG, VehicleAppResultConstants.FIND_VEHICLE_SUCCESS);
             jsonObject.put(AppResultConstants.DATA, vehicles);
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
             logger.info("查询绑定车辆信息成功:" + vehicles.toString());
@@ -86,7 +88,7 @@ public class VehicleServiceImpl implements VehicleService {
                 TrUserVin vehicle = vehicleMapper.findVehicleByVin(trUserVin.getPlateNum());
                 if (vehicle != null) {
                     jsonObject.put(AppResultConstants.MSG, VEHICLE_IS_EXIST);
-                    jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                    jsonObject.put(AppResultConstants.STATUS, VehicleAppResultConstants.VIN_EXIST);
                 } else {
                     //查看默认车辆情况
                     List<TrUserVin> vehicles = vehicleMapper.findById(trUserVin.getUserId());
@@ -105,7 +107,7 @@ public class VehicleServiceImpl implements VehicleService {
 
             } else {
                 jsonObject.put(AppResultConstants.MSG, SAVE_VEHICLE_FAIL);
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
             }
 
         } catch (Exception e) {
@@ -129,23 +131,23 @@ public class VehicleServiceImpl implements VehicleService {
 
             if(!verifyCode(user.getPhoneNum(), RedisConstants.UNBINDCAR_HEAD,code)){
                 //验证验证码是否正确
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.CODE_ERROR);
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.VERIFYCODE_ERROR_MSG);
+                jsonObject.put(AppResultConstants.STATUS,UserAppResultConstants.VERIFYCODE_ERROR);
                 return jsonObject;
 
             }else if (vehicle != null) {
 
                 if (vehicle.getDefaultVehicle() == 1 && vehicles.size() > 1) {
                     //默认车辆,且绑定车辆数大于1
-                    jsonObject.put(AppResultConstants.MSG, UNBIND_ISNOT_DEFAULT);
-                    jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                    jsonObject.put(AppResultConstants.MSG, VehicleAppResultConstants.UNBIND_ISNOT_DEFAULT_MSG);
+                    jsonObject.put(AppResultConstants.STATUS, VehicleAppResultConstants.UNBIND_ISNOT_DEFAULT);
                     logger.info(vin + "解绑失败,多辆绑定车辆不能解绑默认车辆");
                     return jsonObject;
 
                 } else {
                     //车牌存在,且不是默认车辆
                     vehicleMapper.unbindTrUserVin(user.getUserId(), vin);
-                    jsonObject.put(AppResultConstants.MSG, UNBIND_VEHICLE_SUCCESS);
+                    jsonObject.put(AppResultConstants.MSG, VehicleAppResultConstants.UNBIND_VEHICLE_SUCCESS);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
                     logger.info(vin + "解绑成功");
                     return jsonObject;
@@ -153,12 +155,12 @@ public class VehicleServiceImpl implements VehicleService {
 
             } else if(!vehicles.contains(vehicle)){
                 //不能解绑非当前用户车辆
-                jsonObject.put(AppResultConstants.MSG, UNBIND_VEHICLE_SUCCESS);
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
+                jsonObject.put(AppResultConstants.MSG, VehicleAppResultConstants.VIN_ISNOT_EXIST_MSG);
+                jsonObject.put(AppResultConstants.STATUS, VehicleAppResultConstants.VIN_ISNOT_EXIST);
                 return jsonObject;
             }else {
                 //车辆不存在
-                jsonObject.put(AppResultConstants.MSG, VEHICLE_ISNOT_EXIST);
+                jsonObject.put(AppResultConstants.MSG, VehicleAppResultConstants.VIN_ISNOT_EXIST);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
                 logger.info(vin + "信息不存在");
                 return jsonObject;
@@ -187,13 +189,13 @@ public class VehicleServiceImpl implements VehicleService {
                 //用户车辆组存在
                 vehicleMapper.clearDefaultVehicle(userId);//清除所有默认车辆
                 vehicleMapper.setDefaultVehicle(userId, vin, binding);
-                jsonObject.put(AppResultConstants.MSG, SET_DEFAULT_SUCCESS);
+                jsonObject.put(AppResultConstants.MSG, VehicleAppResultConstants.SET_DEFAULT_SUCCESS);
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
                 logger.info(vin + "设置默认车辆成功");
             } else {
                 //车辆不存在
-                jsonObject.put(AppResultConstants.MSG, VEHICLE_ISNOT_EXIST);
-                jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                jsonObject.put(AppResultConstants.MSG, VehicleAppResultConstants.VIN_ISNOT_EXIST_MSG);
+                jsonObject.put(AppResultConstants.STATUS, VehicleAppResultConstants.VIN_ISNOT_EXIST);
                 logger.info(vin + "信息不存在");
             }
         } catch (Exception e) {

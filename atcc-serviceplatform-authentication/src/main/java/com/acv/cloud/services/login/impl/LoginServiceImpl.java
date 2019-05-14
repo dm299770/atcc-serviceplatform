@@ -3,6 +3,7 @@ package com.acv.cloud.services.login.impl;
 import com.acv.cloud.domain.body.resp.login.LoginData;
 import com.acv.cloud.frame.constants.RedisConstants;
 import com.acv.cloud.frame.constants.app.LoginAppResultConstants;
+import com.acv.cloud.frame.constants.app.UserAppResultConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.OauthConstants;
@@ -11,10 +12,7 @@ import com.acv.cloud.mapper.user.TsUserMapper;
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.repository.redistemplate.IUserDao;
 import com.acv.cloud.services.login.LoginService;
-import com.acv.cloud.services.user.impl.TsUserServiceImpl;
-import org.apache.oltu.oauth2.as.issuer.MD5Generator;
-import org.apache.oltu.oauth2.as.issuer.OAuthIssuer;
-import org.apache.oltu.oauth2.as.issuer.OAuthIssuerImpl;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -177,16 +175,16 @@ public class LoginServiceImpl implements LoginService {
             TsUser tsUser = tsUserMapper.findEffctiveByPhoneNum(phoneNum);
             if (null == tsUser) {
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
+                jsonObject.put(AppResultConstants.MSG, AppResultConstants.AUTHENTICATION_FAILURE_MSG);
             } else {
                 try {
                     userDao.deleteDeviceNo(phoneNum);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGOUT_SUCCESS);
+                    jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.LOGOUT_SUCCESS);
                 } catch (Exception e) {
                     logger.error("logout error ! --" + e.getMessage());
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGOUT_ERROR);
+                    jsonObject.put(AppResultConstants.MSG, UserAppResultConstants.LOGOUT_ERROR);
                 }
 
             }

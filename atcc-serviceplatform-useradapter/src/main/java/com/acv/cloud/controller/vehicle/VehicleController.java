@@ -51,7 +51,7 @@ public class VehicleController {
 
         } else {
             jsonObject.put(AppResultConstants.MSG, AppResultConstants.LOGIN_ERROR);
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.AUTHENTICATION_FAILURE);
         }
         jsonObject = JsonUtil.EraseNull(jsonObject);
         return jsonObject;
@@ -190,7 +190,7 @@ public class VehicleController {
             jsonObject = vehicleServiceImpl.setDefaultVehicle(user.getUserId(), vin);
 
         } else {
-            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);
+            jsonObject.put(AppResultConstants.STATUS, AppResultConstants.PARAM_ERROR);
             jsonObject.put(AppResultConstants.MSG, AppResultConstants.PARAM_ERROR_MSG);
         }
 

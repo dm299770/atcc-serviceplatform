@@ -1,7 +1,8 @@
 package com.acv.cloud.services.unread.impl;
 
+import com.acv.cloud.domain.body.req.notification.Notification;
 import com.acv.cloud.frame.constants.AppResultConstants;
-import com.acv.cloud.models.mongdb.notification.requestJson.Notification;
+import com.acv.cloud.frame.constants.app.NotificationResultConstants;
 import com.acv.cloud.repository.mongotemplate.INotificationMongoDBDao;
 import com.acv.cloud.services.unread.UnReadService;
 import com.alibaba.fastjson.JSONObject;
@@ -14,8 +15,7 @@ import org.springframework.stereotype.Service;
 public class UnReadServiceImpl implements UnReadService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private static final String UPDATE_SUCCESS = "未读状态修改成功";
-    private static final String UPDATE_ERROR = "该消息可能已经是已读状态";
+    private static final String UPDATE_ERROR = "该消息已读";
 
     @Autowired
     private INotificationMongoDBDao notificationMongoDBDao;
@@ -32,14 +32,14 @@ public class UnReadServiceImpl implements UnReadService {
             if (readflag == 0) {
                 notificationMongoDBDao.updateUnRead(ids, readflag);
                 json.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                json.put(AppResultConstants.MSG, UPDATE_SUCCESS);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.SUCCESS_MSG);
             } else if (readflag == 1) {
                 //修改失败返回状态
-                json.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
+                json.put(AppResultConstants.STATUS, NotificationResultConstants.RESULT_ERROR);
                 json.put(AppResultConstants.MSG, UPDATE_ERROR);
             } else {
-                json.put(AppResultConstants.STATUS, AppResultConstants.NOTFOUND_ERROR);
-                json.put(AppResultConstants.MSG, AppResultConstants.Paramer_ERROR);
+                json.put(AppResultConstants.STATUS, NotificationResultConstants.RETURN_ERROR);
+                json.put(AppResultConstants.MSG, NotificationResultConstants.RETURN_CODE_ERROR);
             }
         } catch (Exception e) {
             json.put(AppResultConstants.STATUS, AppResultConstants.ERROR_STATUS);

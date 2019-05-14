@@ -1,6 +1,6 @@
 package com.acv.cloud.services.notification;
 
-import com.acv.cloud.models.mongdb.notification.requestJson.NotificationParams;
+import com.acv.cloud.domain.body.req.notification.NotificationParams;
 import com.alibaba.fastjson.JSONObject;
 
 /**

@@ -1,9 +1,8 @@
 package com.acv.cloud.repository.mongotemplate.impl;
 
-import com.acv.cloud.models.jsonBean.message.request.NotificationRequest;
-import com.acv.cloud.models.jsonBean.message.response.MessageResponse;
-import com.acv.cloud.models.mongdb.notification.requestJson.Datal;
-import com.acv.cloud.models.mongdb.notification.requestJson.Notification;
+import com.acv.cloud.domain.body.req.message.NotificationRequest;
+import com.acv.cloud.domain.body.req.notification.Notification;
+import com.acv.cloud.domain.body.resp.message.MessageResponse;
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.repository.mongotemplate.INotificationMongoDBDao;
 import com.acv.cloud.services.page.MongoDBPageable;

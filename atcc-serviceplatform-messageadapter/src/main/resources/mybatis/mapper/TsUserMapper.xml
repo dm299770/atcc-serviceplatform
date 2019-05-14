@@ -5,7 +5,7 @@
     namespace：必须与对应的接口mapper.java全类名一致
     id:必须与对应接口mapper.java的某个对应的方法名一致
  -->
-<mapper namespace="com.acv.cloud.mapper.TsUserMapper">
+<mapper namespace="com.acv.cloud.mapper.user.TsUserMapper">
 
     <!--数据库表字段名与models中类属性对应关系-->
     <resultMap id="BaseResultMap" type="com.acv.cloud.models.sys.TsUser">
