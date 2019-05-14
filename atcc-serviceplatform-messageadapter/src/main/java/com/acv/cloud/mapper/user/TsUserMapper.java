@@ -14,5 +14,5 @@ public interface TsUserMapper {
      * @param phoneNums
      * @return
      */
-    TsUser findUserId(@Param("phoneNum") String phoneNums);
+    TsUser  findUserId(@Param("phoneNum") String phoneNums);
 }
