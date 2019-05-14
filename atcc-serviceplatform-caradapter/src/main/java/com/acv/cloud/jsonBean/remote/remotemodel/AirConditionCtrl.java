@@ -15,6 +15,8 @@ public class AirConditionCtrl {
     //空调
     private AirCondition acparam;
 
+    private String cmdid;
+
     private int smsflag;
 
     public String getVin() {
@@ -47,5 +49,13 @@ public class AirConditionCtrl {
 
     public void setSmsflag(int smsflag) {
         this.smsflag = smsflag;
+    }
+
+    public String getCmdid() {
+        return cmdid;
+    }
+
+    public void setCmdid(String cmdid) {
+        this.cmdid = cmdid;
     }
 }

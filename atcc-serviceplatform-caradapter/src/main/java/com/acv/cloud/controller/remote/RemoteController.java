@@ -41,46 +41,6 @@ public class RemoteController {
     }
 
 
-
-    /**
-     * @description:车锁
-     * @author:@guo.zj
-     */
-    @ResponseBody
-    @RequestMapping(value = "doors")
-    public Object remotedoor(@RequestBody EVvehicleCtrlRequestParameter data) {
-
-
-        JSONObject result=null;
-        try {
-            result = remoteService.remotedoor(data);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-
-    /**
-     * @description:天窗
-     * @author:@guo.zj
-     */
-    @ResponseBody
-    @RequestMapping(value = "sunroof")
-    public Object sunroof(@RequestBody EVvehicleCtrlRequestParameter data) {
-        JSONObject result=null;
-        try {
-            result = remoteService.sunroof(data);
-        } catch (Exception e) {
-            // TODO Auto-generated  catch block
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-
-
     /**
      * @description:空调开关
      * @author:@guo.zj
@@ -90,42 +50,7 @@ public class RemoteController {
     public Object airconditionertrun(@RequestBody AirConditionRequestParameter data) {
         JSONObject result=null;
         try {
-            result = remoteService.airconditionertrun(data);
-        } catch (Exception e) {
-            // TODO Auto-generated  catch block
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-    /**
-     * @description:闪烁鸣笛
-     * @author:@guo.zj
-     */
-    @ResponseBody
-    @RequestMapping(value = "horn")
-    public Object horn(@RequestBody VinRequestParameter data) {
-        JSONObject result=null;
-        try {
-            result = remoteService.horn(data);
-        } catch (Exception e) {
-            // TODO Auto-generated  catch
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-
-    /**
-     * @description:后备箱锁
-     * @author:@guo.zj
-     */
-    @ResponseBody
-    @RequestMapping(value = "trunk")
-    public Object runk(@RequestBody EVvehicleCtrlRequestParameter data) {
-        JSONObject result=null;
-        try {
-            result = remoteService.remotedoor(data);
+            //result = remoteService.airconditionerturn(data);
         } catch (Exception e) {
             // TODO Auto-generated  catch block
             e.printStackTrace();
@@ -134,40 +59,8 @@ public class RemoteController {
     }
 
 
-    /**
-     * @description:启车/熄火
-     * @author:@guo.zj
-     */
-    @ResponseBody
-    @RequestMapping(value = "carpower")
-    public Object carpower(@RequestBody EVvehicleCtrlRequestParameter data) {
-        JSONObject result=null;
-        try {
-            result = remoteService.remotedoor(data);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return result;
-    }
 
 
-    /**
-     * @description:车窗
-     * @author:@guo.zj
-     */
-    @ResponseBody
-    @RequestMapping(value = "window")
-    public Object window(@RequestBody EVWindowRequestParameter data) {
-        JSONObject result=null;
-        try {
-            result = remoteService.window(data);
-        } catch (Exception e) {
-            // TODO Auto-generated  catch block
-            e.printStackTrace();
-        }
-        return result;
-    }
 
 }
 

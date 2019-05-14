@@ -1,6 +1,8 @@
 package com.acv.cloud.models.vehiclestate;
 
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * 车窗状态
  * @author guo.zj
@@ -8,6 +10,7 @@ package com.acv.cloud.models.vehiclestate;
 public class WindowStatus {
 
     //左前
+    @JSONField(name = "FL")
     private int FL;
     //右前
     private int FR;
