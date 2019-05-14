@@ -12,7 +12,6 @@ import com.acv.cloud.mapper.user.TsUserMapper;
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.repository.redistemplate.IUserDao;
 import com.acv.cloud.services.login.LoginService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

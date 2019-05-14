@@ -42,7 +42,7 @@ public class AppResultConstants {
      * 登出异常
      */
     public final static String LOGOUT_ERROR = "注销异常";
-    /***
+     /***
      * 无效url
      */
     public final static String NOTFOUND_URL = "未知url ";

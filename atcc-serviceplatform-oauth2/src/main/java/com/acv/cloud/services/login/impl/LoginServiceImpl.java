@@ -13,7 +13,6 @@ import com.acv.cloud.models.sys.SysUser;
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.repository.redistemplate.IUserDao;
 import com.acv.cloud.services.login.LoginService;
-import com.acv.cloud.services.user.impl.TsUserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

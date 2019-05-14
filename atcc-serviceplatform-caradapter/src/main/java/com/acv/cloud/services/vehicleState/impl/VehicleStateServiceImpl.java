@@ -169,10 +169,10 @@ public class VehicleStateServiceImpl implements VehicleStateService {
         try {
             logger.info("请求体:" + data);
             String vin = data.getData().getVin();
-            if(vin==null||"".equals(vin)){
-                jsonObject.put("status", 201);
-                jsonObject.put("msg", "传入参数有误");
-                jsonObject.put("data","");
+                if(vin==null||"".equals(vin)){
+                    jsonObject.put("status", 201);
+                    jsonObject.put("msg", "传入参数有误");
+                    jsonObject.put("data","");
             }else if ("NISSAN0000000000".equals(vin)||"10".equals(vin)) {
                 EVVehicleState vehicleState=new EVVehicleState();
                 resbatterycap=0.60F;
