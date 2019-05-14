@@ -5,7 +5,7 @@ public class RemoteCallBack {
      private String vin;
      private String cmdid;
      private String requestid;
-    private String result;
+    private int result;
 
     public String getVin() {
         return vin;
@@ -31,11 +31,13 @@ public class RemoteCallBack {
         this.cmdid = cmdid;
     }
 
-    public String getResult() {
+
+    public int getResult() {
         return result;
     }
 
-    public void setResult(String result) {
+    public void setResult(int result) {
         this.result = result;
     }
 }
+

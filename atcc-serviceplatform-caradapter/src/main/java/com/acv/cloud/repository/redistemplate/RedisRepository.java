@@ -1,6 +1,7 @@
 package com.acv.cloud.repository.redistemplate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,22 @@ public class RedisRepository {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    private int defalutDb = 0;
+
+    /**
+     *
+     * @param db 初始化redis桶索引
+     */
+    public void init(int db){
+        if(db!=defalutDb){
+            LettuceConnectionFactory jedisConnectionFactory = (LettuceConnectionFactory) this.redisTemplate.getConnectionFactory();
+            jedisConnectionFactory.setDatabase(db);
+            redisTemplate.setConnectionFactory(jedisConnectionFactory);
+            jedisConnectionFactory.resetConnection();
+        }
+
+    }
+
     /**
      * 写入缓存
      *
@@ -26,6 +43,11 @@ public class RedisRepository {
         try {
             ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
             operations.set(key, value);
+
+            //LettuceConnectionFactory jedisConnectionFactory = (LettuceConnectionFactory) redisTemplate.getConnectionFactory(); jedisConnectionFactory.setDatabase(2); redisTemplate.setConnectionFactory(jedisConnectionFactory); jedisConnectionFactory.resetConnection();
+
+
+
             result = true;
         } catch (Exception e) {
             e.printStackTrace();

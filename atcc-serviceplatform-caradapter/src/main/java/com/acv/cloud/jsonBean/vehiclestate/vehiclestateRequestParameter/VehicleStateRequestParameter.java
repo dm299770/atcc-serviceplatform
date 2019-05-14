@@ -1,21 +1,22 @@
 package com.acv.cloud.jsonBean.vehiclestate.vehiclestateRequestParameter;
 
 
-import com.acv.cloud.jsonBean.vehiclestate.vehiclestatemodel.RequestVehicleState;
+
+import com.acv.cloud.models.car.CarVehicleState;
 
 /**
  * 请求bean
  * @author GUO.ZJ
  */
 public class VehicleStateRequestParameter {
-    private RequestVehicleState data;
+    private CarVehicleState data;
 
 
-    public RequestVehicleState getData() {
+    public CarVehicleState getData() {
         return data;
     }
 
-    public void setData(RequestVehicleState data) {
+    public void setData(CarVehicleState data) {
         this.data = data;
     }
 }

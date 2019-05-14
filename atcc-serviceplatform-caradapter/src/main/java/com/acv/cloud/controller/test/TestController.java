@@ -28,36 +28,5 @@ public class TestController {
 
     @Autowired
     private RemoteCallBackService remoteCallBackService;
-    @RequestMapping(value = "/demo")
-            public String httptest() throws Exception {
-            String str = httpAPIService.doGet("http://www.baidu.com");
-            System.out.println(str);
-            logger.info(str);
-            return "sucess";
-            }
-            @ResponseBody
-         @RequestMapping(value = "/callback")
-         public Object callback(@RequestBody RemoteCallBackParameters data) {
-            JSONObject result=null;
-            try {
-                result = remoteCallBackService.remoteCallBack(data);
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            return result;
-    }
 
-    @ResponseBody
-    @RequestMapping(value = "/tests")
-    public Object test1(@RequestBody RemoteTspVehicle data) {
-        JSONObject result=null;
-        try {
-            System.out.println(data);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return result;
-    }
 }

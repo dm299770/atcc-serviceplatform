@@ -20,7 +20,6 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         // 拦截所有请求，通过判断是否有 @LoginRequired 注解 决定是否需要登录
         registry.addInterceptor(authenticationInterceptor()).addPathPatterns("/**");
-        registry.addInterceptor(allowOriginIntercepter()).addPathPatterns("/**");
         super.addInterceptors(registry);
     }
 
@@ -49,9 +48,5 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     @Bean
     public AuthenticationInterceptor authenticationInterceptor() {
         return new AuthenticationInterceptor();
-    }
-    @Bean
-    public AllowOriginIntercepter allowOriginIntercepter(){
-        return new AllowOriginIntercepter();
     }
 }

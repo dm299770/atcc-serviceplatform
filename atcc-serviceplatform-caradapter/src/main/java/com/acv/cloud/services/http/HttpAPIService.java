@@ -2,8 +2,10 @@ package com.acv.cloud.services.http;
 
 import com.acv.cloud.utils.HttpResult;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -83,7 +85,7 @@ public class HttpAPIService {
     }
 
     /**
-     * 带参数的post请求
+     * 带参数的post请求（form提交）
      *
      * @param url
      * @param map
@@ -153,11 +155,9 @@ public class HttpAPIService {
             int state = status.getStatusCode();
             if (state == 200) {
                 HttpEntity responseEntity = response.getEntity();
-                String jsonString = EntityUtils.toString(responseEntity);
-                return new HttpResult(response.getStatusLine().getStatusCode(), EntityUtils.toString(
-                        response.getEntity(), "UTF-8"));
+                return new HttpResult(200, "成功");
             } else {
-               System.out.println("tsp发送失败");
+                System.out.println("tsp发送失败");
             }
         } finally {
             if (response != null) {
@@ -174,6 +174,57 @@ public class HttpAPIService {
             }
         }
         return new HttpResult(300, "失败");
+    }
+
+    /**
+     * post请求（用于请求json格式的参数）
+     *
+     * @param url
+     * @param params
+     * @return
+     */
+    public static String sendPosts(String url, String params) {
+
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost(url);// 创建httpPost
+        httpPost.setHeader("Accept", "application/json");
+        httpPost.setHeader("Content-Type", "application/json");
+        String charSet = "UTF-8";
+        StringEntity entity = new StringEntity(params, charSet);
+        httpPost.setEntity(entity);
+        CloseableHttpResponse response = null;
+
+        try {
+
+            response = httpclient.execute(httpPost);
+            StatusLine status = response.getStatusLine();
+            int state = status.getStatusCode();
+            if (state == HttpStatus.SC_OK) {
+                HttpEntity responseEntity = response.getEntity();
+                String jsonString = EntityUtils.toString(responseEntity);
+                return jsonString;
+            } else {
+                System.out.println("请求返回:" + state + "(" + url + ")");
+            }
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (response != null) {
+                try {
+                    response.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            try {
+                httpclient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
     }
 

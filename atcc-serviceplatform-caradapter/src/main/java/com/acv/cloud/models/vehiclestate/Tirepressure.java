@@ -1,19 +1,25 @@
 package com.acv.cloud.models.vehiclestate;
 
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * 胎压状态
  * @author guo.zj
  */
-public class Tirepressure {
+public class  Tirepressure {
 
     //左前
+    @JSONField(name = "FL")
     private Float FL;
     //右前
+    @JSONField(name = "FR")
     private Float FR;
     //左后
+    @JSONField(name = "BL")
     private Float BL;
     //右后
+    @JSONField(name = "BR")
     private Float BR;
 
     private int flstate;

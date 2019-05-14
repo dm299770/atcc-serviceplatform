@@ -19,7 +19,7 @@ public class ALLVehicleState implements java.io.Serializable {
     //胎压
     private Tirepressure tirepressure;
     //车锁状态
-    private int doorstatus;
+    private String doorstatus;
     //天窗状态
     private int sunroofstatus;
     //上报时间
@@ -44,6 +44,10 @@ public class ALLVehicleState implements java.io.Serializable {
     private String diagnosedate;
     //车辆种类
     private VehicleCategory vehicleCategory;
+    //经度
+    private double lat;
+    //维度
+    private double lon;
 
     public String getRequestid() {
         return requestid;
@@ -79,14 +83,6 @@ public class ALLVehicleState implements java.io.Serializable {
         this.chargingstatus = chargingstatus;
     }
 
-
-    public int getDoorstatus() {
-        return doorstatus;
-    }
-
-    public void setDoorstatus(int doorstatus) {
-        this.doorstatus = doorstatus;
-    }
 
     public int getSunroofstatus() {
         return sunroofstatus;
@@ -199,5 +195,29 @@ public class ALLVehicleState implements java.io.Serializable {
 
     public void setVehicleCategory(VehicleCategory vehicleCategory) {
         this.vehicleCategory = vehicleCategory;
+    }
+
+    public String getDoorstatus() {
+        return doorstatus;
+    }
+
+    public void setDoorstatus(String doorstatus) {
+        this.doorstatus = doorstatus;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
     }
 }

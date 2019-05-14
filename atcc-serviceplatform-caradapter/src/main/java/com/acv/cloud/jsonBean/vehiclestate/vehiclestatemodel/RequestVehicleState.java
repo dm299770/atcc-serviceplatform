@@ -7,8 +7,8 @@ package com.acv.cloud.jsonBean.vehiclestate.vehiclestatemodel;
 public class RequestVehicleState {
     //车架号
     private String vin;
-   //总里程
-    private int model;
+   //请求方式  0实时 1数据库
+    private int mode;
 
 
     public String getVin() {
@@ -20,11 +20,11 @@ public class RequestVehicleState {
     }
 
 
-    public int getModel() {
-        return model;
+    public int getMode() {
+        return mode;
     }
 
-    public void setModel(int model) {
-        this.model = model;
+    public void setMode(int mode) {
+        this.mode = mode;
     }
 }

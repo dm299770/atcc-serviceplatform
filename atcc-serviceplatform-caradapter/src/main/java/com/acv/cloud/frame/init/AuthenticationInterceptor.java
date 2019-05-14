@@ -1,20 +1,23 @@
 package com.acv.cloud.frame.init;
+
+
+import com.acv.cloud.frame.constants.JwtConstants;
+import com.alibaba.fastjson.JSON;
+import com.acv.cloud.dto.sys.UserInfo;
 import com.acv.cloud.exception.LoginRequiredException;
 import com.acv.cloud.frame.annotation.LoginRequired;
 import com.acv.cloud.frame.constants.CurrentUserConstants;
-import com.acv.cloud.dto.sys.UserInfo;
-import com.alibaba.fastjson.JSON;
 import io.micrometer.core.instrument.util.StringUtils;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.net.URLDecoder;
-
+import java.nio.charset.Charset;
+import java.util.Map;
 
 /**
  * @description:Token验证过滤器,判断是否已登录
@@ -24,7 +27,6 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     public final static String ACCESS_TOKEN = "accessToken";
     //@Autowired
     //private SysUserService userService;
-
 
     /**
      * 在请求处理之前进行调用（Controller方法调用之前）
@@ -65,18 +67,20 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
             //zuul HEADER 传递中文处理乱码问题
             String userJsonStr = request.getHeader("zuul_userInfo");
+
+            //fegin调用请求不通过zuul gateway转发
+            String accessToken = request.getHeader(JwtConstants.ZUUL_ACCESSTOKEN);
+
             if(StringUtils.isNotBlank(userJsonStr)){
                 //user = JSON.parseObject(userJsonStr,UserInfo.class);
 
                 try {
                     user = JSON.parseObject(URLDecoder.decode(userJsonStr, "UTF-8"),UserInfo.class);
                     //解码
-                    }
-                    catch (UnsupportedEncodingException var4) {
+                }
+                catch (UnsupportedEncodingException var4) {
                     var4.printStackTrace();
                 }
-
-
             }
 
             if (user == null) {
