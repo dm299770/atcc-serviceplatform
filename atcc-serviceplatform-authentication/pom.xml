@@ -6,13 +6,27 @@
     <parent>
         <groupId>com.acv.cloud</groupId>
         <artifactId>atcc-serviceplatform</artifactId>
-        <version>2.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <!--<relativePath/>-->
     </parent>
 
+    <distributionManagement>
+        <!--<repository>-->
+            <!--<id>atcc-releases</id>-->
+            <!--<name>atcc-releases</name>-->
+            <!--<url>http://139.217.235.112:8081/repository/maven-releases/</url>-->
+        <!--</repository>-->
+
+        <repository>
+            <id>atcc-snapshots</id>
+            <name>atcc-snapshots</name>
+            <url>http://139.217.235.112:8081/repository/maven-snapshots/</url>
+        </repository>
+    </distributionManagement>
+
     <groupId>com.acv.cloud</groupId>
     <artifactId>atcc-serviceplatform-authentication</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>atcc-serviceplatform-authentication</name>
     <description>authentication</description>
@@ -33,6 +47,10 @@
             <version>0.9.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
 
         <!-- oauth -->
@@ -79,17 +97,17 @@
         <dependency>
             <artifactId>atcc-serviceplatform-common</artifactId>
             <groupId>com.acv.cloud</groupId>
-            <version>2.0-SNAPSHOT</version>
+            <version>${atcc.platform.common.version}</version>
         </dependency>
 
 
-        <dependency>
-            <groupId>idm</groupId>
-            <artifactId>idm</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/lib/http.jar</systemPath>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>idm</groupId>-->
+            <!--<artifactId>idm</artifactId>-->
+            <!--<version>1.0</version>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${basedir}/src/main/resources/lib/http.jar</systemPath>-->
+        <!--</dependency>-->
     </dependencies>
 
     <dependencyManagement>
@@ -112,6 +130,38 @@
             </plugin>
         </plugins>
     </build>
+
+    <!--<build>-->
+        <!--<plugins>-->
+            <!--&lt;!&ndash;被打包项目必须配置项&ndash;&gt;-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash;配置为执行&ndash;&gt;-->
+                    <!--<classifier>exec</classifier>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+                <!--<version>2.1.1.RELEASE</version>-->
+                <!--<configuration>&lt;!&ndash; 指定该Main Class为全局的唯一入口 &ndash;&gt;-->
+                    <!--<mainClass>AuthenticationApplication</mainClass>-->
+                    <!--<layout>ZIP</layout>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>repackage</goal>&lt;!&ndash;可以把依赖的包都打包到生成的Jar包中&ndash;&gt;-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+
+        <!--</plugins>-->
+    <!--</build>-->
 
     <repositories>
         <repository>

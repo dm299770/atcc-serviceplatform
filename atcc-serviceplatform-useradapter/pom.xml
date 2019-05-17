@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.acv.cloud</groupId>
         <artifactId>atcc-serviceplatform</artifactId>
-        <version>2.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <!--<relativePath/>-->
     </parent>
 
@@ -24,8 +24,15 @@
         <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
     </properties>
 
-    <dependencies>
+    <distributionManagement>
+        <repository>
+            <id>atcc-releases</id>
+            <name>atcc-releases</name>
+            <url>http://139.217.235.112:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
+    <dependencies>
         <!-- JSON Web Token Support For The JVM -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -33,6 +40,10 @@
             <version>0.9.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -83,7 +94,7 @@
         <dependency>
             <artifactId>atcc-serviceplatform-common</artifactId>
             <groupId>com.acv.cloud</groupId>
-            <version>2.0-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>

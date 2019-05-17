@@ -13,6 +13,7 @@ import com.acv.cloud.models.sys.SysUser;
 import com.acv.cloud.models.sys.TsUser;
 import com.acv.cloud.repository.redistemplate.IUserDao;
 import com.acv.cloud.services.login.LoginService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,20 +43,20 @@ public class LoginServiceImpl implements LoginService {
 
             if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
+                //jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
             } else if (null == password || "".equalsIgnoreCase(password)) {
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_ERROR);
+                //jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_ERROR);
             } else {
                 // 查找用户，判断用户账号密码是否正确
                 TsUser tsUser = tsUserMapper.findEffctiveByPhoneNum(phoneNum);
                 if (null == tsUser) {
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
+                    //jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
                     //} else if (!MD5Util.md5(password).equalsIgnoreCase(tsUser.getPassword())) {
                 } else if (!password.equalsIgnoreCase(tsUser.getPassword())) {
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_WRONG_ERROR);
+                    //jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_WRONG_ERROR);
                 } else {
                     // 账号密码正确，生成token
                     //String accessToken = TokenUtils.createJwtToken(phoneNum);
@@ -75,7 +76,7 @@ public class LoginServiceImpl implements LoginService {
                     LoginData data = new LoginData(accessToken);
                     jsonObject.put(AppResultConstants.DATA, data);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGIN_SUCCESS);
+                    //jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGIN_SUCCESS);
                 }
             }
 
@@ -103,20 +104,20 @@ public class LoginServiceImpl implements LoginService {
 
             if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
+               // jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
             } else if (null == password || "".equalsIgnoreCase(password)) {
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_ERROR);
+                //jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_ERROR);
             } else {
                 // 查找用户，判断用户账号密码是否正确
                 TsUser tsUser = tsUserMapper.findEffctiveByPhoneNum(phoneNum);
                 if (null == tsUser) {
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
+                   // jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
                     //} else if (!MD5Util.md5(password).equalsIgnoreCase(tsUser.getPassword())) {
                 } else if (!password.equalsIgnoreCase(tsUser.getPassword())) {
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_WRONG_ERROR);
+                   // jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.PASSWORD_WRONG_ERROR);
                 } else {
                     // 账号密码正确，生成token
                     //String accessToken = TokenUtils.createJwtToken(phoneNum);
@@ -136,7 +137,7 @@ public class LoginServiceImpl implements LoginService {
                     LoginData data = new LoginData(accessToken);
                     jsonObject.put(AppResultConstants.DATA, data);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGIN_SUCCESS);
+                   // jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGIN_SUCCESS);
                 }
             }
 
@@ -153,22 +154,22 @@ public class LoginServiceImpl implements LoginService {
 
         if (null == phoneNum || "".equalsIgnoreCase(phoneNum)) {
             jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-            jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
+           // jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_NAME_ERROR);
         } else {
             // 查找用户，判断用户账号密码是否正确
             TsUser tsUser = tsUserMapper.findEffctiveByPhoneNum(phoneNum);
             if (null == tsUser) {
                 jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
+                //jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.USER_ERROR);
             } else {
                 try {
                     userDao.deleteDeviceNo(phoneNum);
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.SUCCESS_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGOUT_SUCCESS);
+                   // jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGOUT_SUCCESS);
                 } catch (Exception e) {
                     logger.error("logout error ! --" + e.getMessage());
                     jsonObject.put(AppResultConstants.STATUS, AppResultConstants.FAIL_STATUS);
-                    jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGOUT_ERROR);
+                   // jsonObject.put(AppResultConstants.MSG, TsUserServiceImpl.LOGOUT_ERROR);
                 }
 
             }
