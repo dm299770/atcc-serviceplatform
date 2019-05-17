@@ -1,4 +1,4 @@
-package com.acv.cloud.frame.util;
+package com.acv.cloud.frame;
 
 import java.security.MessageDigest;
 

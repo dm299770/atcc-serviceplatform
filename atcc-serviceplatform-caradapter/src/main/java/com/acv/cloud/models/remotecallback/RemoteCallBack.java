@@ -31,6 +31,7 @@ public class RemoteCallBack {
         this.cmdid = cmdid;
     }
 
+
     public int getResult() {
         return result;
     }
@@ -39,3 +40,4 @@ public class RemoteCallBack {
         this.result = result;
     }
 }
+
