@@ -6,6 +6,8 @@
 .idea
 *.iml
 log
+target
+
 out
 gen
 ### Example user template template
