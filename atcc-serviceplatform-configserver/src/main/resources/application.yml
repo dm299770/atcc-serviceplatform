@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: atcc-serviceplatform-configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/dm299770/atcc-config-repo.git
+          searchPaths: '{application}'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+
+server:
+  port: 7001

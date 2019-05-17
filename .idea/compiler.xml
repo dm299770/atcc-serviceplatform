@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="acv-ca" />
+        <module name="ACV-CA" />
+        <module name="ACV-EUREKA" />
+        <module name="atcc-serviceplatform-authentication" />
+        <module name="atcc-serviceplatform-b2badapter" />
+        <module name="atcc-serviceplatform-caradapter" />
+        <module name="atcc-serviceplatform-common" />
+        <module name="atcc-serviceplatform-configserver" />
+        <module name="atcc-serviceplatform-discovery" />
+        <module name="atcc-serviceplatform-gateway" />
+        <module name="atcc-serviceplatform-messageadapter" />
+        <module name="atcc-serviceplatform-oauth2" />
+        <module name="atcc-serviceplatform-smarthomeadapter" />
+        <module name="atcc-serviceplatform-useradapter" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="ACV-CA" target="1.8" />
+      <module name="acv-ca" target="1.8" />
+      <module name="ACV-EUREKA" target="1.8" />
+      <module name="ACV-NA" target="8" />
+      <module name="ACV-VA" target="1.8" />
+      <module name="atcc-serviceplatform" target="1.8" />
+      <module name="atcc-serviceplatform-authentication" target="1.8" />
+      <module name="atcc-serviceplatform-b2badapter" target="1.8" />
+      <module name="atcc-serviceplatform-caradapter" target="1.8" />
+      <module name="atcc-serviceplatform-common" target="1.8" />
+      <module name="atcc-serviceplatform-configserver" target="1.8" />
+      <module name="atcc-serviceplatform-discovery" target="1.8" />
+      <module name="atcc-serviceplatform-gateway" target="1.8" />
+      <module name="atcc-serviceplatform-messageadapter" target="1.8" />
+      <module name="atcc-serviceplatform-oauth2" target="1.8" />
+      <module name="atcc-serviceplatform-smarthomeadapter" target="1.8" />
+      <module name="atcc-serviceplatform-useradapter" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ACV-CA" options="" />
+      <module name="ACV-EUREKA" options="" />
+      <module name="ACV-NA" options="" />
+      <module name="ACV-VA" options="" />
+      <module name="atcc-serviceplatform-authentication" options="" />
+      <module name="atcc-serviceplatform-b2badapter" options="" />
+      <module name="atcc-serviceplatform-caradapter" options="" />
+      <module name="atcc-serviceplatform-common" options="" />
+      <module name="atcc-serviceplatform-discovery" options="" />
+      <module name="atcc-serviceplatform-gateway" options="" />
+      <module name="atcc-serviceplatform-messageadapter" options="" />
+      <module name="atcc-serviceplatform-oauth2" options="" />
+      <module name="atcc-serviceplatform-smarthomeadapter" options="" />
+      <module name="atcc-serviceplatform-useradapter" options="" />
+    </option>
+  </component>
+</project>

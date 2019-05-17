@@ -1,0 +1,1933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a8812336-430a-42a7-95ec-162a208b730c" name="Default Changelist" comment="rm .idea">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_19_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_servlet_1_19_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_server_2_1_0_RC3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_server_2_1_0_RC3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/ACV-CA/target/" />
+    <ignored path="$PROJECT_DIR$/ACV-UA/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/ACV-EUREKA/target/" />
+    <ignored path="$PROJECT_DIR$/ACV-NA/target/" />
+    <ignored path="$PROJECT_DIR$/ACV-VA/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-useradapter/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-caradapter/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-messageadapter/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-discovery/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-gateway/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-authentication/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-oauth2/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-smarthomeadapter/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-b2badapter/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-common/target/" />
+    <ignored path="$PROJECT_DIR$/atcc-serviceplatform-configserver/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1104512282">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="25" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="5" />
+          <entry key="project.open.time.24" value="2" />
+          <entry key="project.open.time.25" value="2" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.4" value="3" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="30" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="27" />
+          <entry key="ftl" value="1" />
+          <entry key="java" value="158" />
+          <entry key="log" value="1" />
+          <entry key="md" value="5" />
+          <entry key="properties" value="17" />
+          <entry key="remark" value="6" />
+          <entry key="xml" value="37" />
+          <entry key="yml" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="27" />
+          <entry key="FTL" value="1" />
+          <entry key="JAVA" value="158" />
+          <entry key="Markdown" value="5" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Properties" value="17" />
+          <entry key="XML" value="37" />
+          <entry key="YAML" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="ftl" value="66" />
+          <entry key="java" value="1823" />
+          <entry key="md" value="57" />
+          <entry key="properties" value="208" />
+          <entry key="remark" value="2" />
+          <entry key="txt" value="352" />
+          <entry key="xml" value="187" />
+          <entry key="yml" value="71" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="FTL" value="66" />
+          <entry key="JAVA" value="1823" />
+          <entry key="Markdown" value="57" />
+          <entry key="PLAIN_TEXT" value="354" />
+          <entry key="Properties" value="208" />
+          <entry key="SQL" value="1" />
+          <entry key="XML" value="186" />
+          <entry key="YAML" value="71" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+    </session>
+    <session id="1695141184">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="15" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="MF" value="5" />
+          <entry key="bak" value="2" />
+          <entry key="class" value="27" />
+          <entry key="css" value="1" />
+          <entry key="ftl" value="1" />
+          <entry key="java" value="232" />
+          <entry key="log" value="2" />
+          <entry key="md" value="1" />
+          <entry key="project" value="1" />
+          <entry key="properties" value="64" />
+          <entry key="remark" value="1" />
+          <entry key="xml" value="25" />
+          <entry key="yml" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="27" />
+          <entry key="CSS" value="1" />
+          <entry key="Eclipse" value="1" />
+          <entry key="FTL" value="1" />
+          <entry key="JAVA" value="232" />
+          <entry key="Manifest" value="5" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="Properties" value="64" />
+          <entry key="XML" value="25" />
+          <entry key="YAML" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="MF" value="21" />
+          <entry key="dummy" value="38" />
+          <entry key="ftl" value="37" />
+          <entry key="java" value="5884" />
+          <entry key="project" value="1" />
+          <entry key="properties" value="715" />
+          <entry key="xml" value="384" />
+          <entry key="yml" value="1008" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Eclipse" value="1" />
+          <entry key="FTL" value="37" />
+          <entry key="JAVA" value="5884" />
+          <entry key="Manifest" value="21" />
+          <entry key="PLAIN_TEXT" value="38" />
+          <entry key="Properties" value="715" />
+          <entry key="XML" value="384" />
+          <entry key="YAML" value="1008" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1309404050">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="bak" value="1" />
+          <entry key="class" value="42" />
+          <entry key="java" value="231" />
+          <entry key="md" value="2" />
+          <entry key="properties" value="42" />
+          <entry key="remark" value="1" />
+          <entry key="xml" value="24" />
+          <entry key="yml" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="42" />
+          <entry key="JAVA" value="231" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Properties" value="42" />
+          <entry key="XML" value="24" />
+          <entry key="YAML" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="11" />
+          <entry key="java" value="7713" />
+          <entry key="md" value="30" />
+          <entry key="properties" value="675" />
+          <entry key="txt" value="109" />
+          <entry key="xml" value="20" />
+          <entry key="yml" value="309" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="7713" />
+          <entry key="Markdown" value="30" />
+          <entry key="PLAIN_TEXT" value="120" />
+          <entry key="Properties" value="675" />
+          <entry key="XML" value="20" />
+          <entry key="YAML" value="309" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="299290934">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="2" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="ftl" value="30" />
+          <entry key="gitignore" value="52" />
+          <entry key="java" value="4837" />
+          <entry key="properties" value="485" />
+          <entry key="txt" value="178" />
+          <entry key="xml" value="901" />
+          <entry key="yml" value="326" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="FTL" value="30" />
+          <entry key="Git file" value="20" />
+          <entry key="JAVA" value="4837" />
+          <entry key="PLAIN_TEXT" value="210" />
+          <entry key="Properties" value="485" />
+          <entry key="SQL" value="23" />
+          <entry key="XML" value="878" />
+          <entry key="YAML" value="326" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="MF" value="4" />
+          <entry key="class" value="17" />
+          <entry key="ftl" value="6" />
+          <entry key="gitignore" value="10" />
+          <entry key="java" value="242" />
+          <entry key="json" value="1" />
+          <entry key="log" value="6" />
+          <entry key="png" value="3" />
+          <entry key="properties" value="18" />
+          <entry key="sql" value="1" />
+          <entry key="xml" value="64" />
+          <entry key="xsd" value="1" />
+          <entry key="yml" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="17" />
+          <entry key="FTL" value="6" />
+          <entry key="Git file" value="6" />
+          <entry key="Image" value="3" />
+          <entry key="JAVA" value="242" />
+          <entry key="JSON" value="1" />
+          <entry key="Manifest" value="4" />
+          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="Properties" value="18" />
+          <entry key="SQL" value="1" />
+          <entry key="XML" value="65" />
+          <entry key="YAML" value="5" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ACV-CLOUD" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="13" selection-start-line="5" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-configserver/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-smarthomeadapter/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="13" selection-start-line="5" selection-start-column="3" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-common/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-messageadapter/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="13" selection-start-line="12" selection-start-column="2" selection-end-line="17" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter/src/main/java/com/acv/cloud/controller/car/carController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-discovery/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>modifyUserInfo</find>
+      <find>web.static-baseurl</find>
+      <find>update</find>
+      <find>TsUserInfo</find>
+      <find>/create</find>
+      <find>/getC</find>
+      <find>/reset</find>
+      <find>/setD</find>
+      <find>v</find>
+      <find>bind</find>
+      <find>/bind</find>
+      <find>changepa</find>
+      <find>changeInfo</find>
+      <find>changeP</find>
+      <find>create</find>
+      <find>cars</find>
+      <find>getCode</find>
+      <find>getInfo</find>
+      <find>reset</find>
+      <find>setDefaultCar</find>
+      <find>unbin</find>
+      <find>upload</find>
+      <find>LOGOUT_SUCCESS</find>
+      <find>LOGOUT_ERROR</find>
+      <find>----</find>
+      <find>--------</find>
+      <find>idm</find>
+      <find>test</find>
+      <find>car</find>
+      <find>common</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>acv.cloud</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\ideaWorkSpaces\atcc-serviceplatform\master\log</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/mapper/vehicle/VehicleMapper.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/controller/login/LogoutController.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/test/TransactionalTest.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/resources/mybatis/mapper/TsUserInfoMapper.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/domain/body/req/changePassword/ChangePasswordParams.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/domain/body/req/userInfo/create/Data.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/domain/body/req/verifycode/getCode/Attributes.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/domain/body/req/userInfo/forgetPassword/Attributes.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/domain/body/req/vehicle/setDefault/Attributes.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/controller/oauth/Handler.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-oauth2/src/main/java/com/acv/cloud/services/user/impl/TsUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/frame/constants/AppResultConstants.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/controller/vehicle/VehicleController.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/services/vehicle/impl/VehicleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/frame/constants/app/VehicleAppResultConstants.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/services/verification/impl/VerificationCodeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/services/verification/VerificationCodeService.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/services/user/impl/TsUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/services/user/TsUserService.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/frame/constants/app/UserAppResultConstants.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/controller/verification/VerificationController.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/test/ConfigServerTest.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-authentication/.gitignore" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-oauth2/src/main/java/com/acv/cloud/services/login/impl/LoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/.gitignore" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/controller/login/LogoutController.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-configserver/src/main/java/com/acv/cloud/ConfigApplication.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-configserver/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/frame/init/FastJsonHttpMessageConverterEx.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/frame/util/ResponseUtil.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/controller/mpcv/MpCvController.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/services/mpcv/impl/MpCvServiceImpl.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/services/login/impl/LoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/MainClass.java" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-common/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-discovery/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-oauth2/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-smarthomeadapter/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-configserver/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-useradapter/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-authentication/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-b2badapter/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-messageadapter/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/atcc-serviceplatform-caradapter/pom.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="atcc-serviceplatform" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="atcc-serviceplatform" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Ant</id>
+          </State>
+          <State>
+            <id>Application Servers</id>
+          </State>
+          <State>
+            <id>Control flow issuesJava</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Faces Model</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Hibernate</id>
+          </State>
+          <State>
+            <id>IconsUsabilityLintAndroid</id>
+          </State>
+          <State>
+            <id>InitializationJava</id>
+          </State>
+          <State>
+            <id>InternationalizationJava</id>
+          </State>
+          <State>
+            <id>JBoss Seam</id>
+          </State>
+          <State>
+            <id>JPA</id>
+          </State>
+          <State>
+            <id>JSON and JSON5</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java EE</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>RegExp</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+          <State>
+            <id>Struts</id>
+          </State>
+          <State>
+            <id>Struts 1Struts</id>
+          </State>
+          <State>
+            <id>TestNGJava</id>
+          </State>
+          <State>
+            <id>UI Form</id>
+          </State>
+          <State>
+            <id>UsabilityLintAndroid</id>
+          </State>
+          <State>
+            <id>Validity issuesGroovy</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XMLSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
+          <State>
+            <id>YAML</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Duplicates</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558075683329" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SpringBootLayIM-master" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.3908046" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.acv.cloud.fegin.messageadapter" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaWorkSpaces\atcc-serviceplatform\master\atcc-serviceplatform-authentication\src\main\resources" />
+      <recent name="D:\ideaWorkSpaces\atcc-serviceplatform\master\serviceplatform-config\atcc-serviceplatform-authentication" />
+      <recent name="D:\ideaWorkSpaces\atcc-serviceplatform\master\serviceplatform-config\atcc-servcieplatform-useradapter-config" />
+      <recent name="D:\ideaWorkSpaces\atcc-serviceplatform\master" />
+      <recent name="D:\ideaWorkSpaces\atcc-serviceplatform\master\atcc-serviceplatform-useradapter" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.acv.cloud.domain.model.user" />
+      <recent name="com.acv.cloud.domain.body.resp.login" />
+      <recent name="com.acv.cloud.domain.dto" />
+      <recent name="com.acv.cloud.models.fegin.messageadapter" />
+      <recent name="com.acv.cloud.frame.constants" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ideaWorkSpaces\atcc-serviceplatform\master\atcc-serviceplatform-common\src\main\java\com\acv\cloud\frame\annotation" />
+      <recent name="D:\ideaWorkSpaces\atcc-serviceplatform" />
+      <recent name="D:\ideaWorkSpaces\ACV-CLOUD\ACV-UA\src\main\java\com\acv\cloud\mapper" />
+      <recent name="D:\ideaWorkSpaces\ACV-CLOUD\ACV-UA\src\main\java\com\xxx\demo\models\jsonBean\vehicle\status" />
+      <recent name="D:\ideaWorkSpaces\ACV-CLOUD" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.29380995" />
+  </component>
+  <component name="RunManager" selected="Maven.atcc-serviceplatform [clean]">
+    <configuration name="ConfigServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atcc-serviceplatform-useradapter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ConfigServerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="atcc-serviceplatform [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="atcc-serviceplatform-caradapter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="atcc-serviceplatform-authentication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.AuthenticationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="atcc-serviceplatform-configserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acv.cloud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.ConfigApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaAcvApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="atcc-serviceplatform-discovery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.EurekaAcvApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GateWayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="atcc-serviceplatform-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acv.cloud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.GateWayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainClass" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="atcc-serviceplatform-common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.MainClass" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MessageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="atcc-serviceplatform-messageadapter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.MessageApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Oauth2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="atcc-serviceplatform-oauth2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.Oauth2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmartHomeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="atcc-serviceplatform-smarthomeadapter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.SmartHomeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="atcc-serviceplatform-useradapter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acv.cloud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acv.cloud.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AuthenticationApplication" />
+      <item itemvalue="Spring Boot.SmartHomeApplication" />
+      <item itemvalue="Spring Boot.Oauth2Application" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Spring Boot.MessageApplication" />
+      <item itemvalue="Spring Boot.EurekaAcvApplication" />
+      <item itemvalue="Spring Boot.MainClass" />
+      <item itemvalue="Spring Boot.UserApplication" />
+      <item itemvalue="Spring Boot.GateWayApplication" />
+      <item itemvalue="Spring Boot.ConfigApplication" />
+      <item itemvalue="JUnit.ConfigServerTest" />
+      <item itemvalue="Maven.atcc-serviceplatform [clean]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Maven.atcc-serviceplatform [clean]" />
+        <item itemvalue="Spring Boot.GateWayApplication" />
+        <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Spring Boot.ConfigApplication" />
+        <item itemvalue="JUnit.ConfigServerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8812336-430a-42a7-95ec-162a208b730c" name="Default Changelist" comment="" />
+      <created>1545731551220</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545731551220</updated>
+      <workItem from="1545731556937" duration="790000" />
+      <workItem from="1545817953134" duration="1889000" />
+      <workItem from="1545990120553" duration="249000" />
+      <workItem from="1546392160134" duration="20516000" />
+      <workItem from="1546930265662" duration="13783000" />
+      <workItem from="1547028013605" duration="21948000" />
+      <workItem from="1547429086519" duration="14967000" />
+      <workItem from="1547514943418" duration="6796000" />
+      <workItem from="1547522153344" duration="35443000" />
+      <workItem from="1548030837215" duration="3855000" />
+      <workItem from="1548250234790" duration="1224000" />
+      <workItem from="1548257796923" duration="845000" />
+      <workItem from="1548292985703" duration="592000" />
+      <workItem from="1548297489019" duration="1187000" />
+      <workItem from="1548375919864" duration="1260000" />
+      <workItem from="1549933172694" duration="20538000" />
+      <workItem from="1550116096570" duration="10314000" />
+      <workItem from="1550195709840" duration="4245000" />
+      <workItem from="1550209738771" duration="7040000" />
+      <workItem from="1550455434841" duration="10654000" />
+      <workItem from="1550472962434" duration="3997000" />
+      <workItem from="1550479922522" duration="14445000" />
+      <workItem from="1550570675883" duration="39000" />
+      <workItem from="1550624655887" duration="6301000" />
+      <workItem from="1550712949906" duration="7251000" />
+      <workItem from="1550740157286" duration="2907000" />
+      <workItem from="1550824598707" duration="5232000" />
+      <workItem from="1551230756467" duration="16688000" />
+      <workItem from="1551348882801" duration="9392000" />
+      <workItem from="1551429907485" duration="2170000" />
+      <workItem from="1551434083479" duration="1611000" />
+      <workItem from="1551661577866" duration="1365000" />
+      <workItem from="1551663895107" duration="166000" />
+      <workItem from="1551667519003" duration="45048000" />
+      <workItem from="1551866349282" duration="76000" />
+      <workItem from="1551920913761" duration="27991000" />
+      <workItem from="1552032921272" duration="9000" />
+      <workItem from="1552032959240" duration="338000" />
+      <workItem from="1552033428057" duration="2534000" />
+      <workItem from="1552036013734" duration="3535000" />
+      <workItem from="1552268652647" duration="35726000" />
+      <workItem from="1552383036386" duration="7903000" />
+      <workItem from="1552445808328" duration="671000" />
+      <workItem from="1552447504078" duration="53279000" />
+      <workItem from="1552872718852" duration="57200000" />
+      <workItem from="1553477842041" duration="60782000" />
+      <workItem from="1554686743848" duration="17192000" />
+      <workItem from="1555051863504" duration="1881000" />
+      <workItem from="1555063949701" duration="598000" />
+      <workItem from="1555293255309" duration="594000" />
+      <workItem from="1555400581905" duration="3650000" />
+      <workItem from="1555580465340" duration="1731000" />
+      <workItem from="1555635493702" duration="21991000" />
+      <workItem from="1556010577706" duration="54800000" />
+      <workItem from="1557018507926" duration="56936000" />
+      <workItem from="1557457978429" duration="11978000" />
+      <workItem from="1557709113390" duration="30287000" />
+      <workItem from="1557823379001" duration="6814000" />
+      <workItem from="1557968888493" duration="5814000" />
+    </task>
+    <task id="LOCAL-00001" summary="pom.xml update">
+      <created>1545732298412</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545732298412</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ACV-CA Refactoring">
+      <created>1545818078426</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1545818078426</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ACV-CA 2019/12/28">
+      <created>1545990157654</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1545990157654</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ACV-CLOUD 2019/1/3 commit">
+      <created>1546481655585</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1546481655585</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ACV-CLOUD 2019/1/3 commit">
+      <created>1546482114389</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1546482114389</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ACV-CLOUD 2019/1/3 commit">
+      <created>1546482189513</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1546482189513</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ACV-CLOUD 2019/1/3 commit">
+      <created>1546505513487</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1546505513487</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ACV-CLOUD 2019/1/3 commit">
+      <created>1546505569339</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1546505569339</updated>
+    </task>
+    <task id="LOCAL-00009" summary="ACV-CLOUD 2019/1/3 commit">
+      <created>1546505686424</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1546505686424</updated>
+    </task>
+    <task id="LOCAL-00010" summary="ACV-CLOUD add ACV-NA module">
+      <created>1546841797705</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1546841797705</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ACV-CLOUD pom.xml Integration">
+      <created>1547198547512</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1547198547512</updated>
+    </task>
+    <task id="LOCAL-00012" summary="ACV-CLOUD pom.xml Integration">
+      <created>1547521989995</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1547521989995</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ACV-CLOUD pom.xml Integration">
+      <created>1547523089511</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1547523089511</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ACV-VA static page update vehicle data(Redis)">
+      <created>1547717068592</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1547717068592</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ACV-UA RequestBody bug fix">
+      <created>1550193641654</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1550193641654</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ACV-VA static page update vehicle data(Redis)">
+      <created>1550195856347</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1550195856347</updated>
+    </task>
+    <task id="LOCAL-00017" summary="ACV-UA fix Vehicle bind and unbind with VIN number">
+      <created>1550211636133</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1550211636133</updated>
+    </task>
+    <task id="LOCAL-00018" summary="ACV-UA package name remote &quot;com.acv.cloud&quot;">
+      <created>1550469498859</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1550469498859</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ACV-UA package name remote &quot;com.acv.cloud&quot;">
+      <created>1550473539139</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1550473539139</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ACV-UA package name remote &quot;com.acv.cloud&quot;">
+      <created>1550473707032</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1550473707032</updated>
+    </task>
+    <task id="LOCAL-00021" summary="ACV-UA AccountMapper.java add function">
+      <created>1550826506429</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1550826506429</updated>
+    </task>
+    <task id="LOCAL-00022" summary="ACV-UA AccountMapper.java add function">
+      <created>1551237109141</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1551237109141</updated>
+    </task>
+    <task id="LOCAL-00023" summary="atcc-serviceplatform 2019.03.15 commit">
+      <created>1552643890062</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1552643890062</updated>
+    </task>
+    <task id="LOCAL-00024" summary="194 server first commit">
+      <created>1552893996146</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1552893996146</updated>
+    </task>
+    <task id="LOCAL-00025" summary="2019-03-19">
+      <created>1553050774411</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1553050774411</updated>
+    </task>
+    <task id="LOCAL-00026" summary="2019-03-19">
+      <created>1553479254928</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1553479254928</updated>
+    </task>
+    <task id="LOCAL-00027" summary="2019-04-02">
+      <created>1554195382521</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1554195382521</updated>
+    </task>
+    <task id="LOCAL-00028" summary="branch v1-1">
+      <created>1554862673190</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1554862673190</updated>
+    </task>
+    <task id="LOCAL-00029" summary="v1-1">
+      <created>1554862862757</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1554862862757</updated>
+    </task>
+    <task id="LOCAL-00030" summary="update master branch">
+      <created>1555635566981</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1555635566981</updated>
+    </task>
+    <task id="LOCAL-00031" summary="atcc-serviceplatform-common">
+      <created>1555987116909</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1555987116909</updated>
+    </task>
+    <task id="LOCAL-00032" summary="atcc-serviceplatform-common">
+      <created>1555987613665</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1555987613665</updated>
+    </task>
+    <task id="LOCAL-00033" summary="update refreshtoken">
+      <created>1556006185149</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1556006185149</updated>
+    </task>
+    <task id="LOCAL-00034" summary="login flow">
+      <created>1556263614768</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1556263614769</updated>
+    </task>
+    <task id="LOCAL-00035" summary="2019/04/30">
+      <created>1556616749226</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1556616749226</updated>
+    </task>
+    <task id="LOCAL-00036" summary="update refreshtoken">
+      <created>1556618901671</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1556618901671</updated>
+    </task>
+    <task id="LOCAL-00037" summary="serviceplatform-common check in">
+      <created>1557106747954</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1557106747954</updated>
+    </task>
+    <task id="LOCAL-00038" summary="clean oauth2">
+      <created>1557121393323</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1557121393323</updated>
+    </task>
+    <task id="LOCAL-00039" summary="update refreshtoken">
+      <created>1557455669529</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1557455669529</updated>
+    </task>
+    <task id="LOCAL-00040" summary="update refreshtoken">
+      <created>1557457437998</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1557457437999</updated>
+    </task>
+    <task id="LOCAL-00041" summary="rm .idea">
+      <created>1557458345585</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1557458345585</updated>
+    </task>
+    <task id="LOCAL-00042" summary="rm .idea">
+      <created>1558065384294</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1558065384294</updated>
+    </task>
+    <task id="LOCAL-00043" summary="rm .idea">
+      <created>1558075509132</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1558075509132</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="RedisTest_test - 2019.04.25 at 18h 14m 12s.xml">
+      <configuration name="RedisTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisTest_test - 2019.04.25 at 18h 17m 22s.xml">
+      <configuration name="RedisTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisTest - 2019.04.26 at 15h 08m 58s.xml">
+      <configuration name="RedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisTest - 2019.04.26 at 15h 10m 16s.xml">
+      <configuration name="RedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigServerTest_test - 2019.05.09 at 17h 17m 55s.xml">
+      <configuration name="ConfigServerTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigServerTest_test - 2019.05.09 at 17h 18m 49s.xml">
+      <configuration name="ConfigServerTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigServerTest - 2019.05.09 at 17h 21m 32s.xml">
+      <configuration name="ConfigServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigServerTest - 2019.05.09 at 17h 22m 39s.xml">
+      <configuration name="ConfigServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigServerTest - 2019.05.09 at 17h 31m 22s.xml">
+      <configuration name="ConfigServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigServerTest - 2019.05.09 at 17h 32m 06s.xml">
+      <configuration name="ConfigServerTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="759057000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="2576" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49678457" visible="true" weight="0.1291733" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" sideWeight="0.5015625" side_tool="true" weight="0.14882812" />
+      <window_info id="Web" order="6" sideWeight="0.50321543" side_tool="true" weight="0.16931638" />
+      <window_info id="Structure" order="7" weight="0.11605723" />
+      <window_info anchor="bottom" id="Run Dashboard" order="0" weight="0.3572204" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32790446" />
+      <window_info anchor="bottom" content_ui="combo" x="1942" y="375" width="2516" height="290" id="Run" order="3" sideWeight="0.63593006" side_tool="true" type="SLIDING" weight="0.42888165" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.55763113" weight="0.3061889" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32899022" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.35179153" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.36406994" side_tool="true" weight="0.31389183" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32790446" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.32899022" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" sideWeight="0.49960938" weight="0.320304" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.4933018" weight="0.4036545" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.17170112" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.08744038" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49678457" visible="true" weight="0.2748936" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" sideWeight="0.5015625" side_tool="true" weight="0.14882812" />
+      <window_info id="Web" order="6" sideWeight="0.50321543" side_tool="true" weight="0.16931638" />
+      <window_info id="Structure" order="7" weight="0.11605723" />
+      <window_info anchor="bottom" id="Run Dashboard" order="0" weight="0.3572204" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32790446" />
+      <window_info anchor="bottom" content_ui="combo" x="1942" y="375" width="2516" height="290" id="Run" order="3" sideWeight="0.63593006" side_tool="true" type="SLIDING" weight="0.42857143" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.55763113" weight="0.3061889" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32899022" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.35179153" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.36406994" side_tool="true" weight="0.31389183" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32790446" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.32899022" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" sideWeight="0.49960938" weight="0.320304" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.4933018" weight="0.4036545" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.17191489" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.08744038" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/ACV-NA" />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="pom.xml update" />
+    <MESSAGE value="ACV-CA Refactoring" />
+    <MESSAGE value="ACV-CA 2019/12/28" />
+    <MESSAGE value="ACV-CLOUD 2019/1/3 commit" />
+    <MESSAGE value="ACV-CLOUD add ACV-NA module" />
+    <MESSAGE value="ACV-CLOUD pom.xml Integration" />
+    <MESSAGE value="ACV-UA RequestBody bug fix" />
+    <MESSAGE value="ACV-VA static page update vehicle data(Redis)" />
+    <MESSAGE value="ACV-UA fix Vehicle bind and unbind with VIN number" />
+    <MESSAGE value="ACV-UA package name remote &quot;com.acv.cloud&quot;" />
+    <MESSAGE value="atcc-serviceplatform 2019.03.15 commit" />
+    <MESSAGE value="ACV-UA AccountMapper.java add function" />
+    <MESSAGE value="194 server first commit" />
+    <MESSAGE value="2019-03-19" />
+    <MESSAGE value="2019-04-02" />
+    <MESSAGE value="branch v1-1" />
+    <MESSAGE value="v1-1" />
+    <MESSAGE value="update master branch" />
+    <MESSAGE value="atcc-serviceplatform-common" />
+    <MESSAGE value="login flow" />
+    <MESSAGE value="2019/04/30" />
+    <MESSAGE value="serviceplatform-common check in" />
+    <MESSAGE value="clean oauth2" />
+    <MESSAGE value="update refreshtoken" />
+    <MESSAGE value="rm .idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="rm .idea" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>oauthRequest.getParam(OAuth.OAUTH_GRANT_TYPE)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>oauthRequest.getRedirectURI()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>jsonObject.getInteger(AppResultConstants.STATUS)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>AppResultConstants.SUCCESS_STATUS</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>jsonObject.getInteger(AppResultConstants.STATUS) != AppResultConstants.SUCCESS_STATUS</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>deviceNoCache</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>deviceObject.get(&quot;deviceNo&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>deviceObject.getJSONObject(&quot;deviceNo&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>deviceObject.getJSONObject(&quot;deviceNo&quot;).toJSONString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/serviceplatform-config/atcc-serviceplatform-useradapter/atcc-serviceplatform-useradapter-dev.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serviceplatform-config/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/frame/constants/ApplicationPropertiesConstants.java" />
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-gateway/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-gateway/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/controller/login/LogoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/constants/ApplicationPropertiesConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serviceplatform-config/atcc-serviceplatform-useradapter/atcc-serviceplatform-useradapter-prod.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-discovery/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-configserver/src/main/java/com/acv/cloud/ConfigApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serviceplatform-config/atcc-serviceplatform-authentication/atcc-serviceplatform-authentication-dev.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serviceplatform-config/atcc-serviceplatform-authentication/atcc-serviceplatform-authentication-prod.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-messageadapter/src/main/java/com/acv/cloud/services/sms/impl/SMSServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-configserver/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/domain/body/req/notification/Notification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/frame/init/FastJsonHttpMessageConverterEx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/frame/util/ResponseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="78" lean-forward="true" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/controller/mpcv/MpCvController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/models/sys/TsUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/services/login/impl/LoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/mapper/user/TsUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/com/acv/cloud/services/mpcv/impl/MpCvServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter/src/main/java/com/acv/cloud/mapper/user/TsUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-messageadapter/src/main/java/com/acv/cloud/services/notification/impl/NotificationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/com/acv/cloud/UserApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="43" column="5" selection-start-line="41" selection-start-column="3" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-common/src/main/java/com/acv/cloud/MainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Test.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/test/ConfigServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/maven-4.0.0.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="749" column="6" selection-start-line="749" selection-start-column="6" selection-end-line="749" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-useradapter/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-gateway/src/test/java/com/acv/cloud/AcvCaApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-useradapter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="29" selection-start-line="26" selection-start-column="3" selection-end-line="32" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-oauth2/src/main/java/com/acv/cloud/controller/oauth/AuthorizeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2337">
+          <caret line="166" column="30" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-oauth2/src/main/java/com/acv/cloud/controller/oauth/TokenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2489">
+          <caret line="163" column="61" selection-start-line="163" selection-start-column="61" selection-end-line="163" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-oauth2/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-configserver/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-discovery/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-b2badapter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="225" column="21" selection-start-line="225" selection-start-column="21" selection-end-line="225" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-authentication/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="13" selection-start-line="5" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="13" selection-start-line="12" selection-start-column="2" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-messageadapter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-smarthomeadapter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="13" selection-start-line="5" selection-start-column="3" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atcc-serviceplatform-caradapter/src/main/java/com/acv/cloud/controller/car/carController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>atcc-serviceplatform-common:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3908046" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3908046" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>atcc-serviceplatform-messageadapter</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3908046" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.1.0.RC3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3908046" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
