@@ -247,7 +247,6 @@
             <groupId>com.acv.cloud</groupId>
             <artifactId>atcc-serviceplatform-common</artifactId>
             <version>${atcc.platform.common.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

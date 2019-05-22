@@ -1,4 +1,4 @@
-package com.acv.cloud.frame.util;
+package com.acv.cloud.frame;
 
 /**
  *各类验证码生成工具

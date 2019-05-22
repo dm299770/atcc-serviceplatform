@@ -1,4 +1,4 @@
-package com.acv.cloud.frame.util;
+package com.acv.cloud.frame;
 
 import com.bcloud.msg.http.HttpSender;
 import org.slf4j.Logger;

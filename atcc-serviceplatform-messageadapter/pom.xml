@@ -201,6 +201,14 @@
             <scope>system</scope>
         </dependency>
 
+        <dependency>
+            <groupId>messageadapter</groupId>
+            <artifactId>atcc-serviceplatform-messageadapter</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/resources/lib/PushJavaSDK.jar</systemPath>
+        </dependency>
+
         <!-- 部署关闭服务 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -217,12 +225,6 @@
             <artifactId>atcc-serviceplatform-common</artifactId>
             <version>${atcc.platform.common.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>atcc-serviceplatform-caradapter</groupId>-->
-            <!--<artifactId>atcc-serviceplatform-caradapter</artifactId>-->
-            <!--<version>0.0.1-SNAPSHOT</version>-->
-            <!--<scope>compile</scope>-->
-        <!--</dependency>-->
     </dependencies>
 
     <dependencyManagement>

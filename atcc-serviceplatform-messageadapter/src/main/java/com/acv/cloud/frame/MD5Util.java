@@ -1,9 +1,9 @@
-package com.acv.cloud.frame.util;
-
-import java.security.MessageDigest;
+package com.acv.cloud.frame;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.security.MessageDigest;
 
 /**
  * MD5处理的公共类
