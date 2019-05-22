@@ -70,14 +70,6 @@
             <systemPath>${basedir}/src/main/resources/lib/http.jar</systemPath>
         </dependency>
 
-        <dependency>
-            <groupId>messageadapter</groupId>
-            <artifactId>atcc-serviceplatform-messageadapter</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/lib/PushJavaSDK.jar</systemPath>
-        </dependency>
-
     </dependencies>
 
     <!--<build>-->
