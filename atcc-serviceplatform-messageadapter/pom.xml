@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- project – Run as – Maven build – 在Goals里输入spring-boot:run 浏览器输入localhost:8080 -->
-    <groupId>atcc-serviceplatform-messageadapter</groupId>
+    <groupId>com.acv.cloud</groupId>
     <artifactId>atcc-serviceplatform-messageadapter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -152,36 +152,12 @@
             <version>1.2.44</version>
         </dependency>
 
-        <!-- oauth -->
-        <dependency>
-            <groupId>org.apache.oltu.oauth2</groupId>
-            <artifactId>org.apache.oltu.oauth2.authzserver</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.oltu.oauth2</groupId>
-            <artifactId>org.apache.oltu.oauth2.resourceserver</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.oltu.oauth2</groupId>
-            <artifactId>org.apache.oltu.oauth2.common</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.3</version>
         </dependency>
 
-        <dependency>
-            <groupId>idm</groupId>
-            <artifactId>idm</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/lib/http.jar</systemPath>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
@@ -217,12 +193,7 @@
             <artifactId>atcc-serviceplatform-common</artifactId>
             <version>${atcc.platform.common.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>atcc-serviceplatform-caradapter</groupId>-->
-            <!--<artifactId>atcc-serviceplatform-caradapter</artifactId>-->
-            <!--<version>0.0.1-SNAPSHOT</version>-->
-            <!--<scope>compile</scope>-->
-        <!--</dependency>-->
+
     </dependencies>
 
     <dependencyManagement>
