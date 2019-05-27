@@ -3,7 +3,7 @@ package com.acv.cloud.services.sms.impl;
 import com.acv.cloud.frame.constants.AppResultConstants;
 import com.acv.cloud.frame.constants.ApplicationPropertiesConstants;
 import com.acv.cloud.frame.constants.app.NotificationResultConstants;
-import com.acv.cloud.frame.util.DateUtil;
+import com.acv.cloud.frame.DateUtil;
 import com.acv.cloud.frame.util.SMSUtil;
 import com.acv.cloud.repository.mongotemplate.ISMSDao;
 import com.acv.cloud.services.sms.SMSService;

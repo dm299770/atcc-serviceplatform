@@ -2,6 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- project – Run as – Maven build – 在Goals里输入spring-boot:run 浏览器输入localhost:8080 -->
+    <parent>
+        <groupId>com.acv.cloud</groupId>
+        <artifactId>atcc-serviceplatform</artifactId>
+        <version>1.0.0</version>
+        <!--<relativePath/>-->
+    </parent>
+
     <groupId>com.acv.cloud</groupId>
     <artifactId>atcc-serviceplatform-b2badapter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -17,13 +24,13 @@
         <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
     </properties>
 
-    <parent>
-        <groupId>com.acv.cloud</groupId>
-        <artifactId>atcc-serviceplatform</artifactId>
-        <version>1.0.0</version>
-        <!--<relativePath/>-->
-    </parent>
-
+    <distributionManagement>
+        <repository>
+            <id>atcc-releases</id>
+            <name>atcc-releases</name>
+            <url>http://139.217.235.112:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -247,7 +254,11 @@
             <groupId>com.acv.cloud</groupId>
             <artifactId>atcc-serviceplatform-common</artifactId>
             <version>${atcc.platform.common.version}</version>
-            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
     </dependencies>
 

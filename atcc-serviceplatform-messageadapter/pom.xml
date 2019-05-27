@@ -2,7 +2,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- project – Run as – Maven build – 在Goals里输入spring-boot:run 浏览器输入localhost:8080 -->
-    <groupId>com.acv.cloud</groupId>
+    <!-- spring boot 基本环境 -->
+    <parent>
+        <groupId>com.acv.cloud</groupId>
+        <artifactId>atcc-serviceplatform</artifactId>
+        <version>1.0.0</version>
+        <!--<relativePath/>-->
+    </parent>
+
+    <groupId>atcc-serviceplatform-messageadapter</groupId>
     <artifactId>atcc-serviceplatform-messageadapter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -16,13 +24,13 @@
         <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
     </properties>
 
-    <!-- spring boot 基本环境 -->
-    <parent>
-        <groupId>com.acv.cloud</groupId>
-        <artifactId>atcc-serviceplatform</artifactId>
-        <version>1.0.0</version>
-        <!--<relativePath/>-->
-    </parent>
+    <distributionManagement>
+        <repository>
+            <id>atcc-releases</id>
+            <name>atcc-releases</name>
+            <url>http://139.217.235.112:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -152,12 +160,36 @@
             <version>1.2.44</version>
         </dependency>
 
+        <!-- oauth -->
+        <dependency>
+            <groupId>org.apache.oltu.oauth2</groupId>
+            <artifactId>org.apache.oltu.oauth2.authzserver</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.oltu.oauth2</groupId>
+            <artifactId>org.apache.oltu.oauth2.resourceserver</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.oltu.oauth2</groupId>
+            <artifactId>org.apache.oltu.oauth2.common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>idm</groupId>
+            <artifactId>idm</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/resources/lib/http.jar</systemPath>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
@@ -177,23 +209,29 @@
             <scope>system</scope>
         </dependency>
 
+        <dependency>
+            <groupId>messageadapter</groupId>
+            <artifactId>atcc-serviceplatform-messageadapter</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/resources/lib/PushJavaSDK.jar</systemPath>
+        </dependency>
+
         <!-- 部署关闭服务 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.junit.jupiter</groupId>-->
-            <!--<artifactId>junit-jupiter-api</artifactId>-->
-            <!--<version>RELEASE</version>-->
-            <!--<scope>compile</scope>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.acv.cloud</groupId>
             <artifactId>atcc-serviceplatform-common</artifactId>
             <version>${atcc.platform.common.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
